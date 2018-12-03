@@ -1,31 +1,25 @@
 package etat.impl;
 
 public class Etat {
-	protected EtatFourmi etat;
 	
-	public Etat() {
-		this.etat = EtatFourmi.Oeuf;
-	}
+	protected EtatFourmi etatFourmi;
+	protected int tempsNaissance;
+	protected double poid;
 	
-	
-	public void changerEtape(EtatFourmi nouvelEtat)
+	public Etat(int tempsNaissance)
 	{
-		this.etat = nouvelEtat;
+		this.tempsNaissance = tempsNaissance;
 	}
+	
+	protected void changerEtat(EtatFourmi nouvelEtat)
+	{
+		etatFourmi = nouvelEtat;
+	}
+	
+	
 	public String toString()
 	{
-		if (etat == EtatFourmi.Oeuf)
-		{
-			return "Oeuf";
-		}
-		if (etat == EtatFourmi.Oeuf)
-		{
-			return "Oeuf";
-		}
-		if (etat == EtatFourmi.Oeuf)
-		{
-			return "Oeuf";
-		}
-		return "";
+		return etatFourmi.toString();
 	}
+
 }

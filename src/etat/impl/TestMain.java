@@ -3,9 +3,10 @@ package etat.impl;
 public class TestMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Etat etatTest = new Etat();
-		
+		Etat etatTest = new Oeuf(1);
+		System.out.println(etatTest.toString());
+		etatTest = ((Oeuf) etatTest).transformation();
+		System.out.println(etatTest.toString());
 	}
 
 }

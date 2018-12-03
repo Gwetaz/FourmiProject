@@ -1,17 +1,21 @@
 package etat.impl;
 
-public class Larve implements Transformation{
+import java.util.Random;
 
-	public Larve()
+public class Larve extends Etat implements Transformation{
+
+	public Larve(int tempsNaissance)
 	{
-		
+		super(tempsNaissance);
+		this.changerEtat(EtatFourmi.Larve);
+		Random r = new Random();
+		this.poid = 1.5 + r.nextFloat() * (2-1.5)*4;
 	}
 	
 	
 	@Override
-	public void transformation() {
-		// TODO Auto-generated method stub
-		
+	public Etat transformation() {
+		return new Nymphe(tempsNaissance);
 	}
 
 }
