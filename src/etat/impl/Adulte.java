@@ -1,4 +1,4 @@
-package etape.impl;
+package etat.impl;
 
 public class Adulte {
 
