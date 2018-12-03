@@ -12,4 +12,20 @@ public class Etat {
 	{
 		this.etat = nouvelEtat;
 	}
+	public String toString()
+	{
+		if (etat == EtatFourmi.Oeuf)
+		{
+			return "Oeuf";
+		}
+		if (etat == EtatFourmi.Oeuf)
+		{
+			return "Oeuf";
+		}
+		if (etat == EtatFourmi.Oeuf)
+		{
+			return "Oeuf";
+		}
+		return "";
+	}
 }
