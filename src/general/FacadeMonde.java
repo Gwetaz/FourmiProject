@@ -6,6 +6,7 @@ public class FacadeMonde {
 
 	public final int pourcentOuvriere = 70;
 	public final int pourcentSoldat = 30;
+	public final int lol = 0;
 	
 	public void genererMonde(int nombreOeuf) 
 	{
