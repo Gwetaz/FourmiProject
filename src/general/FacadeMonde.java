@@ -11,7 +11,7 @@ public class FacadeMonde {
 	public void genererMonde(int nombreOeuf) 
 	{
 		Reine reine = new Reine();
-		Fourmiliere fourmiliere = new Fourmiliere(reine);
+		Fourmiliere fourmiliere = new Fourmiliere(reine); 
 		int nombreOuvriere = (int) (nombreOeuf*pourcentOuvriere/100);
 		int nombreSoldat = (int) (nombreOeuf*pourcentSoldat/100);
 	}
