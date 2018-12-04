@@ -1,15 +1,18 @@
 package etat.impl;
 
-public class Oeuf extends Etat implements Transformation{
 
-	/*public Oeuf() {
-		this.etat = EtatFourmi.Oeuf;
-	}*/
+public class Oeuf extends Etat implements Transformation{
+	
+	public Oeuf(int tempsNaissance) {
+		super(tempsNaissance);
+		this.changerEtat(EtatFourmi.Oeuf);
+		this.poid = 0;
+	}
 	
 	
 	@Override
-	public void transformation() {
-		this.etat = EtatFourmi.Larve;
+	public Etat transformation() {
+		return new Larve(tempsNaissance);
 	}
 
 }
