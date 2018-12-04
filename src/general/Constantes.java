@@ -25,6 +25,7 @@ public class Constantes {
 	public final static int departFourmiliereX = 550;
 	public final static int departFourmiliereY = 150;
 	public final static int tailleFourmis = 10;
+	public final static int tailleReine = 20;
 	
 }
 
