@@ -1,4 +1,6 @@
 package general;
+import java.awt.Graphics;
+
 import etat.impl.* ;
 import role.impl.*;
 
@@ -11,14 +13,14 @@ public class Fourmi {
 	int posX,posY;
 	
 	
-	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance, int posX, int posY)
+	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance, int posX, int posY, Graphics g)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		FourmiPoid = this.FourmiPoid;
 		this.Etat = new Oeuf(naissance, posX, posY);
 		this.posX =posX;
 		this.posY = posY;
-		
+		g.fillOval(posX, posY, 10, 10);
 	}
 	
 	
