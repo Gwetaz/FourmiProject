@@ -15,7 +15,7 @@ public class Fourmi {
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		FourmiPoid = this.FourmiPoid;
-		this.Etat = new Oeuf(naissance);
+		this.Etat = new Oeuf(naissance, posX, posY);
 		this.posX =posX;
 		this.posY = posY;
 		

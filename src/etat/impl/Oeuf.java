@@ -1,20 +1,21 @@
 package etat.impl;
 
-import java.awt.Color;
+
+import general.Constantes;
 
 public class Oeuf extends Etat implements Transformation{
 	
-	public Oeuf(int tempsNaissance) {
-		super(tempsNaissance);
+	public Oeuf(int tempsNaissance, int positionX, int positionY) {
+		super(tempsNaissance, positionX, positionY);
 		this.changerEtat(EtatFourmi.Oeuf);
 		this.poid = 0;
-		this.couleur = new Color(255,255,255); 
+		this.couleur = Constantes.couleurOeuf; 
 	}
 	
 	
 	@Override
 	public Etat transformation() {
-		return new Larve(tempsNaissance);
+		return new Larve(tempsNaissance, positionX, positionY);
 	}
 
 }
