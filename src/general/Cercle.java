@@ -16,7 +16,7 @@ public class Cercle extends Morph {
 		Color c = g.getColor();
 		g.setColor(color);
 		g.fillOval(bounds.x,bounds.y,bounds.height,bounds.width);
-		g.setColor(c);
+		g.setColor(c); 
 	}
 
 }

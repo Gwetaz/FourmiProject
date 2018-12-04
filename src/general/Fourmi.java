@@ -47,7 +47,7 @@ public class Fourmi {
 	}*/
 	
 	public void changerEtat()
-	{
+	{ 
 		Etat nouvelEtat;
 		switch(this.getEtat().getEtatFourmi())
 		{

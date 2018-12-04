@@ -11,7 +11,7 @@ public class RectangleForme extends Morph{
 	public RectangleForme(Color color, Point pos, Dimension dim) {
 		super(color, pos, dim);
 		
-	}
+	} 
 
 	public void draw(Graphics g) {
 		Color c = g.getColor();

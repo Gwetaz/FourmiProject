@@ -14,7 +14,7 @@ public abstract class Morph implements IMovableDrawable {
 		setPosition(pos);
 		
 	}
-	
+	 
 	public abstract void draw(Graphics g) ;
 	
 	public Rectangle getBounds(){

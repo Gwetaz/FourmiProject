@@ -16,7 +16,7 @@ public interface IDrawable {
 	public abstract void draw(Graphics g);
 
 	/**
-	 * @pre:
+	 * @pre: 
 	 * @return le rectangle  qui contient compl�tement this.
 	 */
 	public abstract Rectangle getBounds();
