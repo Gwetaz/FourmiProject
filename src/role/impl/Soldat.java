@@ -16,7 +16,6 @@ public class Soldat extends Role{
 	
 	public void deplacement(Adulte a) {
 		Random r = new Random();
-		
 		int x,y,probabilite;
 		probabilite = r.nextInt(4-1) + 1;
 		if(probabilite == 1) {

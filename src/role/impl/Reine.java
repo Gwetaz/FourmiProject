@@ -16,7 +16,12 @@ public class Reine extends Role{
 	}
 	
 	public Oeuf genererFourmi(int tempsdenaissance) {
-		Oeuf oeuf = new Oeuf(tempsdenaissance,4,5);
+		Random rx = new Random();
+		Random ry = new Random();
+		int posx,posy;
+		posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-Constantes.departFourmiliereX)+Constantes.departFourmiliereX;
+		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
+		Oeuf oeuf = new Oeuf(tempsdenaissance,posx,posy);
 		return oeuf;
 	}
 }
