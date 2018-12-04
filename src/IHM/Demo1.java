@@ -8,7 +8,7 @@ import general.Fourmiliere;
 
 public class Demo1 {
 
-	public static final int nombreOeufs = 50;
+	public static final int nombreOeufs = 10;
 	
 	public static void main(String[] args) {
 		Monde jc = FacadeMonde.genererMonde(nombreOeufs);

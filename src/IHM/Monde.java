@@ -3,9 +3,11 @@ package IHM;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
+import general.Constantes;
 import general.Fourmi;
 
 public class Monde extends JPanel{
@@ -32,13 +34,33 @@ public class Monde extends JPanel{
 		g.setColor(Color.RED);
 		g.fillRect(550,150,500,500);
 		g.setColor(Color.BLUE);
-		//g.fillOval(795,395,20,20);
+		Random rx = new Random();
+		int posx;
+		Random ry = new Random();
+		int posy;
 		for (int i = 0; i < nbOuvriere; i++)
 		{
-			Fourmi f = new Fourmi(true, 1.0, 1, 50,50, g);
+			posx = rx.nextInt(Constantes.tailleJframeX);
+			posy = ry.nextInt(Constantes.tailleJframeY);
+			Fourmi f = new Fourmi(true, 1.0, 1, posx, posy, g);
 			listeFourmi.add(f);
 		}
 		g.setColor(c);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

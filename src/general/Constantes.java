@@ -17,7 +17,8 @@ public class Constantes {
 	public final static int nombreJourMaxReine = 3650;
 	public final static int nombreJourMiniAdulte = 547;
 	public final static int nombreJourMaxAdulte = 912;
-	
+	public final static int tailleJframeX = 1600;
+	public final static int tailleJframeY = 800;
 	
 }
 
