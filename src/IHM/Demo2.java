@@ -1,5 +1,6 @@
 package IHM;
 
+import etat.impl.EtatFourmi;
 import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
@@ -14,12 +15,12 @@ import java.util.Random;
 
 public class Demo2 {
 
-	public static final int nombreOeufs = 50;
+	public static final int nombreOeufs = 10;
 	
 	
 	public static void main(String[] args) {
 		Random x = new Random();
-		Monde2 jc = new Monde2("Un essai de Morphs",50);
+		Monde2 jc = new Monde2("Un essai de Morphs",nombreOeufs);
 		jc.setBackground(Constantes.couleurSol);
 		jc.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		Dimension dim = new Dimension(10, 10);
@@ -31,6 +32,7 @@ public class Demo2 {
 			dim = new Dimension(x.nextInt(20), x.nextInt(20));
 			jc.add(new Oval(new Color((int) (Math.random() * 0x1000000)), new Point(0, 0), dim));
 		}*/
+		
 		Random rx = new Random();
 		int posx;
 		Random ry = new Random();
@@ -52,7 +54,7 @@ public class Demo2 {
 			//	iter.next().setPosition(new Point(x.nextInt(800), x.nextInt(600)));
 			//}
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -62,8 +64,14 @@ public class Demo2 {
 				/*Etat etatTest = new Oeuf(1, 2, 3);
 				System.out.println(etatTest.toString());
 				etatTest = ((Oeuf) etatTest).transformation();*/
+				if(jc.listeFourmis.get(i).getEtat().getEtatFourmi() == EtatFourmi.Adulte)
+				{
+					jc.listeFourmis.get(i).deplacement();
+				}else{
+					jc.listeFourmis.get(i).changerEtat();
+				}
 				
-				jc.listeFourmis.get(i).changerEtat(); 
+				
 				//listeFourmi.get(i).getEtat();
 			}
 			jc.repaint();

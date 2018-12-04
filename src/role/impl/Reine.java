@@ -12,6 +12,7 @@ public class Reine extends Role{
 		this.age = r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine;
 		this.couleur = Constantes.couleurReine;
 		this.taille = Constantes.tailleReine;
+		this.setRole(RoleFourmi.Reine);
 	}
 	
 	public Oeuf genererFourmi(int tempsdenaissance) {
