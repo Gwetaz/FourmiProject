@@ -28,8 +28,10 @@ public class Monde extends JPanel{
 		this.nbOeufs = nbOeufs;
 	}
 	
-	public void paint(Graphics g) {
-		super.paint(g);
+	public void paintComponent(Graphics g) {
+		System.out.println("****************************************************************************************************");
+		//super.paintComponent(g);
+		
 		Color c = g.getColor();
 		g.setColor(Constantes.couleurFourmiliere);
 		g.fillRect(Constantes.departFourmiliereX,Constantes.departFourmiliereY,Constantes.tailleFourmiliereX,Constantes.tailleFourmiliereY);
@@ -59,6 +61,7 @@ public class Monde extends JPanel{
 		{
 			System.out.println(listeFourmi.get(i).toString());
 		}
+		System.out.println("****************************************************************************************************");
 		g.setColor(c);
 	}
 
