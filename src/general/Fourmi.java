@@ -8,13 +8,16 @@ public class Fourmi {
 	Double FourmiPoid;
 	Etat Etat;
 	Reine reine;
+	int posX,posY;
 	
 	
-	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance)
+	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance, int posX, int posY)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		FourmiPoid = this.FourmiPoid;
 		this.Etat = new Oeuf(naissance);
+		this.posX =posX;
+		this.posY = posY;
 		
 	}
 	

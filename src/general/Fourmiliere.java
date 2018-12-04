@@ -1,5 +1,6 @@
 package general;
 
+import java.awt.Color;
 import java.util.*;
 import role.impl.*;
 
@@ -7,11 +8,13 @@ public class Fourmiliere {
 	
 	protected List<Fourmi>  listeFourmis;
 	protected Reine reine;
+	protected Color color;
 	
 	
 	public Fourmiliere(Reine reine)
 	{
 		listeFourmis = new ArrayList<Fourmi>();
+		color = Constantes.couleurFourmiliere;
 		
 	}
 
@@ -29,7 +32,7 @@ public class Fourmiliere {
 	}
 	
 	
-	public void setReine() {
+	public void setReine(Reine reine) {
 		this.reine = reine;
 	}
 	
