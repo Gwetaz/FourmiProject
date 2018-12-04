@@ -7,19 +7,20 @@ import role.impl.*;
 public class Fourmi {
 	
 	Boolean FourmiFemelle;
-	Double FourmiPoid;
+	//Double FourmiPoid;
 	Etat Etat;
 	Reine reine;
 	int posX,posY;
 	
 	
-	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance, int posX, int posY, Graphics g)
+	public Fourmi(Boolean FourmiFemelle, int naissance, int posX, int posY, Graphics g)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
-		FourmiPoid = this.FourmiPoid;
+		//FourmiPoid = this.FourmiPoid;
 		this.Etat = new Oeuf(naissance, posX, posY);
 		this.posX =posX;
 		this.posY = posY;
+		g.setColor(Constantes.couleurOeuf);
 		g.fillOval(posX, posY, 10, 10);
 	}
 	
@@ -38,15 +39,15 @@ public class Fourmi {
 
 
 
-	public Double getFourmiPoid() {
+	/*public Double getFourmiPoid() {
 		return FourmiPoid;
-	}
+	}*/
 
 
 
-	public void setFourmiPoid(Double fourmiPoid) {
+	/*public void setFourmiPoid(Double fourmiPoid) {
 		FourmiPoid = fourmiPoid;
-	}
+	}*/
 
 
 
@@ -73,7 +74,12 @@ public class Fourmi {
 	}
 
 
-	
+	public String toString()
+	{
+		String res = "Fourmis : ";
+		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString();
+		return res;
+	}
 	
 	
 
