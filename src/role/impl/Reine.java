@@ -9,7 +9,6 @@ public class Reine extends Role{
 	
 	public Reine() {
 		Random r = new Random();
-		
 		this.age = r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine;
 		this.couleur = Constantes.couleurReine;
 		this.taille = Constantes.tailleReine;
