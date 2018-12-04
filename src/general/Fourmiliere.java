@@ -11,7 +11,7 @@ public class Fourmiliere {
 	protected Color color;
 	
 	
-	public Fourmiliere(Reine reine,Color color)
+	public Fourmiliere(Reine reine)
 	{
 		listeFourmis = new ArrayList<Fourmi>();
 		color = new Color(61,40,4);
