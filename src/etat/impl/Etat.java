@@ -7,7 +7,7 @@ public class Etat {
 	protected EtatFourmi etatFourmi;
 	protected int tempsNaissance;
 	protected double poid;
-	protected Color couleur;
+	protected Color couleur; 
 	
 	public Etat(int tempsNaissance)
 	{

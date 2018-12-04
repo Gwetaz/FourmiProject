@@ -8,7 +8,7 @@ public class Oeuf extends Etat implements Transformation{
 		super(tempsNaissance);
 		this.changerEtat(EtatFourmi.Oeuf);
 		this.poid = 0;
-		this.couleur = new Color(255,255,255);
+		this.couleur = new Color(255,255,255); 
 	}
 	
 	
