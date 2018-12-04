@@ -13,4 +13,24 @@ public class Adulte extends Etat{
 		// set role 
 	}
 	
+	public int getPositionX()
+	{
+		return this.positionX;
+	}
+	
+	public void setPositionX(int pos)
+	{
+		this.positionX = pos;
+	}
+	
+	public int getPositionY()
+	{
+		return this.positionY;
+	}
+	
+	public void setPositionY(int pos)
+	{
+		this.positionY = pos;
+	}
+	
 }
