@@ -9,7 +9,7 @@ public class Fourmiliere {
 	protected List<Fourmi>  listeFourmis;
 	protected Reine reine;
 	protected Color color;
-	
+	protected RectangleForme rectangle;
 	
 	public Fourmiliere(Reine reine)
 	{
