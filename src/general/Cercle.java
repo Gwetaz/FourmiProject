@@ -9,7 +9,7 @@ public class Cercle extends Morph {
 
 	public Cercle(Color color, Point pos, Dimension dim) {
 		super(color, pos, dim);
-		
+		 
 	}
 
 	public void draw(Graphics g) {
