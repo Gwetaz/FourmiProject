@@ -10,11 +10,11 @@ public class Fourmi {
 	Reine reine;
 	
 	
-	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid)
+	public Fourmi(Boolean FourmiFemelle, Double FourmiPoid, int naissance)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		FourmiPoid = this.FourmiPoid;
-		this.Etat = new Oeuf();
+		this.Etat = new Oeuf(naissance);
 		
 	}
 	

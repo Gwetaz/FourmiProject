@@ -27,7 +27,8 @@ public class Fourmiliere {
 	public Reine getReine() {
 		return reine;
 	}
-
+	
+	
 	public void setReine() {
 		this.reine = reine;
 	}
