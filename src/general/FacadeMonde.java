@@ -4,7 +4,7 @@ import role.impl.Reine;
 
 public class FacadeMonde {
 
-	
+
 	
 	public void genererMonde(int nombreOeuf) 
 	{
