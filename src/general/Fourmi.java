@@ -23,6 +23,7 @@ public class Fourmi {
 	
 	
 	
+	
 	public Boolean getFourmiFemelle() {
 		return FourmiFemelle;
 	}
