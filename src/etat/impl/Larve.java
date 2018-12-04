@@ -5,7 +5,7 @@ import java.util.Random;
 
 import general.Constantes;
 
-public class Larve extends Etat implements Transformation{
+public class Larve extends Etat{
 
 	public Larve(int tempsNaissance, int positionX, int positionY)
 	{
@@ -17,9 +17,9 @@ public class Larve extends Etat implements Transformation{
 	}
 	
 	
-	@Override
+	/*@Override
 	public Etat transformation() {
 		return new Nymphe(tempsNaissance, positionX, positionY);
-	}
+	}*/
 
 }

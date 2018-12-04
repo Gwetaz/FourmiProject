@@ -5,7 +5,7 @@ import java.util.Random;
 
 import general.Constantes;
 
-public class Nymphe extends Etat implements Transformation{
+public class Nymphe extends Etat{
 
 	public Nymphe(int tempsNaissance, int positionX, int positionY)
 	{
@@ -16,9 +16,9 @@ public class Nymphe extends Etat implements Transformation{
 		this.couleur = Constantes.couleurNymphe;
 	}
 	
-	@Override
+	/*@Override
 	public Etat transformation() {
 		return new Adulte(tempsNaissance, positionX, positionY);
-	}
+	}*/
 
 }

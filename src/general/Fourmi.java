@@ -11,12 +11,13 @@ public class Fourmi {
 	Etat Etat;
 	Reine reine;
 	int posX,posY;
-	
+	int naissance;
 	
 	public Fourmi(Boolean FourmiFemelle, int naissance, int posX, int posY, Graphics g)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		//FourmiPoid = this.FourmiPoid;
+		this.naissance = naissance;
 		this.Etat = new Oeuf(naissance, posX, posY);
 		this.posX =posX;
 		this.posY = posY;
@@ -25,7 +26,34 @@ public class Fourmi {
 	}
 	
 	
+	public void setColor(Graphics g)
+	{
+		
+	}
 	
+	public void changerEtat()
+	{
+		Etat nouvelEtat;
+		switch(this.getEtat().getEtatFourmi())
+		{
+		case Oeuf:
+			nouvelEtat = new Larve(naissance,posX,posY);
+			this.setEtat(nouvelEtat);
+			break;
+		case Larve :
+			nouvelEtat = new Nymphe(naissance,posX,posY);
+			this.setEtat(nouvelEtat);
+			break;
+		case Nymphe :
+			nouvelEtat = new Adulte(naissance,posX,posY);
+			this.setEtat(nouvelEtat);
+			break;
+		case Adulte :
+			break;
+		default :
+			break;
+		}
+	}
 	
 	public Boolean getFourmiFemelle() {
 		return FourmiFemelle;

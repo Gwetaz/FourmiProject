@@ -3,7 +3,7 @@ package etat.impl;
 
 import general.Constantes;
 
-public class Oeuf extends Etat implements Transformation{
+public class Oeuf extends Etat{
 	
 	public Oeuf(int tempsNaissance, int positionX, int positionY) {
 		super(tempsNaissance, positionX, positionY);
@@ -13,9 +13,9 @@ public class Oeuf extends Etat implements Transformation{
 	}
 	
 	
-	@Override
+	/*@Override
 	public Etat transformation() {
 		return new Larve(tempsNaissance, positionX, positionY);
-	}
+	}*/
 
 }
