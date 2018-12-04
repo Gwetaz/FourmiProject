@@ -16,7 +16,10 @@ public class RectangleForme extends Morph{
 	public void draw(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(color);
-		g.fillOval(bounds.x,bounds.y,bounds.height,bounds.width);
+		//g.fillOval(bounds.x,bounds.y,bounds.height,bounds.width);
+		//System.out.println("depart x : "+bounds.x+" depart y : "+bounds.y+" taille x : "+bounds.height+" taille y : "+bounds.width);
+
+		g.fillRect(Constantes.departFourmiliereX,Constantes.departFourmiliereY, Constantes.tailleFourmiliereX, Constantes.tailleFourmiliereY);
 		g.setColor(c);
 	}
 }

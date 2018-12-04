@@ -34,5 +34,10 @@ public abstract class Morph implements IMovableDrawable {
 		bounds.x = (p.x-bounds.width/2);
 		bounds.y = (p.y-bounds.height/2);
 	}
+	
+	public void SetColor(Color c)
+	{
+		this.color = c;
+	}
 
 }

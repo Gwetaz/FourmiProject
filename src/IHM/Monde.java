@@ -42,8 +42,8 @@ public class Monde extends JPanel{
 		{
 			posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-Constantes.departFourmiliereX)+Constantes.departFourmiliereX;
 			posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
-			Fourmi f = new Fourmi(true, 1, posx, posy, g);
-			listeFourmi.add(f);
+			//Fourmi f = new Fourmi(true, 1, posx, posy, g);
+			//listeFourmi.add(f);
 		}
 		
 		for (int i = 0; i < listeFourmi.size(); i++)

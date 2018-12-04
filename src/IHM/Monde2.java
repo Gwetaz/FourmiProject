@@ -1,6 +1,7 @@
 package IHM;
 
 import general.Constantes;
+import general.Fourmi;
 import general.IMovableDrawable;
 
 import java.awt.Graphics;
@@ -21,10 +22,17 @@ public class Monde2 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private List<IMovableDrawable> drawables = new LinkedList<IMovableDrawable>();
 
+	public List<Fourmi> listeFourmis;
+	
+	//public ArrayList<Fourmi> listeFourmi;
+	private int nbOeufs;
+	
 	String name = "";
 	
-	public Monde2(String name) {
+	public Monde2(String name, int nbOeufs) {
 		this.name = name;
+		listeFourmis = new ArrayList<Fourmi>();
+		this.nbOeufs = nbOeufs;
 	}
 	public List<IMovableDrawable> contents() {
 		return drawables;
@@ -50,13 +58,35 @@ public class Monde2 extends JPanel {
      public void remove(IMovableDrawable d) {
         drawables.remove(d);
      }
+     
+     public void add(Fourmi d) {
+    	 //d.get
+    	 listeFourmis.add(d);
+         //drawables.add(d);
+      }
 
-    public void paint(Graphics g) {
+      public void remove(Fourmi d) {
+    	  listeFourmis.remove(d);
+      }
+
+    /*public void paint(Graphics g) {
         super.paint(g);
+        //System.out.println("coucou");
         for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
             iter.next().draw(g);
         }
-    }
+    }*/
+      
+      public void paint(Graphics g) {
+          super.paint(g);
+          for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
+              iter.next().draw(g);
+          }
+          for (Iterator<Fourmi> iter = listeFourmis.iterator(); iter.hasNext();) {
+        	  //System.out.println("coucou "+iter.next().getC().toString());
+              iter.next().getC().draw(g);
+          }
+      }
 
     public void clear() {
         drawables.clear();

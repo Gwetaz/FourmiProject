@@ -12,8 +12,11 @@ public class Fourmi {
 	Reine reine;
 	int posX,posY;
 	int naissance;
+	Cercle c;
 	
-	public Fourmi(Boolean FourmiFemelle, int naissance, int posX, int posY, Graphics g)
+	
+
+	public Fourmi(Boolean FourmiFemelle, int naissance, Cercle c)
 	{
 		FourmiFemelle = this.FourmiFemelle ;
 		//FourmiPoid = this.FourmiPoid;
@@ -21,15 +24,27 @@ public class Fourmi {
 		this.Etat = new Oeuf(naissance, posX, posY);
 		this.posX =posX;
 		this.posY = posY;
-		g.setColor(Constantes.couleurOeuf);
-		g.fillOval(posX, posY, 10, 10);
+		this.c = c;
+		/*g.setColor(Constantes.couleurOeuf);
+		g.fillOval(posX, posY, 10, 10);*/
+		//c.setPosition(p);
 	}
 	
 	
-	public void setColor(Graphics g)
+	public Cercle getC() {
+		return c;
+	}
+
+
+	public void setC(Cercle c) {
+		this.c = c;
+	}
+
+	
+	/*public void setColor(Graphics g)
 	{
 		
-	}
+	}*/
 	
 	public void changerEtat()
 	{
@@ -39,13 +54,16 @@ public class Fourmi {
 		case Oeuf:
 			nouvelEtat = new Larve(naissance,posX,posY);
 			this.setEtat(nouvelEtat);
+			this.c.SetColor(Constantes.couleurLarve);
 			break;
 		case Larve :
 			nouvelEtat = new Nymphe(naissance,posX,posY);
 			this.setEtat(nouvelEtat);
+			this.c.SetColor(Constantes.couleurNymphe);
 			break;
 		case Nymphe :
 			nouvelEtat = new Adulte(naissance,posX,posY);
+			//this.c.SetColor(Constantes.couleurAdulte);
 			this.setEtat(nouvelEtat);
 			break;
 		case Adulte :
