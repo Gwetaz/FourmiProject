@@ -25,6 +25,8 @@ public class Constantes {
 	public final static int tailleNidY = 100;
 	public final static int departNidX = 750;
 	public final static int departNidY = 350;
+	public final static int finNidX = 850;
+	public final static int finNidY = 450;
 	public final static int tailleFourmiliereX = 500;
 	public final static int tailleFourmiliereY = 500;
 	public final static int departFourmiliereX = 550;
@@ -35,4 +37,8 @@ public class Constantes {
 	public final static int prioriteManger = -1;
 	public final static int nbOeufsReine = 50;
 	public final static Color couleurProie = new Color(255,51,153);
+	public final static int departFrontierePatrouilleX = 700;
+	public final static int departFrontierePatrouilleY = 300;
+	public final static int finFrontierePatrouilleX = 900;
+	public final static int finFrontierePatrouilleY = 500;
 }
