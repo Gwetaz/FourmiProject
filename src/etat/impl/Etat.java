@@ -7,6 +7,7 @@ import general.Fourmi;
 import java.awt.Color;
 
 import role.impl.Ouvriere;
+import role.impl.Reine;
 import role.impl.Soldat;
 
 public class Etat implements Action{
@@ -65,6 +66,7 @@ public class Etat implements Action{
 		case Adulte:
 			//Adulte.actionEtat(f);
 			//if (f.get)
+			System.out.println(f.getRoleAdulte().toString());
 			switch(f.getRoleAdulte())
 			{
 			case Ouvriere:
@@ -72,6 +74,9 @@ public class Etat implements Action{
 				break;
 			case Soldat:
 				Soldat.actionSoldat(f);
+				break;
+			case Reine:
+				Reine.actionReine(f.getFourmiliere());
 				break;
 			default:
 					break;

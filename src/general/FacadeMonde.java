@@ -40,9 +40,9 @@ public class FacadeMonde {
 		return monMonde;
 	}*/
 	
-	public static Monde3 genererMonde(Fourmiliere fourmiliere, Nid nid, List<Cercle> listeCercle) 
+	public static Monde3 genererMonde(Fourmiliere fourmiliere, Nid nid, List<Cercle> listeCercle, List<Cercle> listeProie) 
 	{
-		Monde3 monMonde = new Monde3("Mon Monde",fourmiliere,listeCercle);
+		Monde3 monMonde = new Monde3("Mon Monde",fourmiliere,listeCercle, listeProie);
 		monMonde.setBackground(Constantes.couleurSol);
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		return monMonde;
@@ -60,7 +60,7 @@ public class FacadeMonde {
 	
 	public static List<Cercle> genererListCercle(Fourmiliere fourmiliere)
 	{
-		return Vue.listeFourmis(Fourmiliere.listeFourmis);
+		return Vue.listeFourmis(fourmiliere.listeFourmis);
 	}
 	
 	

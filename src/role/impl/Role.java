@@ -41,7 +41,7 @@ public class Role implements Action{
 				break;
 				
 			case Reine: 
-				Reine.actionReine();
+				Reine.actionReine(f.getFourmiliere());
 				break;
 				
 			default: break;

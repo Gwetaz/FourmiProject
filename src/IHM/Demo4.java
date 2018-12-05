@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 import role.impl.Reine;
+import role.impl.RoleFourmi;
 import etat.impl.Adulte;
 import etat.impl.EtatFourmi;
 import vue.Vue;
@@ -28,16 +29,19 @@ public class Demo4 {
 		Nid nid = new Nid();
 		RectangleForme nidForme = FacadeMonde.genererNid(nid);
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);
-		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle);
+		List<Cercle> listeProie = new ArrayList<Cercle> ();
+		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle, listeProie);
 		monMonde.add(fourmiliereForme);
 		monMonde.add(nidForme);
 		monMonde.open();
 		
 		
-		Fourmi reine = new Fourmi(1,(Constantes.tailleJframeX-Constantes.tailleFourmis)/2,(Constantes.tailleJframeY-Constantes.tailleFourmis)/2);
+		Fourmi reine = new Fourmi(1,(Constantes.tailleJframeX-Constantes.tailleFourmis)/2,(Constantes.tailleJframeY-Constantes.tailleFourmis)/2, fourmiliere);
 		//reine.setEtat(etat);
 		reine.setFourmiFemelle(true);
-		reine.setEtat(new Adulte(new Reine()));
+		reine.setEtat(new Adulte(new Reine(fourmiliere)));
+		reine.setRoleAdulte(RoleFourmi.Reine);
+		
 		fourmiliere.ajouterUneReine(reine);
 		while (true) {
 			List<IMovableDrawable> drawables = monMonde.contents();
@@ -46,10 +50,11 @@ public class Demo4 {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			/*for(int i = 0; i<50; i++)
+			for(int i = 0; i<fourmiliere.getListeFourmis().size(); i++)
 			{
-				listeFourmis.get(i).action();
-			}*/
+				fourmiliere.getListeFourmis().get(i).action();
+				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
+			}
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 			monMonde.setListeCercle(listeCercle);
 			monMonde.repaint();

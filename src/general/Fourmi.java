@@ -12,10 +12,11 @@ public class Fourmi {
 	int posX,posY;
 	int naissance;
 	RoleFourmi roleAdulte;
-	
+	Fourmiliere fourmiliere;
 
-	public Fourmi(int naissance, int posx, int posy)
+	public Fourmi(int naissance, int posx, int posy, Fourmiliere fourmiliere)
 	{
+		this.fourmiliere = fourmiliere;
 		Random r = new Random();
 		int sexe; 
 		sexe = r.nextInt(2-1) + 1;
@@ -33,6 +34,16 @@ public class Fourmi {
 	}
 	
 	
+	public Fourmiliere getFourmiliere() {
+		return fourmiliere;
+	}
+
+
+	public void setFourmiliere(Fourmiliere fourmiliere) {
+		this.fourmiliere = fourmiliere;
+	}
+
+
 	public RoleFourmi getRoleAdulte() {
 		return roleAdulte;
 	}
@@ -104,7 +115,7 @@ public class Fourmi {
 	public String toString()
 	{
 		String res = "Fourmis : sexe "+this.getFourmiFemelle();
-		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString();
+		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString()+" Role Adulte : "+this.getRoleAdulte();
 		return res;
 	}
 
@@ -114,6 +125,7 @@ public class Fourmi {
 		this.getEtat().action(this);
 		
 	}
+
 	
 	
 

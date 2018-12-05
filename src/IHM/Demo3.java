@@ -20,7 +20,7 @@ import general.RectangleForme;
 public class Demo3 {
 
 	public static void main(String[] args) {
-		Fourmiliere fourmiliere = new Fourmiliere();
+		/*Fourmiliere fourmiliere = new Fourmiliere();
 		List<Fourmi> listeFourmis = new ArrayList<Fourmi>();
 		int posx,posy;
 		Random rx = new Random();
@@ -29,7 +29,7 @@ public class Demo3 {
 		{
 			posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-(Constantes.departFourmiliereX+Constantes.tailleFourmis))+(Constantes.departFourmiliereX+Constantes.tailleFourmis);
 			posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-(Constantes.departFourmiliereY+Constantes.tailleFourmis))+(Constantes.departFourmiliereY+Constantes.tailleFourmis);
-			Fourmi f = new Fourmi(1,posx,posy);
+			Fourmi f = new Fourmi(1,posx,posy,fourmiliere);
 			listeFourmis.add(f);
 		}
 		fourmiliere.setListeFourmis(listeFourmis);
@@ -57,6 +57,6 @@ public class Demo3 {
 			listeCercle = Vue.listeFourmis(listeFourmis);
 			monMonde.setListeCercle(listeCercle);
 			monMonde.repaint();
-		}
+		}*/
 	}
 }
