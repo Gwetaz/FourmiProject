@@ -70,7 +70,7 @@ public class Fourmi implements Action {
 			break;
 		}
 	}*/
-	
+	 
 	public void changerEtat()
 	{
 		//this.Etat.
