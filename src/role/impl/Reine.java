@@ -20,7 +20,7 @@ public class Reine extends Role{
 		int posx,posy;
 		posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-Constantes.departFourmiliereX)+Constantes.departFourmiliereX;
 		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
-		Oeuf oeuf = new Oeuf(tempsdenaissance,posx,posy);
+		Oeuf oeuf = new Oeuf();
 		return oeuf;
 	} 
 }
