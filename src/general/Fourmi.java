@@ -22,7 +22,7 @@ public class Fourmi {
 		if(sexe == 1)
 		{
 			this.FourmiFemelle = true;
-		}else{
+		}else{ 
 			this.FourmiFemelle = false;
 		}
 		this.posX = posx;
