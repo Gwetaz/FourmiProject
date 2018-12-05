@@ -15,12 +15,13 @@ import general.Fourmi;
 import general.Fourmiliere;
 import general.IMovableDrawable;
 import general.Nid;
+import general.Proie;
 import general.RectangleForme;
 
 public class Demo3 {
 
 	public static void main(String[] args) {
-		/*Fourmiliere fourmiliere = new Fourmiliere();
+		Fourmiliere fourmiliere = new Fourmiliere();
 		List<Fourmi> listeFourmis = new ArrayList<Fourmi>();
 		int posx,posy;
 		Random rx = new Random();
@@ -32,12 +33,34 @@ public class Demo3 {
 			Fourmi f = new Fourmi(1,posx,posy,fourmiliere);
 			listeFourmis.add(f);
 		}
+		
+		
+		List<Proie> listeProie = new ArrayList<Proie>();
+		for(int i = 0; i<8; i++)
+		{
+			posx = rx.nextInt(Constantes.tailleJframeX ) ;
+			while(posx >= Constantes.departFourmiliereX && posx <= (Constantes.departFourmiliereX + Constantes.tailleFourmiliereX))
+					{
+						posx = rx.nextInt(Constantes.tailleJframeX );
+					}
+			
+			posy = ry.nextInt(Constantes.tailleJframeY ) ;
+			while(posy >= Constantes.departFourmiliereY && posy <= (Constantes.departFourmiliereY + Constantes.tailleFourmiliereY))
+					{
+						posy = ry.nextInt(Constantes.tailleJframeX );
+					}
+			
+			Proie p = new Proie(2, posx, posy );
+			listeProie.add(p);		
+		}
+		
 		fourmiliere.setListeFourmis(listeFourmis);
 		Nid nid = new Nid();
 		RectangleForme rectFourmiliere = Vue.fourmiliere(fourmiliere);
 		RectangleForme rectNid = Vue.nid(nid);
+		List<Cercle> listProie = Vue.listeproie(listeProie);
 		List<Cercle> listeCercle = Vue.listeFourmis(listeFourmis);
-		Monde3 monMonde = new Monde3("monMonde",fourmiliere, listeCercle);
+		Monde3 monMonde = new Monde3("monMonde",fourmiliere, listeCercle, listProie);
 		monMonde.setBackground(Constantes.couleurSol);
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		monMonde.open();
@@ -54,9 +77,17 @@ public class Demo3 {
 			{
 				listeFourmis.get(i).action();
 			}
+			for(int i = 0; i<8; i++)
+			{
+				listeProie.get(i).actionProie();
+				System.out.println(listeProie.get(i).toString() )  ;
+			}
+			System.out.println("");
 			listeCercle = Vue.listeFourmis(listeFourmis);
+			listProie = Vue.listeproie(listeProie);
 			monMonde.setListeCercle(listeCercle);
+			monMonde.setListeproie(listProie);
 			monMonde.repaint();
-		}*/
+		}
 	}
 }

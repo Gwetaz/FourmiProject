@@ -56,8 +56,8 @@ public class Proie {
 		this.posY = posY;
 	}
 	
-	public void actionProie(Fourmi f) {
-		bouger();
+	public void actionProie() {
+		this.bouger();
 	}
 
 	private void bouger() {
@@ -65,23 +65,41 @@ public class Proie {
 		Random r = new Random();
 		int probabilite;
 		probabilite = r.nextInt(4-1) + 1;
+		System.out.println(probabilite);
 		if(probabilite == 1)
-			this.posX=+10;
-			if( this.posX < 200 )this.posX=+10;
-				
+		{
+			this.posX= this.posX+10;
+		//	if( this.posX < 200 )this.posX=+10;
+		}		
 		if(probabilite == 2)
-			this.posX=-10;
-			if( this.posX > 1400 )this.posX=-10;
-				
+		{
+			this.posX= this.posX-10;
+			//if( this.posX > 1400 )this.posX=-10;
+		}		
 		if(probabilite == 3)
-			this.posY=-10;
-			if( this.posY > 650 )this.posY=-10;
-				
-		if(probabilite == 4)
-			this.posY=+10;
-		if( this.posY < 150 )this.posY=+10;
+		{
+			this.posY= this.posY-10;
 		
+			//if( this.posY > 650 )this.posY=-10;
+		}
+		
+		if(probabilite == 4)
+		{
+			this.posY= this.posY+10;
+		//if( this.posY < 150 )this.posY=+10;
+		}
 	}
+
+	@Override
+	public String toString() {
+		return "Proie [color=" + color + ", poids=" + poids + ", posX=" + posX + ", posY=" + posY + "]";
+	}
+	
+	
+	
+	
+	
+	
 
 	
 	
