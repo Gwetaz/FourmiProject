@@ -64,9 +64,7 @@ public class Etat implements Action{
 			Nymphe.actionEtat(f);
 			break;
 		case Adulte:
-			//Adulte.actionEtat(f);
-			//if (f.get)
-			System.out.println(f.getRoleAdulte().toString());
+
 			switch(f.getRoleAdulte())
 			{
 			case Ouvriere:
