@@ -19,6 +19,9 @@ public class Soldat extends Role{
 		int posx,posy,probabilite;
 		posx = f.getPosX();
 		posy = f.getPosY();
+		if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx > Constantes.departNidX && posx < Constantes.finNidX) {
+			f.setPosY(posy-10);
+		}
 		probabilite = r.nextInt(5-1) + 1;
 		if(probabilite == 1)
 			if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx+10 > Constantes.departNidX && posx+10 < Constantes.finNidX);
