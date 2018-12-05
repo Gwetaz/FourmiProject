@@ -21,15 +21,15 @@ public class Ouvriere extends Role{
 		int posx,posy,probabilite;
 		posx = f.getPosX();
 		posy = f.getPosY();
-		probabilite = r.nextInt(5-1) + 1;
+		probabilite = r.nextInt(4-1) + 1;
 		if(probabilite == 1)
 			f.setPosX(posx+10);
 		if(probabilite == 2)
 			f.setPosX(posx-10);
 		if(probabilite == 3)
-			f.setPosX(posy+10);
+			f.setPosY(posy+10);
 		if(probabilite == 4)
-			f.setPosX(posy-10);
+			f.setPosY(posy-10);
 	}
 	
 	public void donnerNourriture(Fourmi f) {

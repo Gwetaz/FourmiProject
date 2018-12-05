@@ -65,6 +65,7 @@ public class Demo3 {
 		monMonde.add(rectFourmiliere);
 		monMonde.add(rectNid);
 		//listeCercle = Vue.listeFourmis(listeFourmis);
+		//int tour = 0;
 		while (true) {
 			List<IMovableDrawable> drawables = monMonde.contents();
 			//listeCercle.clear();
@@ -81,11 +82,12 @@ public class Demo3 {
 			{
 				//System.out.println("Coucou");
 				listeFourmis.get(i).action();
-				System.out.println(listeFourmis.get(i).toString());
+				//System.out.println(listeFourmis.get(i).toString());
 			}
 			listeCercle = Vue.listeFourmis(listeFourmis);
 			monMonde.setListeCercle(listeCercle);
 			monMonde.repaint();
+			//tour++;
 		}
 	}
 }

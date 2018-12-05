@@ -7,7 +7,7 @@ import general.Fourmi;
 
 public class Soldat extends Role{
 	
-	public void genererAge() {
+	public Soldat() {
 		Random r = new Random();
 		this.age = r.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
 		this.taille = Constantes.tailleFourmis;
