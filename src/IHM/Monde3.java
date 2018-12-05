@@ -1,5 +1,6 @@
 package IHM;
 
+import general.Cercle;
 import general.Fourmi;
 import general.Fourmiliere;
 import general.IMovableDrawable;
@@ -20,6 +21,7 @@ public class Monde3 extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private List<IMovableDrawable> drawables = new LinkedList<IMovableDrawable>();
 	private Fourmiliere fourmiliere;
+	private List<Cercle> listeCercle;
 	//public List<Fourmi> listeFourmis;
 	
 	//public ArrayList<Fourmi> listeFourmi;
@@ -27,9 +29,10 @@ public class Monde3 extends JPanel{
 	
 	String name = "";
 	
-	public Monde3(String name, Fourmiliere fourmiliere) {
+	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle) {
 		this.name = name;
 		//this.nbOeufs = nbOeufs;
+		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
 	}
 	public List<IMovableDrawable> contents() {
@@ -75,17 +78,18 @@ public class Monde3 extends JPanel{
         }
     }*/
       
-      public void paint(Graphics g) {
-          super.paint(g);
-          for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
-              iter.next().draw(g);
-          }
-          for (Iterator<Fourmi> iter = fourmiliere.getListeFourmis().iterator(); iter.hasNext();) {
-        	  //System.out.println("coucou "+iter.next().getC().toString());
-              //iter.next().getC().draw(g);
-        	  System.out.println("Fourmiiiiii");
-          }
-      }
+	  public void paint(Graphics g) {
+	      super.paint(g);
+	      for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
+	          iter.next().draw(g);
+	      }
+	      for (Iterator<Cercle> iter = listeCercle.iterator(); iter.hasNext();) {
+	    	  //System.out.println("coucou "+iter.next().getC().toString());
+	      //iter.next().getC().draw(g);
+	    	  //System.out.println("Fourmiiiiii");
+	    	  iter.next().draw(g);;
+	      }
+	  }
 
     public void clear() {
         drawables.clear();

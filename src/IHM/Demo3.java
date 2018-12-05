@@ -1,14 +1,19 @@
 package IHM;
 
 import java.awt.Dimension;
+import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import etat.impl.EtatFourmi;
 import vue.Vue;
+import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
 import general.Fourmiliere;
+import general.IMovableDrawable;
 import general.RectangleForme;
 
 public class Demo3 {
@@ -45,13 +50,27 @@ public class Demo3 {
 			listeFourmis.add(f);
 		}
 		fourmiliere.setListeFourmis(listeFourmis);
-		Monde3 monMonde = new Monde3("monMonde",fourmiliere);
+		
+		Vue maVue = new Vue(listeFourmis);
+		RectangleForme rectFourmiliere = maVue.fourmiliere(fourmiliere);
+		List<Cercle> listeCercle = maVue.listeFourmis();
+		//maVue.
+		Monde3 monMonde = new Monde3("monMonde",fourmiliere, listeCercle);
 		monMonde.setBackground(Constantes.couleurSol);
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		monMonde.open();
-		Vue maVue = new Vue(listeFourmis);
-		RectangleForme rectFourmiliere = maVue.fourmiliere(fourmiliere);
-		//maVue.
 		monMonde.add(rectFourmiliere);
+		while (true) {
+			List<IMovableDrawable> drawables = monMonde.contents();
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			monMonde.repaint();
+		}
 	}
 }
