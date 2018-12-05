@@ -14,11 +14,11 @@ public class Soldat extends Role{
 		this.setRole(RoleFourmi.Soldat);
 	}
 	
-	public void patrouille(Adulte a) {
+	public static void patrouille() {
 		
 	}
 	
 	public static void actionSoldat() {
-		
+		patrouille();
 	}
 }

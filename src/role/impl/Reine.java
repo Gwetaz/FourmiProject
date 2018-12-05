@@ -4,6 +4,7 @@ import java.util.Random;
 
 import general.Constantes;
 import general.Fourmi;
+import general.Fourmiliere;
 
 public class Reine extends Role{
 	
@@ -14,17 +15,17 @@ public class Reine extends Role{
 		this.setRole(RoleFourmi.Reine);
 	}
 	
-	public Fourmi genererFourmi(int tempsdenaissance) {
+	public static void genererFourmi(int tempsdenaissance) {
 		Random rx = new Random();
 		Random ry = new Random();
 		int posx,posy;
 		posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-Constantes.departFourmiliereX)+Constantes.departFourmiliereX;
 		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
 		Fourmi fourmi = new Fourmi(tempsdenaissance, posx, posy);
-		return fourmi;
+		Fourmiliere.ajouterFourmis(fourmi);
 	} 
 	
 	public static void actionReine() {
-		
+		genererFourmi(1);
 	}
 }
