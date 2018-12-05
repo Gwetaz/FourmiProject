@@ -20,7 +20,7 @@ public class Ouvriere extends Role{
 		int posx,posy,probabilite;
 		posx = f.getPosX();
 		posy = f.getPosY();
-		probabilite = r.nextInt(4-1) + 1;
+		probabilite = r.nextInt(5-1) + 1;
 		if(probabilite == 1)
 			f.setPosX(posx+10);
 		if(probabilite == 2)
