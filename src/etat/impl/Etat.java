@@ -71,7 +71,7 @@ public class Etat implements Action{
 				Ouvriere.actionOuvriere(f);
 				break;
 			case Soldat:
-				//Soldat.actionSoldat(f);
+				Soldat.actionSoldat(f);
 				break;
 			default:
 					break;
