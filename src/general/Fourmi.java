@@ -11,7 +11,7 @@ public class Fourmi {
 	Reine reine;
 	int posX,posY;
 	int naissance;
-	
+	RoleFourmi roleAdulte;
 	
 
 	public Fourmi(int naissance, int posx, int posy)
@@ -29,8 +29,20 @@ public class Fourmi {
 		this.posY = posy;
 		this.naissance = naissance;
 		this.Etat = new Oeuf();
+		this.roleAdulte = null;
 	}
 	
+	
+	public RoleFourmi getRoleAdulte() {
+		return roleAdulte;
+	}
+
+
+	public void setRoleAdulte(RoleFourmi roleAdulte) {
+		this.roleAdulte = roleAdulte;
+	}
+
+
 	public Boolean getFourmiFemelle() {
 		return FourmiFemelle;
 	}

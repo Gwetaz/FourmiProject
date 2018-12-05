@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.Random;
 
 import role.impl.Ouvriere;
+import role.impl.RoleFourmi;
 import role.impl.Soldat;
 import general.Action;
 import general.Constantes;
@@ -25,8 +26,10 @@ public class Nymphe extends Etat{
 		if(role <= Constantes.pourcentOuvriere)
 		{
 			f.setEtat(new Adulte(new Ouvriere()));
+			f.setRoleAdulte(RoleFourmi.Ouvriere);
 		}else{
 			f.setEtat(new Adulte(new Soldat()));
+			f.setRoleAdulte(RoleFourmi.Soldat);
 		}		
 	}
 

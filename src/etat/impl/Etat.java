@@ -7,19 +7,14 @@ import general.Fourmi;
 import java.awt.Color;
 
 import role.impl.Ouvriere;
+import role.impl.Soldat;
 
 public class Etat implements Action{
 	
 	protected EtatFourmi etatFourmi;
 	protected double poid;
 	protected Color color;
-	/*public Etat()
-	{
-		this.tempsNaissance = tempsNaissance;
-		this.positionX = positionX;
-		this.positionY = positionY;
-	}*/
-	
+
 	public EtatFourmi getEtatFourmi() {
 		return etatFourmi;
 	}
@@ -42,25 +37,6 @@ public class Etat implements Action{
 		etatFourmi = nouvelEtat;
 	}
 	
-	/*public void evolutionFourmi()
-	{
-		System.out.println();
-		switch(etatFourmi)
-		{
-		case Oeuf:
-			new Larve();
-			break;
-		case Larve:
-			new Nymphe();
-			break;
-		case Nymphe:
-			new Adulte(new Ouvriere());
-			break;
-		case Adulte:
-			break;
-			
-		}
-	}*/
 	
 	public Color getColor()
 	{
@@ -87,7 +63,19 @@ public class Etat implements Action{
 			Nymphe.actionEtat(f);
 			break;
 		case Adulte:
-			Adulte.actionEtat(f);
+			//Adulte.actionEtat(f);
+			//if (f.get)
+			switch(f.getRoleAdulte())
+			{
+			case Ouvriere:
+				Ouvriere.actionOuvriere(f);
+				break;
+			case Soldat:
+				//Soldat.actionSoldat(f);
+				break;
+			default:
+					break;
+			}
 			break;
 			
 		}

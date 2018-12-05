@@ -28,6 +28,11 @@ public class Fourmiliere {
 		return reine;
 	}
 	
+	public void ajouterUneReine(Fourmi f)
+	{
+		listeFourmis.add(f);
+	}
+	
 	public static void ajouterFourmis(Fourmi f)
 	{
 		listeFourmis.add(f);
