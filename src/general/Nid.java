@@ -4,13 +4,12 @@ import java.awt.Color;
 
 public class Nid {
 	
-	protected RectangleForme rec;
+	protected Color couleur;
 
 	
 	public Nid ()
 	{
-		
-		
+		this.couleur = Constantes.couleurNid;
 	}
 	
 	

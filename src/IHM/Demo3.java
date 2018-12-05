@@ -14,6 +14,7 @@ import general.Constantes;
 import general.Fourmi;
 import general.Fourmiliere;
 import general.IMovableDrawable;
+import general.Nid;
 import general.RectangleForme;
 
 public class Demo3 {
@@ -52,7 +53,9 @@ public class Demo3 {
 		fourmiliere.setListeFourmis(listeFourmis);
 		
 		//Vue maVue = new Vue(listeFourmis);
+		Nid nid = new Nid();
 		RectangleForme rectFourmiliere = Vue.fourmiliere(fourmiliere);
+		RectangleForme rectNid = Vue.nid(nid);
 		List<Cercle> listeCercle = Vue.listeFourmis(listeFourmis);
 		//maVue.
 		Monde3 monMonde = new Monde3("monMonde",fourmiliere, listeCercle);
@@ -60,6 +63,7 @@ public class Demo3 {
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		monMonde.open();
 		monMonde.add(rectFourmiliere);
+		monMonde.add(rectNid);
 		//listeCercle = Vue.listeFourmis(listeFourmis);
 		while (true) {
 			List<IMovableDrawable> drawables = monMonde.contents();

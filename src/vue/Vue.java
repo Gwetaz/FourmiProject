@@ -9,6 +9,7 @@ import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
 import general.Fourmiliere;
+import general.Nid;
 import general.RectangleForme;
 
 public class Vue {
@@ -30,6 +31,12 @@ public class Vue {
 	public static RectangleForme fourmiliere(Fourmiliere f) {
 		RectangleForme r;
 		r = new RectangleForme(Constantes.couleurFourmiliere, new Point(Constantes.departFourmiliereX, Constantes.departFourmiliereY),new Dimension(Constantes.tailleFourmiliereX, Constantes.tailleFourmiliereY));
+		return r;
+	}
+	
+	public static RectangleForme nid(Nid n) {
+		RectangleForme r;
+		r = new RectangleForme(Constantes.couleurNid, new Point(Constantes.departNidX, Constantes.departNidY),new Dimension(Constantes.tailleNidX, Constantes.tailleNidY));
 		return r;
 	}
 	

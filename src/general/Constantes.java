@@ -21,6 +21,10 @@ public class Constantes {
 	public final static int nombreJourMaxAdulte = 912;
 	public final static int tailleJframeX = 1600;
 	public final static int tailleJframeY = 800;
+	public final static int tailleNidX = 100;
+	public final static int tailleNidY = 100;
+	public final static int departNidX = 750;
+	public final static int departNidY = 350;
 	public final static int tailleFourmiliereX = 500;
 	public final static int tailleFourmiliereY = 500;
 	public final static int departFourmiliereX = 550;

@@ -54,11 +54,11 @@ public class Role implements Action{
 	public void action(Fourmi f) {
 		switch(roleFourmi) {
 			case Ouvriere:
-				Ouvriere.actionOuvriere();	
+				Ouvriere.actionOuvriere(f);	
 				break;
 				
 			case Soldat:
-				Soldat.actionSoldat();
+				Soldat.actionSoldat(f);
 				break;
 				
 			case Reine: 

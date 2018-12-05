@@ -2,8 +2,8 @@ package role.impl;
 
 import java.util.Random;
 
-import etat.impl.Adulte;
 import general.Constantes;
+import general.Fourmi;
 
 public class Soldat extends Role{
 	
@@ -14,11 +14,23 @@ public class Soldat extends Role{
 		this.setRole(RoleFourmi.Soldat);
 	}
 	
-	public static void patrouille() {
-		
+	public static void patrouille(Fourmi f) {
+		Random r = new Random();
+		int posx,posy,probabilite;
+		posx = f.getPosX();
+		posy = f.getPosY();
+		probabilite = r.nextInt(5-1) + 1;
+		if(probabilite == 1)
+			f.setPosX(posx+10);
+		if(probabilite == 2)
+			f.setPosX(posx-10);
+		if(probabilite == 3)
+			f.setPosX(posy+10);
+		if(probabilite == 4)
+			f.setPosX(posy-10);
 	}
 	
-	public static void actionSoldat() {
-		patrouille();
+	public static void actionSoldat(Fourmi f) {
+		patrouille(f);
 	}
 }
