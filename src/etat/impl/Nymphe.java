@@ -3,6 +3,7 @@ package etat.impl;
 import java.awt.Color;
 import java.util.Random;
 
+import role.impl.Ouvriere;
 import general.Action;
 import general.Constantes;
 import general.Fourmi;
@@ -19,6 +20,8 @@ public class Nymphe extends Etat{
 	
 	public static void actionEtat(Fourmi f){
 		// TODO Auto-generated method stub
+		f.setEtat(new Adulte(new Ouvriere()));
+		
 		System.out.println("Oeuf ne fait rien");
 	}
 	

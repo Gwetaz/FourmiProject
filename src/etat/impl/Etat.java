@@ -42,7 +42,7 @@ public class Etat implements Action{
 		etatFourmi = nouvelEtat;
 	}
 	
-	public void evolutionFourmi()
+	/*public void evolutionFourmi()
 	{
 		System.out.println();
 		switch(etatFourmi)
@@ -60,7 +60,7 @@ public class Etat implements Action{
 			break;
 			
 		}
-	}
+	}*/
 	
 	public Color getColor()
 	{

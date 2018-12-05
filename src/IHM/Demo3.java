@@ -51,9 +51,9 @@ public class Demo3 {
 		}
 		fourmiliere.setListeFourmis(listeFourmis);
 		
-		Vue maVue = new Vue(listeFourmis);
-		RectangleForme rectFourmiliere = maVue.fourmiliere(fourmiliere);
-		List<Cercle> listeCercle = maVue.listeFourmis();
+		//Vue maVue = new Vue(listeFourmis);
+		RectangleForme rectFourmiliere = Vue.fourmiliere(fourmiliere);
+		List<Cercle> listeCercle = Vue.listeFourmis(listeFourmis);
 		//maVue.
 		Monde3 monMonde = new Monde3("monMonde",fourmiliere, listeCercle);
 		monMonde.setBackground(Constantes.couleurSol);
@@ -66,9 +66,10 @@ public class Demo3 {
 			for(int i = 0; i<50; i++)
 			{
 				//System.out.println("Coucou");
-				listeFourmis.get(i).getEtat().evolutionFourmi();
+				listeFourmis.get(i).action();
 				System.out.println(listeFourmis.get(i).toString());
 			}
+			listeCercle = Vue.listeFourmis(listeFourmis);
 			//Fourmiliere.
 			//evolutionFourmi
 			try {
