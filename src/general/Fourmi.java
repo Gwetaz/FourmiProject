@@ -4,7 +4,7 @@ import java.util.Random;
 import etat.impl.* ;
 import role.impl.*;
 
-public class Fourmi {
+public class Fourmi implements Action {
 	
 	Boolean FourmiFemelle;
 	Etat Etat;
@@ -14,7 +14,7 @@ public class Fourmi {
 	
 	
 
-	public Fourmi(Boolean FourmiFemelle, int naissance, int posx, int posy)
+	public Fourmi(int naissance, int posx, int posy)
 	{
 		Random r = new Random();
 		int sexe; 
@@ -28,7 +28,7 @@ public class Fourmi {
 		this.posX = posx;
 		this.posY = posy;
 		this.naissance = naissance;
-		this.Etat = new Oeuf(naissance, posX, posY);
+		this.Etat = new Oeuf();
 	}
 	
 	
@@ -70,6 +70,11 @@ public class Fourmi {
 			break;
 		}
 	}*/
+	
+	public void changerEtat()
+	{
+		//this.Etat.
+	}
 	
 	public Boolean getFourmiFemelle() {
 		return FourmiFemelle;
@@ -134,6 +139,13 @@ public class Fourmi {
 		String res = "Fourmis : sexe "+this.getFourmiFemelle();
 		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString();
 		return res;
+	}
+
+
+	@Override
+	public void action() {
+		this.getEtat().toString();
+		
 	}
 	
 	
