@@ -11,7 +11,7 @@ public class Fourmiliere {
 	protected RectangleForme rectangle;
 	protected Nid nid;
 	
-	public Fourmiliere(Reine reine)
+	public Fourmiliere()
 	{
 		listeFourmis = new ArrayList<Fourmi>();
 	}
