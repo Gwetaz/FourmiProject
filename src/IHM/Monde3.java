@@ -22,12 +22,14 @@ public class Monde3 extends JPanel{
 	private List<IMovableDrawable> drawables = new LinkedList<IMovableDrawable>();
 	private Fourmiliere fourmiliere;
 	private List<Cercle> listeCercle;
+	private List<Cercle> listeproie;
 	String name = "";
 	
-	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle) {
+	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
 		this.name = name;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
+		this.listeproie = listeproie; 
 	}
 	public List<IMovableDrawable> contents() {
 		return drawables;
@@ -59,6 +61,15 @@ public class Monde3 extends JPanel{
 	public void setListeCercle(List<Cercle> listeCercle) {
 		this.listeCercle = listeCercle;
 	}
+	
+	
+	public List<Cercle> getListeproie() {
+		return listeproie;
+	}
+	public void setListeproie(List<Cercle> listeproie) {
+		this.listeproie = listeproie;
+	}
+	
 	public void paint(Graphics g) {
 	      super.paint(g);
 	      for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
@@ -66,6 +77,9 @@ public class Monde3 extends JPanel{
 	      }
 	      for (Iterator<Cercle> iter = listeCercle.iterator(); iter.hasNext();) {
 	    	  iter.next().draw(g);;
+	      }
+	      for (Iterator<Cercle> iter2 = listeproie.iterator(); iter2.hasNext();) {
+	    	  iter2.next().draw(g);;
 	      }
 	  }
 

@@ -10,6 +10,7 @@ import general.Constantes;
 import general.Fourmi;
 import general.Fourmiliere;
 import general.Nid;
+import general.Proie;
 import general.RectangleForme;
 
 public class Vue {
@@ -18,6 +19,14 @@ public class Vue {
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
 		for(int i=0;i<listeFourmis.size();i++) {
 			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
+		}
+		return listeCercles;
+	}
+	
+	public static List<Cercle> listeproie(List<Proie> listeproie){
+		List<Cercle> listeCercles = new ArrayList<Cercle>();
+		for(int i=0;i<listeproie.size();i++) {
+			listeCercles.add(new Cercle(listeproie.get(i).getColor(), new Point(listeproie.get(i).getPosX(), listeproie.get(i).getPosY()), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
 		}
 		return listeCercles;
 	}

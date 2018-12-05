@@ -44,6 +44,14 @@ public class Proie {
 	}
 
 
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
@@ -74,6 +82,9 @@ public class Proie {
 		if( this.posY < 150 )this.posY=+10;
 		
 	}
+
+	
+	
 	
 	
 	

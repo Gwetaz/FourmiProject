@@ -41,4 +41,5 @@ public class Constantes {
 	public final static int departFrontierePatrouilleY = 300;
 	public final static int finFrontierePatrouilleX = 900;
 	public final static int finFrontierePatrouilleY = 500;
+	public final static int tailleProie = 20;
 }
