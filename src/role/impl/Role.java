@@ -1,12 +1,11 @@
 package role.impl;
 
-import java.awt.Color;
-import java.awt.Point;
 import java.util.Random;
 
+import general.Action;
 import general.Fourmi;
 
-public class Role {
+public class Role implements Action{
 	protected int age;
 	protected int taille;
 	protected RoleFourmi roleFourmi;
@@ -49,5 +48,24 @@ public class Role {
 		}
 		f.setPosX(x);
 		f.setPosY(y);
+	}
+
+	@Override
+	public void action() {
+		switch(roleFourmi) {
+			case Ouvriere:
+				Ouvriere.actionOuvriere();	
+				break;
+				
+			case Soldat:
+				Soldat.actionSoldat();
+				break;
+				
+			case Reine: 
+				Reine.actionReine();
+				break;
+				
+			default: break;
+		}
 	}
 }

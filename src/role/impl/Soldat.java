@@ -1,11 +1,9 @@
 package role.impl;
 
-import java.awt.Point;
 import java.util.Random;
 
 import etat.impl.Adulte;
 import general.Constantes;
-import general.Fourmi;
 
 public class Soldat extends Role{
 	
@@ -17,6 +15,10 @@ public class Soldat extends Role{
 	}
 	
 	public void patrouille(Adulte a) {
+		
+	}
+	
+	public static void actionSoldat() {
 		
 	}
 }

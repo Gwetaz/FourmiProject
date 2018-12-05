@@ -1,11 +1,9 @@
 package role.impl;
 
-import java.awt.Point;
 import java.util.Random;
 
 import etat.impl.Adulte;
 import general.Constantes;
-import general.Fourmi;
 
 public class Ouvriere extends Role{
 	protected int nourriture;
@@ -27,6 +25,10 @@ public class Ouvriere extends Role{
 	}
 	
 	public void nidConstruction(Adulte a) {
+		
+	}
+	
+	public static void actionOuvriere() {
 		
 	}
 }
