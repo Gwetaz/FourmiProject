@@ -84,7 +84,7 @@ public class Monde2 extends JPanel {
           }
           for (Iterator<Fourmi> iter = listeFourmis.iterator(); iter.hasNext();) {
         	  //System.out.println("coucou "+iter.next().getC().toString());
-              iter.next().getC().draw(g);
+              //iter.next().getC().draw(g);
           }
       }
 
