@@ -33,5 +33,5 @@ public class Constantes {
 	public final static int tailleReine = 20;
 	public final static int tailleCase = 10;
 	public final static int prioriteManger = -1;
-	
+	public final static int nbOeufsReine = 50;
 }
