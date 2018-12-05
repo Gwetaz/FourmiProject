@@ -23,8 +23,8 @@ public class Reine extends Role{
 		Random rx = new Random();
 		Random ry = new Random();
 		int posx,posy;
-		posx = rx.nextInt((Constantes.tailleFourmiliereX+Constantes.departFourmiliereX-Constantes.tailleFourmis)-Constantes.departFourmiliereX)+Constantes.departFourmiliereX;
-		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
+		posx = rx.nextInt((Constantes.tailleNidX+Constantes.departNidX-Constantes.tailleFourmis)-Constantes.departNidX)+Constantes.departNidX;
+		posy = ry.nextInt((Constantes.tailleNidY+Constantes.departNidY-Constantes.tailleFourmis)-Constantes.departNidY)+Constantes.departNidY;
 		Fourmi fourmi = new Fourmi(tempsdenaissance, posx, posy, fourmiliere);
 		fourmiliere.ajouterFourmis(fourmi);
 	} 
