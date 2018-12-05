@@ -2,6 +2,6 @@ package general;
 
 public interface Action {
 
-	public void action(Fourmi f);
+	public void action();
 
 }

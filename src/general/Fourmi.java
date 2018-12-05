@@ -144,7 +144,7 @@ public class Fourmi implements Action {
 
 	@Override
 	public void action() {
-		this.getEtat().toString();
+		this.getEtat().action();
 		
 	}
 	
