@@ -6,7 +6,7 @@ import role.impl.*;
 
 public class Fourmiliere {
 	
-	protected List<Fourmi>  listeFourmis;
+	protected static List<Fourmi>  listeFourmis;
 	protected Reine reine;
 	protected RectangleForme rectangle;
 	protected Nid nid;
@@ -28,6 +28,10 @@ public class Fourmiliere {
 		return reine;
 	}
 	
+	public static void ajouterFourmis(Fourmi f)
+	{
+		listeFourmis.add(f);
+	}
 	
 	public void setReine(Reine reine) {
 		this.reine = reine;
