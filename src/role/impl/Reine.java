@@ -10,7 +10,7 @@ public class Reine extends Role{
 	public Reine() {
 		Random r = new Random();
 		this.age = r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine;
-		this.taille = Constantes.tailleReine;
+		this.taille = Constantes.tailleReine; 
 		this.setRole(RoleFourmi.Reine);
 	}
 	
@@ -22,5 +22,5 @@ public class Reine extends Role{
 		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
 		Oeuf oeuf = new Oeuf(tempsdenaissance,posx,posy);
 		return oeuf;
-	}
+	} 
 }

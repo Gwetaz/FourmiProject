@@ -1,5 +1,7 @@
 package etat.impl;
 
+import general.Constantes;
+
 import java.util.Random;
 
 import role.impl.Role;
@@ -8,14 +10,27 @@ public class Adulte extends Etat{
 
 	private Role role;
 	
-	public Adulte(int tempsNaissance, int positionX, int positionY, Role role)
+	public Adulte(Role role)
 	{
-		super(tempsNaissance, positionX, positionY);
+		
 		this.changerEtat(EtatFourmi.Adulte);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5);
 		this.role = role;
-		
+		switch (role.getRoleFourmi())
+		{
+		case Ouvriere:
+			this.color = Constantes.couleurOuvriere;
+			break;
+		case Soldat:
+			this.color = Constantes.couleurSoldat;
+			break;
+		case Reine:
+			this.color = Constantes.couleurReine;
+			break;
+		default:
+				break;
+		}
 	}
 	
 	public Role getRole() {
@@ -28,24 +43,10 @@ public class Adulte extends Etat{
 
 	
 	
-	public int getPositionX()
-	{
-		return this.positionX;
-	}
-	
-	public void setPositionX(int pos)
-	{
-		this.positionX = pos;
-	}
-	
-	public int getPositionY()
-	{
-		return this.positionY;
-	}
-	
-	public void setPositionY(int pos)
-	{
-		this.positionY = pos;
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		System.out.println("Action de Adulte");
 	}
 	
 }
