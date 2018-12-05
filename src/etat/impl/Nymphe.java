@@ -5,6 +5,7 @@ import java.util.Random;
 
 import general.Action;
 import general.Constantes;
+import general.Fourmi;
 
 public class Nymphe extends Etat{
 
@@ -16,10 +17,9 @@ public class Nymphe extends Etat{
 		this.color = Constantes.couleurNymphe;
 	}
 	
-	@Override
-	public void action() {
+	public static void actionEtat(Fourmi f){
 		// TODO Auto-generated method stub
-		System.out.println("Nymphe fait rien");
+		System.out.println("Oeuf ne fait rien");
 	}
 	
 	/*@Override

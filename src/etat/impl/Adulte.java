@@ -1,6 +1,7 @@
 package etat.impl;
 
 import general.Constantes;
+import general.Fourmi;
 
 import java.util.Random;
 
@@ -8,7 +9,7 @@ import role.impl.Role;
 
 public class Adulte extends Etat{
 
-	private Role role;
+	private static Role role;
 	
 	public Adulte(Role role)
 	{
@@ -16,7 +17,7 @@ public class Adulte extends Etat{
 		this.changerEtat(EtatFourmi.Adulte);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5);
-		this.role = role;
+		Adulte.role = role;
 		switch (role.getRoleFourmi())
 		{
 		case Ouvriere:
@@ -38,15 +39,14 @@ public class Adulte extends Etat{
 	}
 
 	public void setRole(Role role) {
-		this.role = role;
+		Adulte.role = role;
 	}
 
 	
-	
-	@Override
-	public void action() {
+	public static void actionEtat(Fourmi f){
 		// TODO Auto-generated method stub
-		System.out.println("Action de Adulte");
+		//System.out.println("Oeuf ne fait rien");
+		role.action(f);
 	}
 	
 }

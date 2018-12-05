@@ -2,8 +2,11 @@ package etat.impl;
 
 import general.Action;
 import general.Constantes;
+import general.Fourmi;
 
 import java.awt.Color;
+
+import role.impl.Ouvriere;
 
 public class Etat implements Action{
 	
@@ -39,6 +42,26 @@ public class Etat implements Action{
 		etatFourmi = nouvelEtat;
 	}
 	
+	public void evolutionFourmi()
+	{
+		System.out.println();
+		switch(etatFourmi)
+		{
+		case Oeuf:
+			new Larve();
+			break;
+		case Larve:
+			new Nymphe();
+			break;
+		case Nymphe:
+			new Adulte(new Ouvriere());
+			break;
+		case Adulte:
+			break;
+			
+		}
+	}
+	
 	public Color getColor()
 	{
 		return this.color;
@@ -51,8 +74,27 @@ public class Etat implements Action{
 	}
 
 	@Override
-	public void action() {
+	public void action(Fourmi f) {
 		// TODO Auto-generated method stub
+		switch(etatFourmi)
+		{
+		case Oeuf:
+			Oeuf.actionEtat(f);
+			//new Larve();
+			break;
+		case Larve:
+			//new Nymphe();
+			Larve.actionEtat(f);
+			break;
+		case Nymphe:
+			Nymphe.actionEtat(f);
+			//new Adulte(new Ouvriere());
+			break;
+		case Adulte:
+			Adulte.actionEtat(f);
+			break;
+			
+		}
 		
 	}
 

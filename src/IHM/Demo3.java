@@ -62,7 +62,15 @@ public class Demo3 {
 		monMonde.add(rectFourmiliere);
 		while (true) {
 			List<IMovableDrawable> drawables = monMonde.contents();
-			
+			//listeCercle.clear();
+			for(int i = 0; i<50; i++)
+			{
+				//System.out.println("Coucou");
+				listeFourmis.get(i).getEtat().evolutionFourmi();
+				System.out.println(listeFourmis.get(i).toString());
+			}
+			//Fourmiliere.
+			//evolutionFourmi
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {

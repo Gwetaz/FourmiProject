@@ -4,7 +4,7 @@ import java.util.Random;
 import etat.impl.* ;
 import role.impl.*;
 
-public class Fourmi implements Action {
+public class Fourmi {
 	
 	Boolean FourmiFemelle;
 	Etat Etat;
@@ -142,9 +142,9 @@ public class Fourmi implements Action {
 	}
 
 
-	@Override
-	public void action(Fourmi f) {
-		this.getEtat().action();
+	
+	public void action() {
+		this.getEtat().action(this);
 		
 	}
 	

@@ -21,7 +21,7 @@ public class Fourmiliere {
 	}
 
 	public void setListeFourmis(List<Fourmi> listeFourmis) {
-		this.listeFourmis = listeFourmis;
+		Fourmiliere.listeFourmis = listeFourmis;
 	}
 
 	public Reine getReine() {

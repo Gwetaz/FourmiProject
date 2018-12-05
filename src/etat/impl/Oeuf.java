@@ -2,6 +2,7 @@ package etat.impl;
 
 
 import general.Constantes;
+import general.Fourmi;
 
 public class Oeuf extends Etat{
 	
@@ -11,8 +12,8 @@ public class Oeuf extends Etat{
 		this.color = Constantes.couleurOeuf;
 	}
 	
-	@Override
-	public void action() {
+	
+	public static void actionEtat(Fourmi f){
 		// TODO Auto-generated method stub
 		System.out.println("Oeuf ne fait rien");
 	}

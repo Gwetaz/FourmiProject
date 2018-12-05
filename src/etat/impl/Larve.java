@@ -1,11 +1,9 @@
 package etat.impl;
 
-
-import java.awt.Color;
 import java.util.Random;
 
-import general.Action;
 import general.Constantes;
+import general.Fourmi;
 
 
 public class Larve extends Etat{
@@ -18,10 +16,9 @@ public class Larve extends Etat{
 		this.color = Constantes.couleurLarve;
 	}
 	
-	@Override
-	public void action() {
-		System.out.println("Larve fait rien");
-		
+	public static void actionEtat(Fourmi f){
+		// TODO Auto-generated method stub
+		System.out.println("Oeuf ne fait rien");
 	}
 	
 	
