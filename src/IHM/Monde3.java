@@ -60,6 +60,8 @@ public class Monde3 extends JPanel{
         drawables.remove(d);
      }
      
+     
+     
      /*public void add(Fourmi d) {
     	 //d.get
     	 listeFourmis.add(d);
@@ -78,7 +80,13 @@ public class Monde3 extends JPanel{
         }
     }*/
       
-	  public void paint(Graphics g) {
+	  public List<Cercle> getListeCercle() {
+		return listeCercle;
+	}
+	public void setListeCercle(List<Cercle> listeCercle) {
+		this.listeCercle = listeCercle;
+	}
+	public void paint(Graphics g) {
 	      super.paint(g);
 	      for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
 	          iter.next().draw(g);

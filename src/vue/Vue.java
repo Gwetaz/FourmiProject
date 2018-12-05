@@ -22,7 +22,7 @@ public class Vue {
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
 		for(int i=0;i<listeFourmis.size();i++) {
 			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
-			System.out.println("Fourmis couleur : "+listeFourmis.get(i).getEtat().getColor());
+			//System.out.println("Fourmis couleur : "+listeFourmis.get(i).getEtat().getColor());
 		}
 		return listeCercles;
 	}

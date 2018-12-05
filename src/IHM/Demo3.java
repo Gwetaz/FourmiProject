@@ -60,9 +60,19 @@ public class Demo3 {
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		monMonde.open();
 		monMonde.add(rectFourmiliere);
+		//listeCercle = Vue.listeFourmis(listeFourmis);
 		while (true) {
 			List<IMovableDrawable> drawables = monMonde.contents();
 			//listeCercle.clear();
+			
+			//Fourmiliere.
+			//evolutionFourmi
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			for(int i = 0; i<50; i++)
 			{
 				//System.out.println("Coucou");
@@ -70,15 +80,7 @@ public class Demo3 {
 				System.out.println(listeFourmis.get(i).toString());
 			}
 			listeCercle = Vue.listeFourmis(listeFourmis);
-			//Fourmiliere.
-			//evolutionFourmi
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
+			monMonde.setListeCercle(listeCercle);
 			monMonde.repaint();
 		}
 	}
