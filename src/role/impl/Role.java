@@ -1,5 +1,6 @@
 package role.impl;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.Random;
 
@@ -12,8 +13,7 @@ public class Role {
 	
 	public int getAge() {
 		return this.age;
-	}
-	
+	}	
 	
 	public int getTaille() {
 		return this.taille;
@@ -33,8 +33,8 @@ public class Role {
 		Random r = new Random();
 		int x,y,probabilite;
 		probabilite = r.nextInt(5-1) + 1;
-		x = (int) f.getC().getPosition().getX();
-		y = (int) f.getC().getPosition().getY();
+		x = f.getPosX();
+		y = f.getPosY();
 		if(probabilite == 1) {
 			x++;
 		}
@@ -47,6 +47,7 @@ public class Role {
 		if(probabilite == 4) {
 			y--;
 		}
-		f.getC().setPosition(new Point(x,y));
+		f.setPosX(x);
+		f.setPosY(y);
 	}
 }

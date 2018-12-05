@@ -3,12 +3,8 @@ package vue;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import etat.impl.Adulte;
-import etat.impl.Etat;
-import etat.impl.EtatFourmi;
 import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
@@ -23,12 +19,9 @@ public class Vue {
 	}
 	
 	public List<Cercle> listeFourmis(){
-		Etat etat;
-		Adulte a;
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
 		for(int i=0;i<listeFourmis.size();i++) {
-			etat = listeFourmis.get(i).getEtat();
-			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getCouleur(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
+			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
 		}
 		return listeCercles;
 	}
