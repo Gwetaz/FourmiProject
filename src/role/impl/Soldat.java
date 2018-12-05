@@ -15,6 +15,10 @@ public class Soldat extends Role{
 	}
 	
 	public static void patrouille(Fourmi f) {
+		
+	}
+	
+	public static void deplacement(Fourmi f) {
 		Random r = new Random();
 		int posx,posy,probabilite;
 		posx = f.getPosX();
@@ -25,12 +29,12 @@ public class Soldat extends Role{
 		if(probabilite == 2)
 			f.setPosX(posx-10);
 		if(probabilite == 3)
-			f.setPosX(posy+10);
+			f.setPosY(posy+10);
 		if(probabilite == 4)
-			f.setPosX(posy-10);
+			f.setPosY(posy-10);
 	}
 	
 	public static void actionSoldat(Fourmi f) {
-		patrouille(f);
+		deplacement(f);
 	}
 }
