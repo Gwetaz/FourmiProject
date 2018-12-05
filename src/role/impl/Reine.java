@@ -22,5 +22,5 @@ public class Reine extends Role{
 		posy = ry.nextInt((Constantes.tailleFourmiliereY+Constantes.departFourmiliereY-Constantes.tailleFourmis)-Constantes.departFourmiliereY)+Constantes.departFourmiliereY;
 		Oeuf oeuf = new Oeuf(tempsdenaissance,posx,posy);
 		return oeuf;
-	}
+	} 
 }
