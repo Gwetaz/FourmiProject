@@ -34,4 +34,5 @@ public class Constantes {
 	public final static int tailleCase = 10;
 	public final static int prioriteManger = -1;
 	public final static int nbOeufsReine = 50;
+	public final static Color couleurProie = new Color(255,51,153);
 }
