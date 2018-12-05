@@ -22,16 +22,10 @@ public class Monde3 extends JPanel{
 	private List<IMovableDrawable> drawables = new LinkedList<IMovableDrawable>();
 	private Fourmiliere fourmiliere;
 	private List<Cercle> listeCercle;
-	//public List<Fourmi> listeFourmis;
-	
-	//public ArrayList<Fourmi> listeFourmi;
-	//private int nbOeufs;
-	
 	String name = "";
 	
 	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle) {
 		this.name = name;
-		//this.nbOeufs = nbOeufs;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
 	}
@@ -59,27 +53,6 @@ public class Monde3 extends JPanel{
      public void remove(IMovableDrawable d) {
         drawables.remove(d);
      }
-     
-     
-     
-     /*public void add(Fourmi d) {
-    	 //d.get
-    	 listeFourmis.add(d);
-         //drawables.add(d);
-      }
-
-      public void remove(Fourmi d) {
-    	  listeFourmis.remove(d);
-      }*/
-
-    /*public void paint(Graphics g) {
-        super.paint(g);
-        //System.out.println("coucou");
-        for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
-            iter.next().draw(g);
-        }
-    }*/
-      
 	  public List<Cercle> getListeCercle() {
 		return listeCercle;
 	}
@@ -92,9 +65,6 @@ public class Monde3 extends JPanel{
 	          iter.next().draw(g);
 	      }
 	      for (Iterator<Cercle> iter = listeCercle.iterator(); iter.hasNext();) {
-	    	  //System.out.println("coucou "+iter.next().getC().toString());
-	      //iter.next().getC().draw(g);
-	    	  //System.out.println("Fourmiiiiii");
 	    	  iter.next().draw(g);;
 	      }
 	  }
@@ -103,15 +73,5 @@ public class Monde3 extends JPanel{
         drawables.clear();
      }
 
-    /*public List<IMovableDrawable> find(Point p) {
-        List<IMovableDrawable> l = new ArrayList<IMovableDrawable>();
-        for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
-        	IMovableDrawable element = iter.next();
-            if (element.getBounds().contains(p)) {
-                l.add(element);
-            }
-        }
-        return l;
-    }*/
 	
 }

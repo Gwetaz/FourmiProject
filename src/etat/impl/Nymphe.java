@@ -20,28 +20,14 @@ public class Nymphe extends Etat{
 	}
 	
 	public static void actionEtat(Fourmi f){
-		// TODO Auto-generated method stub
-		
 		Random r = new Random();
 		int role = r.nextInt(100-0);
-		//System.out.println(role);
 		if(role <= Constantes.pourcentOuvriere)
 		{
 			f.setEtat(new Adulte(new Ouvriere()));
 		}else{
 			f.setEtat(new Adulte(new Soldat()));
-		}
-		
-		
-		
-		//f.setEtat(new Adulte(new Ouvriere()));
-		
-		System.out.println("Oeuf ne fait rien");
+		}		
 	}
-	
-	/*@Override
-	public Etat transformation() {
-		return new Adulte(tempsNaissance, positionX, positionY);
-	}*/
 
 }

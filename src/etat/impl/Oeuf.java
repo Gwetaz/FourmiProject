@@ -14,14 +14,6 @@ public class Oeuf extends Etat{
 	
 	
 	public static void actionEtat(Fourmi f){
-		// TODO Auto-generated method stub
 		f.setEtat(new Larve());
-		//System.out.println("Oeuf ne fait rien");
 	}
-	
-	/*@Override
-	public Etat transformation() {
-		return new Larve(tempsNaissance, positionX, positionY);
-	}*/
-
 }

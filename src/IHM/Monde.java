@@ -54,7 +54,7 @@ public class Monde extends JPanel{
 			System.out.println(etatTest.toString());
 			etatTest = ((Oeuf) etatTest).transformation();*/
 			
-			listeFourmi.get(i).changerEtat(); 
+			//listeFourmi.get(i).changerEtat(); 
 			//listeFourmi.get(i).getEtat();
 		}
 		for (int i = 0; i < listeFourmi.size(); i++)

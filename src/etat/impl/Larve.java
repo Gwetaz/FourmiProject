@@ -17,16 +17,7 @@ public class Larve extends Etat{
 	}
 	
 	public static void actionEtat(Fourmi f){
-		// TODO Auto-generated method stub
 		f.setEtat(new Nymphe());
-		System.out.println("Oeuf ne fait rien");
 	}
-	
-	
-	
-	/*@Override
-	public Etat transformation() {
-		return new Nymphe(tempsNaissance, positionX, positionY);
-	}*/
 
 }

@@ -75,20 +75,16 @@ public class Etat implements Action{
 
 	@Override
 	public void action(Fourmi f) {
-		// TODO Auto-generated method stub
 		switch(etatFourmi)
 		{
 		case Oeuf:
 			Oeuf.actionEtat(f);
-			//new Larve();
 			break;
 		case Larve:
-			//new Nymphe();
 			Larve.actionEtat(f);
 			break;
 		case Nymphe:
 			Nymphe.actionEtat(f);
-			//new Adulte(new Ouvriere());
 			break;
 		case Adulte:
 			Adulte.actionEtat(f);

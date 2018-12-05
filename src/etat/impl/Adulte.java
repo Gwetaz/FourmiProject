@@ -44,8 +44,6 @@ public class Adulte extends Etat{
 
 	
 	public static void actionEtat(Fourmi f){
-		// TODO Auto-generated method stub
-		//System.out.println("Oeuf ne fait rien");
 		role.action(f);
 	}
 	

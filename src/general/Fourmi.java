@@ -31,51 +31,6 @@ public class Fourmi {
 		this.Etat = new Oeuf();
 	}
 	
-	
-	/*public void changerEtat()
-	{ 
-		Etat nouvelEtat;
-		switch(this.getEtat().getEtatFourmi())
-		{
-		case Oeuf:
-			nouvelEtat = new Larve(naissance,posX,posY);
-			this.setEtat(nouvelEtat);
-			//this.c.SetColor(Constantes.couleurLarve);
-			break;
-		case Larve :
-			nouvelEtat = new Nymphe(naissance,posX,posY);
-			this.setEtat(nouvelEtat);
-			//this.c.SetColor(Constantes.couleurNymphe);
-			break;
-		case Nymphe :
-			
-			//this.c.SetColor(Constantes.couleurAdulte);
-			
-			Random r = new Random();
-			int role = r.nextInt(100-0);
-			//System.out.println(role);
-			if(role <= Constantes.pourcentOuvriere)
-			{
-				//this.c.SetColor(Constantes.couleurOuvriere);
-				nouvelEtat = new Adulte(naissance,posX,posY, new Ouvriere());
-			}else{
-				//this.c.SetColor(Constantes.couleurSoldat);
-				nouvelEtat = new Adulte(naissance,posX,posY, new Soldat());
-			}
-			this.setEtat(nouvelEtat); 
-			break;
-		case Adulte :
-			break;
-		default :
-			break;
-		}
-	}*/
-	 
-	public void changerEtat()
-	{
-		//this.Etat.
-	}
-	
 	public Boolean getFourmiFemelle() {
 		return FourmiFemelle;
 	}

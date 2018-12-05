@@ -13,7 +13,6 @@ public class Ouvriere extends Role{
 		this.age = r.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
 		this.taille = Constantes.tailleFourmis;
 		this.setRole(RoleFourmi.Ouvriere);
-		//System.out.println("Ouvriere");
 	}
 	
 	public static void chasse(Fourmi f) {
