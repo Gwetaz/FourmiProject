@@ -62,7 +62,7 @@ public class Fourmi implements Action {
 				//this.c.SetColor(Constantes.couleurSoldat);
 				nouvelEtat = new Adulte(naissance,posX,posY, new Soldat());
 			}
-			this.setEtat(nouvelEtat);
+			this.setEtat(nouvelEtat); 
 			break;
 		case Adulte :
 			break;
