@@ -17,7 +17,7 @@ public class Fourmi {
 	public Fourmi(Boolean FourmiFemelle, int naissance, int posx, int posy)
 	{
 		Random r = new Random();
-		int sexe;
+		int sexe; 
 		sexe = r.nextInt(2-1) + 1;
 		if(sexe == 1)
 		{
