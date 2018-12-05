@@ -51,7 +51,7 @@ public class Role implements Action{
 	}
 
 	@Override
-	public void action() {
+	public void action(Fourmi f) {
 		switch(roleFourmi) {
 			case Ouvriere:
 				Ouvriere.actionOuvriere();	

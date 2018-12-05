@@ -143,7 +143,7 @@ public class Fourmi implements Action {
 
 
 	@Override
-	public void action() {
+	public void action(Fourmi f) {
 		this.getEtat().action();
 		
 	}
