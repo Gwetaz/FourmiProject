@@ -13,7 +13,6 @@ public class Ouvriere extends Role{
 	public Ouvriere (){
 		Random r = new Random();
 		this.age = r.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
-		this.couleur = Constantes.couleurOuvriere;
 		this.taille = Constantes.tailleFourmis;
 		this.setRole(RoleFourmi.Ouvriere);
 		//System.out.println("Ouvriere");

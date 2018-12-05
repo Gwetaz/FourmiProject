@@ -13,7 +13,7 @@ public class Larve extends Etat{
 		this.changerEtat(EtatFourmi.Larve);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5)*4;
-		this.couleur = Constantes.couleurLarve; 
+		
 	}
 	
 	

@@ -13,7 +13,6 @@ public class Nymphe extends Etat{
 		this.changerEtat(EtatFourmi.Nymphe);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5);
-		this.couleur = Constantes.couleurNymphe;
 	}
 	
 	/*@Override

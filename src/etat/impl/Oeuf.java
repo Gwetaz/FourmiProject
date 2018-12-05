@@ -9,7 +9,6 @@ public class Oeuf extends Etat{
 		super(tempsNaissance, positionX, positionY);
 		this.changerEtat(EtatFourmi.Oeuf);
 		this.poid = 0;
-		this.couleur = Constantes.couleurOeuf; 
 	}
 	
 	

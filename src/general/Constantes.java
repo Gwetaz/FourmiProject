@@ -14,6 +14,7 @@ public class Constantes {
 	public final static Color couleurOuvriere = new Color(0, 33, 245);
 	public final static Color couleurFourmiliere = new Color(96, 64, 32);
 	public final static Color couleurSol = new Color(210, 161, 121);
+	public final static Color couleurNid = new Color(153, 102, 0);
 	public final static int nombreJourMiniReine = 1460;
 	public final static int nombreJourMaxReine = 3650;
 	public final static int nombreJourMiniAdulte = 547;

@@ -8,17 +8,13 @@ public class Fourmiliere {
 	
 	protected List<Fourmi>  listeFourmis;
 	protected Reine reine;
-	protected Color color;
 	protected RectangleForme rectangle;
+	protected Nid nid;
 	
 	public Fourmiliere(Reine reine)
 	{
 		listeFourmis = new ArrayList<Fourmi>();
-		color = Constantes.couleurFourmiliere;
-		
 	}
-
-	
 
 	public List<Fourmi> getListeFourmis() {
 		return listeFourmis;

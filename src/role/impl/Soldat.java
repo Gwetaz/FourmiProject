@@ -12,7 +12,6 @@ public class Soldat extends Role{
 	public void genererAge() {
 		Random r = new Random();
 		this.age = r.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
-		this.couleur = Constantes.couleurSoldat;
 		this.taille = Constantes.tailleFourmis;
 		this.setRole(RoleFourmi.Soldat);
 	}
