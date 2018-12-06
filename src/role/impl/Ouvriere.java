@@ -48,10 +48,6 @@ public class Ouvriere extends Role{
 		int posx,posy,probabilite;
 		posx = f.getPosX();
 		posy = f.getPosY();
-		if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx > Constantes.departNidX && posx < Constantes.finNidX) {
-			//f.setPosY(posy-10);
-			sortirNid(f);
-		}
 		probabilite = r.nextInt(5-1) + 1;
 		if(probabilite == 1)
 			f.setPosX(posx+10);
