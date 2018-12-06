@@ -74,7 +74,7 @@ public class Ouvriere extends Role{
 	public static void deplacement(Fourmi f) {
 		Random r = new Random();
 		int prob;
-		prob = r.nextInt(2-1) + 1;
+		prob = r.nextInt(3-1) + 1;
 		if(prob == 1) {
 			deplacementFourmiliere(f);
 		}
@@ -85,11 +85,13 @@ public class Ouvriere extends Role{
 	}
 	
 	public static void deplacementFourmiliere(Fourmi f) {
-		sortirNid(f);
 		Random r = new Random();
 		int posx,posy, prob;
 		posx = f.getPosX();
 		posy = f.getPosY();
+		if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx > Constantes.departNidX && posx < Constantes.finNidX) {
+			sortirNid(f);
+		}
 		prob = r.nextInt(5-1) + 1;
 		if(prob == 1)
 			f.setPosX(posx+10);
@@ -101,12 +103,14 @@ public class Ouvriere extends Role{
 			f.setPosY(posy-10);
 	}
 	
-	public static void deplacementChasse(Fourmi f) {
-		sortirFourmiliere(f);
+	public static void deplacementChasse(Fourmi f) {	
 		Random r = new Random();
 		int posx,posy, prob;
 		posx = f.getPosX();
 		posy = f.getPosY();
+		if(posy > Constantes.departFourmiliereY && posy < Constantes.departFourmiliereY+Constantes.tailleFourmiliereY && posx > Constantes.departFourmiliereX && posx < Constantes.departFourmiliereX+Constantes.tailleFourmiliereX) {
+			sortirFourmiliere(f);
+		}
 		prob = r.nextInt(5-1) + 1;
 		if(prob == 1)
 			f.setPosX(posx+10);
