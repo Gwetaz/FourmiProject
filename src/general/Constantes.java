@@ -47,4 +47,6 @@ public class Constantes {
 	public final static int nbJourEnOeuf = 3;
 	public final static int nbJourEnLarve = 10;
 	public final static int nbJourEnNymphe = 5;
+	public final static int nombreProies = 10;
+
 }

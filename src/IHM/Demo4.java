@@ -29,8 +29,8 @@ public class Demo4 {
 		Nid nid = new Nid();
 		RectangleForme nidForme = FacadeMonde.genererNid(nid);
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);
-		List<Cercle> listeProie = new ArrayList<Cercle> ();
-		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle, listeProie);
+		List<Cercle> listeProies = new ArrayList<Cercle> ();
+		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle, listeProies);
 		monMonde.add(fourmiliereForme);
 		monMonde.add(nidForme);
 		monMonde.open();
@@ -64,7 +64,14 @@ public class Demo4 {
 				fourmiliere.getListeFourmis().get(i).action();
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
-			
+			/*int nbProies = fourmiliere.getListeProies().size();
+			for(int i = 0; i<nbProies; i++)
+			{
+				//System.out.println("i : "+i);
+				fourmiliere.getListeFourmis().get(i).action();
+				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
+			}*/
+			listeProies = null;
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 			monMonde.setListeCercle(listeCercle);
 

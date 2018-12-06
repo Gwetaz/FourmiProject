@@ -36,11 +36,11 @@ public class Vue {
 		return listeCercles;
 	}
 	
-	public static List<Cercle> listeproie(List<Proie> listeproie){
+	public static List<Cercle> listeproie(Fourmiliere fourmiliere){
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
-		for(int i=0;i<listeproie.size();i++) {
+		/*for(int i=0;i<listeproie.size();i++) {
 			listeCercles.add(new Cercle(listeproie.get(i).getColor(), new Point(listeproie.get(i).getPosX(), listeproie.get(i).getPosY()), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
-		}
+		}*/
 		return listeCercles;
 	}
 	

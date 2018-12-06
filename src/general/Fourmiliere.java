@@ -9,6 +9,7 @@ import role.impl.*;
 public class Fourmiliere {
 	
 	protected List<Fourmi>  listeFourmis;
+	private List<Proie> listeProies;
 	protected Reine reine;
 	protected RectangleForme rectangle;
 	protected Nid nid;
@@ -24,8 +25,17 @@ public class Fourmiliere {
 		this.nbSoldat = 0;
 		this.nbSexuee = 0;
 		listeFourmis = new ArrayList<Fourmi>();
+		listeProies = new ArrayList<Proie>();
 	}
 	
+	public List<Proie> getListeProies() {
+		return listeProies;
+	}
+
+	public void setListeProies(List<Proie> listeProies) {
+		this.listeProies = listeProies;
+	}
+
 	public void purge()
 	{
 		this.nbOuvriere = 0;
