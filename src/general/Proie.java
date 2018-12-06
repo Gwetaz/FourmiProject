@@ -57,7 +57,7 @@ public class Proie {
 	}
 	
 	public void actionProie() {
-		this.bouger();
+		//this.bouger();
 	}
 
 	private void bouger() {
@@ -86,7 +86,6 @@ public class Proie {
 		if(probabilite == 4)
 		{
 			this.posY= this.posY+10;
-		//if( this.posY < 150 )this.posY=+10;
 		}
 	}
 
