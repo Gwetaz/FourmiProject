@@ -78,8 +78,12 @@ public class Monde3 extends JPanel{
 		
 	      super.paint(g);
 	      this.nbJour++;
+	      fourmiliere.purge();
 	      //g.setFont(new Font("TimesRoman", Font.PLAIN, 50)); 
 	      g.drawString("Jour : "+this.nbJour, 50, 50);
+	      g.drawString("Nombre d'ouvrières : "+this.fourmiliere.getNbOuvriere(), 50, 75);
+	      g.drawString("Nombre de soldats : "+this.fourmiliere.getNbSoldat(), 50, 100);
+	      g.drawString("Nombre de sexuées : "+this.fourmiliere.getNbSexuee(), 50, 125);
 	      for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
 	          iter.next().draw(g);
 	      }

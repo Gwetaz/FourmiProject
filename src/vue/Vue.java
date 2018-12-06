@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+import role.impl.RoleFourmi;
 import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
@@ -17,9 +18,21 @@ public class Vue {
 
 	public static List<Cercle> listeFourmis(List<Fourmi> listeFourmis){
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
+		List<Cercle> listeReine = new ArrayList<Cercle>();
 		for(int i=0;i<listeFourmis.size();i++) {
-			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
+			if (listeFourmis.get(i).getRoleAdulte() == RoleFourmi.Reine)
+			{
+				listeReine.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleReine,Constantes.tailleReine)));
+
+			}else{
+				listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleFourmis,Constantes.tailleFourmis)));
+
+			}
 		}
+		for(int i=0;i<listeReine.size();i++) {
+			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleReine,Constantes.tailleReine)));
+		}
+		//listeCercles.add(new Cercle(listeFourmis.get(0).getEtat().getColor(), new Point(listeFourmis.get(0).getPosX(), listeFourmis.get(0).getPosY()), new Dimension(Constantes.tailleReine,Constantes.tailleReine)));
 		return listeCercles;
 	}
 	
