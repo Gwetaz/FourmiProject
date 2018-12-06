@@ -11,6 +11,7 @@ import java.util.Random;
 import role.impl.Ouvriere;
 import role.impl.Reine;
 import role.impl.RoleFourmi;
+import role.impl.Sexuee;
 import role.impl.Soldat;
 
 public class Etat implements Action{
@@ -90,13 +91,19 @@ public class Etat implements Action{
 					f.setNbJourDeMort(age);
 					f.setEtat(new Adulte(new Ouvriere()));
 					f.setRoleAdulte(RoleFourmi.Ouvriere);
-				}else{
+				}else if (role > Constantes.pourcentOuvriere && role <= (Constantes.pourcentOuvriere+Constantes.pourcentSoldat)){
 					Random ageR = new Random();
 					int age = ageR.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
 					f.setNbJourDeMort(age);
 					f.setEtat(new Adulte(new Soldat()));
 					f.setRoleAdulte(RoleFourmi.Soldat);
-				}		
+				}else{
+					Random ageR = new Random();
+					int age = ageR.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
+					f.setNbJourDeMort(age);
+					f.setEtat(new Adulte(new Sexuee()));
+					f.setRoleAdulte(RoleFourmi.Sexuee);
+				}
 				//f.setEtat(new Larve());
 			}
 			//Nymphe.actionEtat(f);
@@ -114,6 +121,9 @@ public class Etat implements Action{
 					break;
 				case Soldat:
 					Soldat.actionSoldat(f);
+					break;
+				case Sexuee:
+					Sexuee.actionSexuee(f);
 					break;
 				case Reine:
 					Reine.actionReine(f.getFourmiliere());

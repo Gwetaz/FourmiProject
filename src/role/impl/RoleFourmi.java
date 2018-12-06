@@ -1,5 +1,5 @@
 package role.impl;
 
 public enum RoleFourmi {
-	Ouvriere, Reine, Soldat
+	Ouvriere, Reine, Soldat, Sexuee
 }

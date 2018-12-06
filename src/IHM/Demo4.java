@@ -51,7 +51,7 @@ public class Demo4 {
 			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
-				Thread.sleep(10);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

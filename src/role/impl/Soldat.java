@@ -12,13 +12,44 @@ public class Soldat extends Role{
 		this.setRole(RoleFourmi.Soldat);
 	}
 	
+	public static void sortirNid(Fourmi f)
+	{
+		int posx,posy,ecartHaut,ecartBas,ecartDroite,ecartGauche;
+		int finNidX = Constantes.departNidX+Constantes.tailleNidX;
+		int finNidY = Constantes.departNidY+Constantes.tailleNidY;
+		posx = f.getPosX();
+		posy = f.getPosY();
+		ecartHaut = posy - Constantes.departNidY;
+		ecartBas = finNidY - posy;
+		ecartGauche = posx - Constantes.departNidX;
+		ecartDroite = finNidX - posx;
+		
+		if(ecartHaut < ecartBas && ecartHaut < ecartGauche && ecartHaut < ecartDroite)
+		{
+			f.setPosY(posy-10);
+		}else if(ecartBas < ecartHaut && ecartBas < ecartGauche && ecartBas < ecartDroite)
+		{
+			f.setPosY(posy+10);
+		}else if(ecartGauche < ecartBas && ecartGauche < ecartHaut && ecartGauche < ecartDroite)
+		{
+			f.setPosX(posx-10);
+		}else if(ecartDroite < ecartBas && ecartDroite < ecartGauche && ecartDroite < ecartHaut)
+		{
+			f.setPosX(posx+10);
+		}else{
+			f.setPosY(posy-10);
+		}
+		//if(posx)
+	}
+	
 	public static void patrouille(Fourmi f) {
 		Random r = new Random();
 		int posx,posy,probabilite;
 		posx = f.getPosX();
 		posy = f.getPosY();
 		if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx > Constantes.departNidX && posx < Constantes.finNidX) {
-			f.setPosY(posy-10);
+			//f.setPosY(posy-10);
+			sortirNid(f);
 		}
 		probabilite = r.nextInt(5-1) + 1;
 		if(probabilite == 1)

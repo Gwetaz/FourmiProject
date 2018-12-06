@@ -32,6 +32,9 @@ public class Adulte extends Etat{
 		case Reine:
 			this.color = Constantes.couleurReine;
 			break;
+		case Sexuee:
+			this.color = Constantes.couleurSexuee;
+			break;
 		default:
 				break;
 		}
@@ -46,8 +49,8 @@ public class Adulte extends Etat{
 	}
 
 	
-	public void actionEtat(Fourmi f){
+	/*public void actionEtat(Fourmi f){
 		role.action(f);
-	}
+	}*/
 	
 }
