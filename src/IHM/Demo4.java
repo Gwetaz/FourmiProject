@@ -51,7 +51,7 @@ public class Demo4 {
 			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
-				Thread.sleep(100);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -62,7 +62,7 @@ public class Demo4 {
 			{
 				//System.out.println("i : "+i);
 				fourmiliere.getListeFourmis().get(i).action();
-				System.out.println(fourmiliere.getListeFourmis().get(i).toString());
+				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
 			
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);
