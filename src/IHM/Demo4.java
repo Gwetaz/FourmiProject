@@ -43,21 +43,30 @@ public class Demo4 {
 		reine.setRoleAdulte(RoleFourmi.Reine);
 		
 		fourmiliere.ajouterUneReine(reine);
+		//int tour = 0;
 		while (true) {
+			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			for(int i = 0; i<fourmiliere.getListeFourmis().size(); i++)
+			//System.out.println("fourmiliere size "+fourmiliere.getListeFourmis().size());
+			int nbFourmis = fourmiliere.getListeFourmis().size();
+			for(int i = 0; i<nbFourmis; i++)
 			{
+				//System.out.println("i : "+i);
 				fourmiliere.getListeFourmis().get(i).action();
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
+			
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 			monMonde.setListeCercle(listeCercle);
+
+			//System.out.println("BACKSLASH AINE");
 			monMonde.repaint();
+			//tour++;
 		}
 	}
 }

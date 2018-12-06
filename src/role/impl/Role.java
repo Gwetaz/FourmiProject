@@ -1,6 +1,5 @@
 package role.impl;
 
-import java.util.Random;
 
 import general.Action;
 import general.Fourmi;

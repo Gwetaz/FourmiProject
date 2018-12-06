@@ -13,9 +13,17 @@ public class Fourmi {
 	int naissance;
 	RoleFourmi roleAdulte;
 	Fourmiliere fourmiliere;
+	public int nbJourEnOeuf;
+	public int nbJourEnLarve;
+	public int nbJourEnNymphe;
+	public int nbJourDeVie;
 
 	public Fourmi(int naissance, int posx, int posy, Fourmiliere fourmiliere)
 	{
+		this.nbJourEnOeuf = 1;
+		this.nbJourEnLarve = 1;
+		this.nbJourEnNymphe = 1;
+		this.nbJourDeVie = 0;
 		this.fourmiliere = fourmiliere;
 		Random r = new Random();
 		int sexe; 

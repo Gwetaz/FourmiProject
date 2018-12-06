@@ -10,6 +10,7 @@ public class Larve extends Etat{
 
 	public Larve()
 	{
+		//this.nbJourEnEtat = 0;
 		this.changerEtat(EtatFourmi.Larve);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5)*4;

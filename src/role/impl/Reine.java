@@ -26,6 +26,7 @@ public class Reine extends Role{
 		posx = rx.nextInt((Constantes.tailleNidX+Constantes.departNidX-Constantes.tailleFourmis)-Constantes.departNidX)+Constantes.departNidX;
 		posy = ry.nextInt((Constantes.tailleNidY+Constantes.departNidY-Constantes.tailleFourmis)-Constantes.departNidY)+Constantes.departNidY;
 		Fourmi fourmi = new Fourmi(tempsdenaissance, posx, posy, fourmiliere);
+		//System.out.println(fourmi.toString());
 		fourmiliere.ajouterFourmis(fourmi);
 	} 
 	

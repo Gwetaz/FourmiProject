@@ -14,6 +14,7 @@ public class Nymphe extends Etat{
 
 	public Nymphe()
 	{
+		//this.nbJourEnEtat = 0;
 		this.changerEtat(EtatFourmi.Nymphe);
 		Random r = new Random();
 		this.poid = 1.5 + r.nextFloat() * (2-1.5);

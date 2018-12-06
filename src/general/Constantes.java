@@ -42,4 +42,7 @@ public class Constantes {
 	public final static int finFrontierePatrouilleX = 900;
 	public final static int finFrontierePatrouilleY = 500;
 	public final static int tailleProie = 20;
+	public final static int nbJourEnOeuf = 3;
+	public final static int nbJourEnLarve = 10;
+	public final static int nbJourEnNymphe = 5;
 }
