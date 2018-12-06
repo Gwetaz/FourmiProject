@@ -5,6 +5,7 @@ import general.Constantes;
 import general.Fourmi;
 
 import java.awt.Color;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 import role.impl.Ouvriere;
@@ -59,43 +60,40 @@ public class Etat implements Action{
 		switch(etatFourmi)
 		{
 		case Oeuf:
-			//Oeuf.actionEtat(f);
-			//System.out.println("nb jour en Oeuf : "+f.nbJourEnEtat);
 			if(f.nbJourEnOeuf < Constantes.nbJourEnOeuf)
 			{
 				f.nbJourEnOeuf++;
 			}else{
-				//System.out.println("ELSE NB JOUR OEUF : "+f.nbJourEnOeuf);
-				//f.nbJourEnEtat = 0;
 				f.setEtat(new Larve());
 			}
 			break;
 		case Larve:
-			//System.out.println("nb jour en Larve : "+f.nbJourEnEtat);
 			if(f.nbJourEnLarve < Constantes.nbJourEnLarve)
 			{
 				f.nbJourEnLarve++;
 			}else{
-				//System.out.println("ELSE NB JOUR LARVE : "+f.nbJourEnEtat);
-				//f.nbJourEnEtat = 0;
 				f.setEtat(new Nymphe());
 			}
 			//Larve.actionEtat(f);
 			break;
 		case Nymphe:
-			//System.out.println("nb jour en Nymphe : "+f.nbJourEnEtat);
 			if(f.nbJourEnNymphe < Constantes.nbJourEnNymphe)
 			{
 				f.nbJourEnNymphe++;
 			}else{
-				//f.nbJourEnEtat = 0;
 				Random r = new Random();
 				int role = r.nextInt(100-0);
 				if(role <= Constantes.pourcentOuvriere)
 				{
+					Random ageR = new Random();
+					int age = ageR.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
+					f.setNbJourDeMort(age);
 					f.setEtat(new Adulte(new Ouvriere()));
 					f.setRoleAdulte(RoleFourmi.Ouvriere);
 				}else{
+					Random ageR = new Random();
+					int age = ageR.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
+					f.setNbJourDeMort(age);
 					f.setEtat(new Adulte(new Soldat()));
 					f.setRoleAdulte(RoleFourmi.Soldat);
 				}		
@@ -104,22 +102,27 @@ public class Etat implements Action{
 			//Nymphe.actionEtat(f);
 			break;
 		case Adulte:
-
-			switch(f.getRoleAdulte())
+			if(f.getNbJourDeMort()-f.getNbJourDeVie() == 0)
 			{
-			case Ouvriere:
-				Ouvriere.actionOuvriere(f);
-				break;
-			case Soldat:
-				Soldat.actionSoldat(f);
-				break;
-			case Reine:
-				Reine.actionReine(f.getFourmiliere());
-				break;
-			default:
+				f.setVivante(false);
+			}else{
+				f.setNbJourDeVie(f.getNbJourDeVie()+1);
+				switch(f.getRoleAdulte())
+				{
+				case Ouvriere:
+					Ouvriere.actionOuvriere(f);
 					break;
+				case Soldat:
+					Soldat.actionSoldat(f);
+					break;
+				case Reine:
+					Reine.actionReine(f.getFourmiliere());
+					break;
+				default:
+						break;
+				}
+				break;
 			}
-			break;
 			
 		}
 		

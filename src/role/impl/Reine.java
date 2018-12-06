@@ -8,12 +8,10 @@ import general.Fourmiliere;
 
 public class Reine extends Role{
 	
-	//private Fourmiliere fourmiliere;
 	
-	public Reine(Fourmiliere fourmiliere) {
-		//this.fourmiliere = fourmiliere;
-		Random r = new Random();
-		this.age = r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine;
+	public Reine() {
+		/*Random r = new Random();
+		this.age = r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine;*/
 		this.taille = Constantes.tailleReine; 
 		this.setRole(RoleFourmi.Reine);
 	}

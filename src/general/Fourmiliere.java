@@ -15,6 +15,17 @@ public class Fourmiliere {
 	{
 		listeFourmis = new ArrayList<Fourmi>();
 	}
+	
+	public void purge()
+	{
+		for(int i=0; i<this.listeFourmis.size(); i++)
+		{
+			if (!this.listeFourmis.get(i).isVivante())
+			{
+				this.listeFourmis.remove(i);
+			}
+		}
+	}
 
 	public List<Fourmi> getListeFourmis() {
 		return listeFourmis;

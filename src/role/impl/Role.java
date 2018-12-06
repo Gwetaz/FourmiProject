@@ -5,13 +5,10 @@ import general.Action;
 import general.Fourmi;
 
 public class Role implements Action{
-	protected int age;
+
 	protected int taille;
 	protected RoleFourmi roleFourmi;
 	
-	public int getAge() {
-		return this.age;
-	}	
 	
 	public int getTaille() {
 		return this.taille;

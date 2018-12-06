@@ -9,8 +9,6 @@ public class Ouvriere extends Role{
 	protected int nourriture;
 
 	public Ouvriere (){
-		Random r = new Random();
-		this.age = r.nextInt(Constantes.nombreJourMaxAdulte-Constantes.nombreJourMiniAdulte) + Constantes.nombreJourMiniAdulte;
 		this.taille = Constantes.tailleFourmis;
 		this.setRole(RoleFourmi.Ouvriere);
 	}

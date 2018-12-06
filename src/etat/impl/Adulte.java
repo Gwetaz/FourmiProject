@@ -3,6 +3,8 @@ package etat.impl;
 import general.Constantes;
 import general.Fourmi;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 import role.impl.Ouvriere;
@@ -17,7 +19,7 @@ public class Adulte extends Etat{
 		
 		this.changerEtat(EtatFourmi.Adulte);
 		Random r = new Random();
-		this.poid = 1.5 + r.nextFloat() * (2-1.5);
+		this.poid = BigDecimal.valueOf(1.5 + r.nextFloat() * (2-1.5)).setScale(2, RoundingMode.HALF_UP).doubleValue();
 		this.role = role;
 		switch (role.getRoleFourmi())
 		{

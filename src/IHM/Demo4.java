@@ -39,26 +39,30 @@ public class Demo4 {
 		Fourmi reine = new Fourmi(1,(Constantes.tailleJframeX-Constantes.tailleFourmis)/2,(Constantes.tailleJframeY-Constantes.tailleFourmis)/2, fourmiliere);
 		//reine.setEtat(etat);
 		reine.setFourmiFemelle(true);
-		reine.setEtat(new Adulte(new Reine(fourmiliere)));
+		Random r = new Random();
+		reine.setNbJourDeMort(r.nextInt(Constantes.nombreJourMaxReine-Constantes.nombreJourMiniReine) + Constantes.nombreJourMiniReine);
+		reine.setEtat(new Adulte(new Reine()));
 		reine.setRoleAdulte(RoleFourmi.Reine);
 		
 		fourmiliere.ajouterUneReine(reine);
 		//int tour = 0;
+		int nbFourmis;
 		while (true) {
 			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			//System.out.println("fourmiliere size "+fourmiliere.getListeFourmis().size());
-			int nbFourmis = fourmiliere.getListeFourmis().size();
+			fourmiliere.purge();
+			nbFourmis = fourmiliere.getListeFourmis().size();
 			for(int i = 0; i<nbFourmis; i++)
 			{
 				//System.out.println("i : "+i);
 				fourmiliere.getListeFourmis().get(i).action();
-				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
+				System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
 			
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);

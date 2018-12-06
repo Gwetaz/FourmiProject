@@ -5,6 +5,8 @@ import general.Fourmi;
 import general.Fourmiliere;
 import general.IMovableDrawable;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -24,12 +26,14 @@ public class Monde3 extends JPanel{
 	private List<Cercle> listeCercle;
 	private List<Cercle> listeproie;
 	String name = "";
+	private int nbJour;
 	
 	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
 		this.name = name;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
 		this.listeproie = listeproie; 
+		this.nbJour = 0;
 	}
 	public List<IMovableDrawable> contents() {
 		return drawables;
@@ -71,7 +75,11 @@ public class Monde3 extends JPanel{
 	}
 	
 	public void paint(Graphics g) {
+		
 	      super.paint(g);
+	      this.nbJour++;
+	      //g.setFont(new Font("TimesRoman", Font.PLAIN, 50)); 
+	      g.drawString("Jour : "+this.nbJour, 50, 50);
 	      for (Iterator<IMovableDrawable> iter = drawables.iterator(); iter.hasNext();) {
 	          iter.next().draw(g);
 	      }
@@ -81,6 +89,7 @@ public class Monde3 extends JPanel{
 	      for (Iterator<Cercle> iter2 = listeproie.iterator(); iter2.hasNext();) {
 	    	  iter2.next().draw(g);;
 	      }
+	      
 	  }
 
     public void clear() {

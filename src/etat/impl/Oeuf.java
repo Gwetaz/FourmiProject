@@ -14,7 +14,7 @@ public class Oeuf extends Etat{
 	}
 	
 	
-	public void actionEtat(Fourmi f){
+	/*public void actionEtat(Fourmi f){
 		f.setEtat(new Larve());
-	}
+	}*/
 }

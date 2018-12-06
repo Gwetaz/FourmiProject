@@ -17,9 +17,33 @@ public class Fourmi {
 	public int nbJourEnLarve;
 	public int nbJourEnNymphe;
 	public int nbJourDeVie;
+	public int nbJourDeMort;
+	boolean vivante;
+
+	public int getNbJourDeVie() {
+		return nbJourDeVie;
+	}
+
+
+	public int getNbJourDeMort() {
+		return nbJourDeMort;
+	}
+
+
+	public void setNbJourDeMort(int nbJourDeMort) {
+		this.nbJourDeMort = nbJourDeMort;
+	}
+
+
+	public void setNbJourDeVie(int nbJourDeVie) {
+		this.nbJourDeVie = nbJourDeVie;
+	}
+
 
 	public Fourmi(int naissance, int posx, int posy, Fourmiliere fourmiliere)
 	{
+		this.vivante = true;
+		this.nbJourDeMort = 0;
 		this.nbJourEnOeuf = 1;
 		this.nbJourEnLarve = 1;
 		this.nbJourEnNymphe = 1;
@@ -42,6 +66,16 @@ public class Fourmi {
 	}
 	
 	
+	public boolean isVivante() {
+		return vivante;
+	}
+
+
+	public void setVivante(boolean vivante) {
+		this.vivante = vivante;
+	}
+
+
 	public Fourmiliere getFourmiliere() {
 		return fourmiliere;
 	}
@@ -123,7 +157,7 @@ public class Fourmi {
 	public String toString()
 	{
 		String res = "Fourmis : sexe "+this.getFourmiFemelle();
-		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString()+" Role Adulte : "+this.getRoleAdulte();
+		res = res+" posX = "+this.posX+" posY = "+this.posY+" Poids : "+this.getEtat().getPoid()+" Etat : "+this.getEtat().toString()+" Role Adulte : "+this.getRoleAdulte()+" Nb jour de vie : "+this.nbJourDeVie+" Date de cécès en jours : "+this.nbJourDeMort+" Nombre de jour restant : "+(this.nbJourDeMort-this.nbJourDeVie);
 		return res;
 	}
 
@@ -131,7 +165,7 @@ public class Fourmi {
 	
 	public void action() {
 		this.getEtat().action(this);
-		
+		//this.nbJourDeVie++;
 	}
 
 	

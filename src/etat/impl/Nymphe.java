@@ -1,6 +1,8 @@
 package etat.impl;
 
 import java.awt.Color;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 import role.impl.Ouvriere;
@@ -17,11 +19,11 @@ public class Nymphe extends Etat{
 		//this.nbJourEnEtat = 0;
 		this.changerEtat(EtatFourmi.Nymphe);
 		Random r = new Random();
-		this.poid = 1.5 + r.nextFloat() * (2-1.5);
+		this.poid = BigDecimal.valueOf(1.5 + r.nextFloat() * (2-1.5)).setScale(2, RoundingMode.HALF_UP).doubleValue();
 		this.color = Constantes.couleurNymphe;
 	}
 	
-	public static void actionEtat(Fourmi f){
+	/*public static void actionEtat(Fourmi f){
 		Random r = new Random();
 		int role = r.nextInt(100-0);
 		if(role <= Constantes.pourcentOuvriere)
@@ -32,6 +34,6 @@ public class Nymphe extends Etat{
 			f.setEtat(new Adulte(new Soldat()));
 			f.setRoleAdulte(RoleFourmi.Soldat);
 		}		
-	}
+	}*/
 
 }
