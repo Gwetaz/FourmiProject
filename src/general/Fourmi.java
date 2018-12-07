@@ -19,6 +19,7 @@ public class Fourmi {
 	public int nbJourDeVie;
 	public int nbJourDeMort;
 	boolean vivante;
+	boolean PossedeNourriture;
 
 	public int getNbJourDeVie() {
 		return nbJourDeVie;
@@ -27,6 +28,15 @@ public class Fourmi {
 
 	public int getNbJourDeMort() {
 		return nbJourDeMort;
+	}
+
+	public boolean isPossedeNourriture() {
+		return PossedeNourriture;
+	}
+
+
+	public void setPossedeNourriture(boolean possedeNourriture) {
+		PossedeNourriture = possedeNourriture;
 	}
 
 
