@@ -103,8 +103,6 @@ public class Matrice {
 
 	public int PheroOuPas(Fourmi f)
 	{
-		
-		int i,j;
 		Point p = this.DePosACase(f.getPosX(), f.getPosY());
 		return this.matrice[p.x][p.y];
 	}
