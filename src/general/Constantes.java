@@ -50,4 +50,12 @@ public class Constantes {
 	public final static int nombreProies = 10;
 	public final static Color couleurStack = new Color(255, 184 ,77);
 	public final static int tailleStack = 50;
+	public final static int departStack1X = 600;
+	public final static int departStack1Y = 200;
+	public final static int departStack2X = 600;
+	public final static int departStack2Y = 550;
+	public final static int departStack3X = 950;
+	public final static int departStack3Y = 200;
+	public final static int departStack4X = 950;
+	public final static int departStack4Y = 550;
 }

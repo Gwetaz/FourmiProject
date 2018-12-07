@@ -15,6 +15,7 @@ import general.Matrice;
 import general.Nid;
 import general.Proie;
 import general.RectangleForme;
+import general.Stack;
 
 public class Vue {
 
@@ -81,5 +82,17 @@ public class Vue {
 		return r;
 	}
 	
-	
+	public static List<RectangleForme> stack(Stack s) {
+		List<RectangleForme> listeStack = new ArrayList<RectangleForme>();
+		RectangleForme s1,s2,s3,s4;
+		s1 = new RectangleForme(Constantes.couleurStack, new Point(Constantes.departStack1X,Constantes.departStack1Y), new Dimension(Constantes.tailleStack, Constantes.tailleStack));
+		s2 = new RectangleForme(Constantes.couleurStack, new Point(Constantes.departStack2X,Constantes.departStack2Y), new Dimension(Constantes.tailleStack, Constantes.tailleStack));
+		s3 = new RectangleForme(Constantes.couleurStack, new Point(Constantes.departStack3X,Constantes.departStack3Y), new Dimension(Constantes.tailleStack, Constantes.tailleStack));
+		s4 = new RectangleForme(Constantes.couleurStack, new Point(Constantes.departStack4X,Constantes.departStack4Y), new Dimension(Constantes.tailleStack, Constantes.tailleStack));
+		listeStack.add(s1);
+		listeStack.add(s2);
+		listeStack.add(s3);
+		listeStack.add(s4);
+		return listeStack;
+	}
 }
