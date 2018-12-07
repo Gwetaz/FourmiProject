@@ -48,7 +48,7 @@ public class Monde3 extends JPanel{
 		{
 			for (int j=0; j<matrice.getMatrice()[0].length; j++)
 			{
-				System.out.println();
+				//System.out.println(matrice.getMatrice()[0].length",");
 			}
 		}
 	}
