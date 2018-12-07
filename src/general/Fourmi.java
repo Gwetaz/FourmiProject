@@ -190,13 +190,12 @@ public class Fourmi {
 		
 		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
 		{
-			JeCalcul = Math.sqrt((this.posX - fourmiliere.getListeStack().get(i).Casex))
+			//JeCalcul = Math.sqrt((this.posX - fourmiliere.getListeStack().get(i).Casex))
 			
 		}
 		
 		
 	}
-
 	
 	
 
