@@ -123,6 +123,14 @@ public class Monde3 extends JPanel{
 	{
 		return this.matrice;
 	}
+	public boolean cheminExiste(Point caseMatrice) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public void creerChemin(Point caseMatrice) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

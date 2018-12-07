@@ -181,6 +181,12 @@ public class Fourmi {
 		//this.nbJourDeVie++;
 	}
 
+
+	public void retourMaison() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 
