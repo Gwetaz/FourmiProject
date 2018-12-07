@@ -3,10 +3,8 @@ package etat.impl;
 import general.Action;
 import general.Constantes;
 import general.Fourmi;
-import general.Matrice;
 
 import java.awt.Color;
-import java.text.DecimalFormat;
 import java.util.Random;
 
 import IHM.Monde3;
@@ -77,7 +75,6 @@ public class Etat implements Action{
 			}else{
 				f.setEtat(new Nymphe());
 			}
-			//Larve.actionEtat(f);
 			break;
 		case Nymphe:
 			if(f.nbJourEnNymphe < Constantes.nbJourEnNymphe)
@@ -106,9 +103,7 @@ public class Etat implements Action{
 					f.setEtat(new Adulte(new Sexuee()));
 					f.setRoleAdulte(RoleFourmi.Sexuee);
 				}
-				//f.setEtat(new Larve());
 			}
-			//Nymphe.actionEtat(f);
 			break;
 		case Adulte:
 			if(f.getNbJourDeMort()-f.getNbJourDeVie() == 0)

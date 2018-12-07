@@ -1,6 +1,5 @@
 package general;
 
-import IHM.Monde;
 import IHM.Monde3;
 
 public interface Action {

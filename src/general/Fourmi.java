@@ -2,7 +2,6 @@ package general;
 import java.awt.Point;
 import java.util.Random;
 
-import IHM.Monde;
 import IHM.Monde3;
 import etat.impl.* ;
 import role.impl.*;
@@ -193,7 +192,6 @@ public class Fourmi {
 	
 	public void action(Monde3 monMonde) {
 		this.getEtat().action(this, monMonde);
-		//this.nbJourDeVie++;
 	}
 
 
@@ -224,7 +222,7 @@ public class Fourmi {
 	
 	public void retourMaison(Monde3 m)
 	{
-		/*int i = StackProche(m);
+		int i = StackProche(m);
 		Point Posfourmi = m.getMatrice().DePosACase(this.posX, this.posY);
 		
 		if( fourmiliere.getListeStack().get(i).Casex > Posfourmi.getX() )
@@ -243,7 +241,7 @@ public class Fourmi {
 		else if( fourmiliere.getListeStack().get(i).Casey < Posfourmi.getY() )
 		{
 			this.posY = this.posY-10;
-		}*/
+		}
 		
 		
 		

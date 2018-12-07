@@ -1,13 +1,9 @@
 package general;
 
 import java.awt.Dimension;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import IHM.Monde;
 import IHM.Monde3;
-import role.impl.Reine;
 import vue.Vue;
 
 public class FacadeMonde {
@@ -29,8 +25,6 @@ public class FacadeMonde {
 	{
 		return Vue.nid(nid);
 	}
-	
-	//public static List<RectangleForme> genererStack
 	
 	public static List<Cercle> genererListCercle(Fourmiliere fourmiliere)
 	{

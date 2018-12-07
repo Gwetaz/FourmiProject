@@ -1,13 +1,11 @@
 package etat.impl;
 
 import general.Constantes;
-import general.Fourmi;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
 
-import role.impl.Ouvriere;
 import role.impl.Role;
 
 public class Adulte extends Etat{
@@ -47,10 +45,5 @@ public class Adulte extends Etat{
 	public void setRole(Role role) {
 		this.role = role;
 	}
-
-	
-	/*public void actionEtat(Fourmi f){
-		role.action(f);
-	}*/
 	
 }
