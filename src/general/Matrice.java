@@ -5,12 +5,12 @@ import java.awt.Point;
 public class Matrice {
 	
 	
-	protected boolean[][] Matrice;
+	protected int[][] matrice;
 
 	
 	public Matrice() {
 		
-		Matrice = new boolean[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
+		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
 		// Donne le nombre de cases 
 		
 	}
@@ -21,11 +21,11 @@ public class Matrice {
 	{
 		 int i,j;
 		 
-		 for(i=0;i < Matrice.length ; i++) // On parcours les lignes 
+		 for(i=0;i < matrice.length ; i++) // On parcours les lignes 
 		 {
-			 for(j =0; j < Matrice[i].length ; j++) // On parcours les colonnes
+			 for(j =0; j < matrice[i].length ; j++) // On parcours les colonnes
 			 {
-				 Matrice[i][j] = false;
+				 matrice[i][j] = 0;
 			 }
 		 }
 		
@@ -34,7 +34,7 @@ public class Matrice {
 	
 	public void PrioPlus(int posx , int posy )
 	{
-		Matrice[posx][posy] = true;
+		matrice[posx][posy] = 1;
 		
 		
 	}
@@ -45,7 +45,7 @@ public class Matrice {
 	
 	public void Reset(int posx , int posy )
 	{
-		Matrice[posx][posy] = false;
+		matrice[posx][posy] = 0;
 		
 		
 	}
@@ -69,6 +69,7 @@ public class Matrice {
 		
 		i = Math.round(posx/Constantes.tailleCase);
 		j = Math.round(posy/Constantes.tailleCase);
+		matrice[i][j] = 1;
 		Point p = new Point(i,j) ;
 		//return p;
 		
@@ -81,12 +82,12 @@ public class Matrice {
 	
 	
 	
-	public boolean PheroOuPas(Fourmi f)
+	public int PheroOuPas(Fourmi f)
 	{
 		
 		int i,j;
 		Point p = this.DePosACase(f.getPosX(), f.getPosY());
-		return this.Matrice[p.x][p.y];
+		return this.matrice[p.x][p.y];
 	}
 	
 	
