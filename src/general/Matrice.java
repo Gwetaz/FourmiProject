@@ -6,6 +6,8 @@ public class Matrice {
 	
 	
 	protected int[][] matrice;
+	Fourmiliere f ;
+	
 
 	
 	public Matrice() {
@@ -66,6 +68,9 @@ public class Matrice {
 	
 	public void MarquerCaseProie(int posx , int posy)
 	{
+		Point  p = this.DePosACase(posx, posy);
+		
+		this.matrice[p.x][p.y] = 1;
 		
 	
 		
@@ -74,10 +79,20 @@ public class Matrice {
 	}
 	
 	
-	
-	
-	
-	
+	public Point RenvoyerCoordProie(int posx,int posy)
+	{
+		Point p = this.DePosACase(posx, posy);
+		
+		for (int i = 0; i < f.getListeProies().size() ; i ++ )
+		{
+			Point pProie = this.DePosACase(f.getListeProies().get(i).posX, f.getListeProies().get(i).posY);
+			if (pProie.equals(p)) return pProie;
+		}
+		
+		
+		return null;
+		
+	}
 	
 	
 	public int[][] getMatrice() {
