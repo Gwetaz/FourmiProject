@@ -66,7 +66,7 @@ public class Demo4 {
 			for(int i = 0; i<nbFourmis; i++)
 			{
 				//System.out.println("i : "+i);
-				fourmiliere.getListeFourmis().get(i).action();
+				fourmiliere.getListeFourmis().get(i).action(monMonde.getMatrice());
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
 			int nbProies = fourmiliere.getListeProies().size();

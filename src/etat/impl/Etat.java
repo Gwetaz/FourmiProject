@@ -3,6 +3,7 @@ package etat.impl;
 import general.Action;
 import general.Constantes;
 import general.Fourmi;
+import general.Matrice;
 
 import java.awt.Color;
 import java.text.DecimalFormat;
@@ -56,7 +57,7 @@ public class Etat implements Action{
 	}
 
 	@Override
-	public void action(Fourmi f) {
+	public void action(Fourmi f, Matrice m) {
 		
 		switch(etatFourmi)
 		{
@@ -117,7 +118,7 @@ public class Etat implements Action{
 				switch(f.getRoleAdulte())
 				{
 				case Ouvriere:
-					Ouvriere.actionOuvriere(f);
+					Ouvriere.actionOuvriere(f,m);
 					break;
 				case Soldat:
 					Soldat.actionSoldat(f);

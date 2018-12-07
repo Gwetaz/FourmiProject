@@ -4,6 +4,7 @@ import general.Cercle;
 import general.Fourmi;
 import general.Fourmiliere;
 import general.IMovableDrawable;
+import general.Matrice;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -25,10 +26,12 @@ public class Monde3 extends JPanel{
 	private Fourmiliere fourmiliere;
 	private List<Cercle> listeCercle;
 	private List<Cercle> listeproie;
+	private Matrice matrice;
 	String name = "";
 	private int nbJour;
 	
 	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
+		this.matrice = new Matrice();
 		this.name = name;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
@@ -37,6 +40,14 @@ public class Monde3 extends JPanel{
 	}
 	public List<IMovableDrawable> contents() {
 		return drawables;
+	}
+	
+	public void afficherMatrice()
+	{
+		for (int i=0; i<matrice.getMatrice().length; i++)
+		{
+			//for (int j=0; j<matrice.getMatrice())
+		}
 	}
 	
 	public void open() {
@@ -101,7 +112,10 @@ public class Monde3 extends JPanel{
      }
 
 	
-	
+    public  Matrice getMatrice()
+	{
+		return this.matrice;
+	}
 
 	
 }
