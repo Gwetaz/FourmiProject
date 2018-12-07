@@ -156,7 +156,7 @@ public class Ouvriere extends Role{
 						
 					}else{ //si case phromone et pas nourriture et pas dans de chemin qui existe = 1ere qui crer le chemin
 						
-						m.affProieDansCase(m.getMatrice().DePosACase(posx, posy));
+						//m.affProieDansCase(m.getMatrice().DePosACase(posx, posy));
 					}
 				}
 				
