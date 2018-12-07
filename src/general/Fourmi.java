@@ -1,4 +1,5 @@
 package general;
+import java.awt.Point;
 import java.util.Random;
 
 import IHM.Monde;
@@ -196,13 +197,15 @@ public class Fourmi {
 	}
 
 
-	public void retourMaison() {
+	public void retourMaison(Monde3 m) {
 		
 		int JeCalcul =0 ;
 		
+		
 		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
 		{
-		//	JeCalcul = Math.sqrt((this.posX - Matrice.DeCaseaPosfourmiliere.getListeStack().get(i).Casex))
+			//Point p = new Point(Matrice.DeCaseaPosfourmiliere.getListeStack().get(i).Casex,0);
+			//JeCalcul = Math.sqrt((this.posX - ))
 			
 		}
 		

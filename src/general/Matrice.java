@@ -55,7 +55,7 @@ public class Matrice {
 	}
 	
 	
-	public static Point DePosACase(int posx , int posy)
+	public Point DePosACase(int posx , int posy)
 	{
 		int i,j;
 		
@@ -121,7 +121,7 @@ public class Matrice {
 	}
 	
 	
-	public static Point DeCaseaPos(int Casex , int Casey)
+	public Point DeCaseaPos(int Casex , int Casey)
 	{
 
 		int i,j;
