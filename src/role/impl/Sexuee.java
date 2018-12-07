@@ -11,7 +11,7 @@ public class Sexuee extends Role{
 		this.setRole(RoleFourmi.Sexuee);
 	}
 	
-	
+	//Lorsqu'une fourmi devient une adulte et prend le rôle de sexuée elle est envoyé en dehors de la fenêtre pour simuler le fait qu'elle aille se reproduire
 	public static void sortirEcran(Fourmi f)
 	{
 		int posx,posy,ecartHaut,ecartBas,ecartDroite,ecartGauche;

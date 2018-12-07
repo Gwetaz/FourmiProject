@@ -14,6 +14,7 @@ public class Reine extends Role{
 		this.setRole(RoleFourmi.Reine);
 	}
 	
+	//Cette méthode génère des oeufs de fourmi dans des position aléatoire dans le nid
 	public static void genererFourmi(int tempsdenaissance, Fourmiliere fourmiliere) {
 		Random rx = new Random();
 		Random ry = new Random();

@@ -18,6 +18,7 @@ import general.RectangleForme;
 
 public class Vue {
 
+	//Créer les cercles représentant les fourmis
 	public static List<Cercle> listeFourmis(List<Fourmi> listeFourmis){
 		List<Cercle> listeCercles = new ArrayList<Cercle>();
 		List<Cercle> listeReine = new ArrayList<Cercle>();
@@ -37,6 +38,7 @@ public class Vue {
 		return listeCercles;
 	}
 	
+	//Créer les cercles représentant les proies
 	public static List<Cercle> listeproie(Fourmiliere fourmiliere, Matrice m){
 		List<Cercle> listeProie = new ArrayList<Cercle>();
 		for(int i=0; i<Constantes.nombreProies; i++) {
@@ -63,18 +65,21 @@ public class Vue {
 		return listeProie;
 	}
 	
+	//Créer le rectangle représentant la fourmilière
 	public static RectangleForme fourmiliere(Fourmiliere f) {
 		RectangleForme r;
 		r = new RectangleForme(Constantes.couleurFourmiliere, new Point(Constantes.departFourmiliereX, Constantes.departFourmiliereY),new Dimension(Constantes.tailleFourmiliereX, Constantes.tailleFourmiliereY));
 		return r;
 	}
 	
+	//Créer le rectangle représentant le nid
 	public static RectangleForme nid(Nid n) {
 		RectangleForme r;
 		r = new RectangleForme(Constantes.couleurNid, new Point(Constantes.departNidX, Constantes.departNidY),new Dimension(Constantes.tailleNidX, Constantes.tailleNidY));
 		return r;
 	}
 	
+	//Créer les rectangles représentant les stack de nourriture (endroit où les fourmis déposent la nourriture)
 	public static List<RectangleForme> stack() {
 		List<RectangleForme> listeStack = new ArrayList<RectangleForme>();
 		RectangleForme s1,s2,s3,s4;
