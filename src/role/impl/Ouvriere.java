@@ -1,5 +1,6 @@
 package role.impl;
 
+import java.awt.Point;
 import java.util.Random;
 
 import general.Constantes;
@@ -76,11 +77,16 @@ public class Ouvriere extends Role{
 		Random r = new Random();
 		int prob;
 		prob = r.nextInt(3-1) + 1;
-		if(prob == 1) {
-			deplacementFourmiliere(f);
-		}
-		else if(prob == 2) {
+		if(m.PheroOuPas(f) == 1) {
 			deplacementChasse(f,m);
+		}
+		else {
+			if(prob == 1) {
+				deplacementFourmiliere(f);
+			}
+			else if(prob == 2) {
+				deplacementChasse(f,m);
+			}
 		}
 		
 	}
@@ -93,6 +99,7 @@ public class Ouvriere extends Role{
 		if(posy > Constantes.departNidY && posy < Constantes.finNidY && posx > Constantes.departNidX && posx < Constantes.finNidX) {
 			sortirNid(f);
 		}
+		
 		prob = r.nextInt(5-1) + 1;
 		if(prob == 1)
 			f.setPosX(posx+10);
@@ -107,17 +114,28 @@ public class Ouvriere extends Role{
 	public static void deplacementChasse(Fourmi f, Matrice m) {	
 		Random r = new Random();
 		int posx,posy, prob;
+		Point proie;
 		posx = f.getPosX();
 		posy = f.getPosY();
 		if(posy > Constantes.departFourmiliereY && posy < Constantes.departFourmiliereY+Constantes.tailleFourmiliereY && posx > Constantes.departFourmiliereX && posx < Constantes.departFourmiliereX+Constantes.tailleFourmiliereX) {
 			sortirFourmiliere(f);
 		}
 		
-		if(true) {
+		if(m.PheroOuPas(f) == 1) {
+			proie = m.RenvoyerCoordProie(posx, posy);
+			System.out.println(proie.getX()+" "+proie.getY());
+			if(proie.getX() > posx)
+				f.setPosX(posx+10);
+			else if(proie.getX() < posx)
+				f.setPosX(posx-10);
+			else if(proie.getY() > posy)
+				f.setPosY(posy+10);
+			else if(proie.getY() < posy)
+				f.setPosY(posy-10);
 			
 		}
 		else {
-			/*prob = r.nextInt(5-1) + 1;
+			prob = r.nextInt(5-1) + 1;
 			if(prob == 1)
 				f.setPosX(posx+10);
 			if(prob == 2)
@@ -125,7 +143,7 @@ public class Ouvriere extends Role{
 			if(prob == 3)
 				f.setPosY(posy+10);
 			if(prob == 4)
-				f.setPosY(posy-10);*/
+				f.setPosY(posy-10);
 		}		
 	}
 	
