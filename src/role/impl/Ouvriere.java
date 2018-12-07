@@ -130,6 +130,7 @@ public class Ouvriere extends Role{
 			if(m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getX() == f.getStackproche(m).getX() && m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getY() == f.getStackproche(m).getY())
 			{
 				System.out.println("ON NEZ SUR LE STACK");
+				f.setPossedeNourriture(false);
 			}
 			//System.out.println("CREATION CHEMIN");
 			//retour à la maison en creant chemin
@@ -150,7 +151,7 @@ public class Ouvriere extends Role{
 					}
 					else if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) { //si case phromone et pas nourriture et sur un chemin qui existe
 						// go to proie
-					}else{ //si case phromone et pas nourriture et pas dans de chemin qui existe
+					}else{ //si case phromone et pas nourriture et pas dans de chemin qui existe = 1ere qui crer le chemin
 						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
 						f.setCreationChemin(true);
 						System.out.println("ELLLLLLSSSEEE");
