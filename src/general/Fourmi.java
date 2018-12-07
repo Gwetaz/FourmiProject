@@ -197,17 +197,54 @@ public class Fourmi {
 	}
 
 
-	public void retourMaison(Monde3 m) {
+	public int StackProche(Monde3 m) {
 		
-		int JeCalcul =0 ;
-		
-		
+		double JeCalcul =1000 ;
+		double intermed = 0 ;		
+		int QuelStack = -1 ;
 		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
 		{
-			//Point p = new Point(Matrice.DeCaseaPosfourmiliere.getListeStack().get(i).Casex,0);
-			//JeCalcul = Math.sqrt((this.posX - ))
+			Point p = m.getMatrice().DeCaseaPos(fourmiliere.getListeStack().get(i).Casex, fourmiliere.getListeStack().get(i).Casey);
+			
+			intermed = Math.sqrt(((this.posX - p.x) * (this.posX - p.x) )+ ((this.posY - p.x) * (this.posY - p.x))) ;
+			 if ( intermed < JeCalcul ) 
+			 {
+				 JeCalcul = intermed;
+				 QuelStack= i;
+			 }
 			
 		}
+		return QuelStack;
+
+		
+	}
+	
+	
+	public void retourMaison(Monde3 m)
+	{
+		int i = StackProche(m);
+		Point Posfourmi = m.getMatrice().DePosACase(this.posX, this.posY);
+		
+		if( fourmiliere.getListeStack().get(i).Casex > Posfourmi.getX() )
+		{
+			this.posX = this.posX+10;
+		}
+		else if( fourmiliere.getListeStack().get(i).Casex < Posfourmi.getX() )
+		{
+			this.posX = this.posX-10;
+		}
+		
+		if( fourmiliere.getListeStack().get(i).Casey > Posfourmi.getY() )
+		{
+			this.posY = this.posY+10;
+		}
+		else if( fourmiliere.getListeStack().get(i).Casey < Posfourmi.getY() )
+		{
+			this.posY = this.posY-10;
+		}
+		
+		
+		
 		
 		
 	}
