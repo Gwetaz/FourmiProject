@@ -21,7 +21,7 @@ import general.RectangleForme;
 public class Demo3 {
 
 	public static void main(String[] args) {
-		Fourmiliere fourmiliere = new Fourmiliere();
+	/*	Fourmiliere fourmiliere = new Fourmiliere();
 		List<Fourmi> listeFourmis = new ArrayList<Fourmi>();
 		int posx,posy;
 		Random rx = new Random();
@@ -88,6 +88,6 @@ public class Demo3 {
 			monMonde.setListeCercle(listeCercle);
 			monMonde.setListeproie(listProie);
 			monMonde.repaint();
-		}
+		}*/
 	}
 }

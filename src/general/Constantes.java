@@ -38,7 +38,7 @@ public class Constantes {
 	public final static int tailleCase = 50;
 	public final static int prioriteManger = -1;
 	public final static int nbOeufsReine = 50;
-	public final static Color couleurProie = new Color(255,51,153);
+	public final static Color couleurProie = new Color(0,0,0);
 	public final static int departFrontierePatrouilleX = 700;
 	public final static int departFrontierePatrouilleY = 300;
 	public final static int finFrontierePatrouilleX = 900;

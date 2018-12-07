@@ -35,7 +35,7 @@ public class FacadeMonde {
 		return Vue.listeFourmis(fourmiliere.listeFourmis);
 	}
 	
-	public List<Cercle> genererProie(Fourmiliere fourmiliere)
+	public static List<Cercle> genererProie(Fourmiliere fourmiliere)
 	{
 		return Vue.listeproie(fourmiliere);
 	}

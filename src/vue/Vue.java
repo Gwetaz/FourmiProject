@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import role.impl.RoleFourmi;
 import general.Cercle;
@@ -37,11 +38,34 @@ public class Vue {
 	}
 	
 	public static List<Cercle> listeproie(Fourmiliere fourmiliere){
-		List<Cercle> listeCercles = new ArrayList<Cercle>();
-		/*for(int i=0;i<listeproie.size();i++) {
-			listeCercles.add(new Cercle(listeproie.get(i).getColor(), new Point(listeproie.get(i).getPosX(), listeproie.get(i).getPosY()), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
-		}*/
-		return listeCercles;
+		List<Cercle> listeProie = new ArrayList<Cercle>();
+		for(int i=0; i<Constantes.nombreProies; i++) {
+			//System.out.println("proie "+i);
+			//listeProie.add(new Cercle(fourmiliere.getListeProies().get(i).getColor(), new Point(fourmiliere.getListeProies().get(i).getPosX(), fourmiliere.getListeProies().get(i).getPosY()), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
+			int posx,posy;
+			Random rx = new Random();
+			Random ry = new Random();
+			posx = rx.nextInt(Constantes.tailleJframeX ) ;
+			//rand.nextInt(max - min + 1) + min
+			//System.out.println("x entre "+Constantes.departFourmiliereX+" et "+(Constantes.departFourmiliereX + Constantes.tailleFourmiliereX));
+			while((posx >= Constantes.departFourmiliereX && posx <= (Constantes.departFourmiliereX + Constantes.tailleFourmiliereX)) || posx >= (Constantes.tailleJframeX - Constantes.tailleProie))
+			{
+				posx = rx.nextInt(Constantes.tailleJframeX );
+			}
+			
+			posy = ry.nextInt(Constantes.tailleJframeY ) ;
+			while((posy >= Constantes.departFourmiliereY && posy <= (Constantes.departFourmiliereY + Constantes.tailleFourmiliereY)) || posy >= (Constantes.tailleJframeY - Constantes.tailleProie))
+			{
+				posy = ry.nextInt(Constantes.tailleJframeX );
+			}
+			
+			Proie p = new Proie(2, posx, posy );
+			System.out.println(p.toString());
+			fourmiliere.getListeProies().add(p);
+			listeProie.add(new Cercle(Constantes.couleurProie, new Point(posx, posy), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
+		}
+		
+		return listeProie;
 	}
 	
 	public static RectangleForme fourmiliere(Fourmiliere f) {

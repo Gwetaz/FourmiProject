@@ -45,13 +45,18 @@ public class Demo4 {
 		reine.setRoleAdulte(RoleFourmi.Reine);
 		
 		fourmiliere.ajouterUneReine(reine);
+		
+		
+		
+		listeProies = FacadeMonde.genererProie(fourmiliere);
+		monMonde.setListeproie(listeProies);
 		//int tour = 0;
 		int nbFourmis;
 		while (true) {
 			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
-				Thread.sleep(50);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -64,17 +69,21 @@ public class Demo4 {
 				fourmiliere.getListeFourmis().get(i).action();
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
-			/*int nbProies = fourmiliere.getListeProies().size();
+			int nbProies = fourmiliere.getListeProies().size();
 			for(int i = 0; i<nbProies; i++)
 			{
 				//System.out.println("i : "+i);
-				fourmiliere.getListeFourmis().get(i).action();
+				//fourmiliere.getListeProies().;
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
-			}*/
-			listeProies = null;
+			}
+			
 			listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 			monMonde.setListeCercle(listeCercle);
 
+			
+			/*listeProies = FacadeMonde.genererProie(fourmiliere);
+			monMonde.setListeproie(listeProies);*/
+			
 			//System.out.println("BACKSLASH AINE");
 			monMonde.repaint();
 			//tour++;
