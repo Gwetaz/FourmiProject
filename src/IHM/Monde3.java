@@ -31,7 +31,7 @@ public class Monde3 extends JPanel{
 	private int nbJour;
 	
 	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
-		this.matrice = new Matrice();
+		this.matrice = new Matrice(fourmiliere);
 		this.name = name;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
@@ -48,7 +48,7 @@ public class Monde3 extends JPanel{
 		{
 			for (int j=0; j<matrice.getMatrice()[0].length; j++)
 			{
-				//System.out.println(matrice.getMatrice()[0].length",");
+				System.out.println(matrice.getMatrice()[i][j]+",");
 			}
 		}
 	}
