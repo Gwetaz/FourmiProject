@@ -11,6 +11,7 @@ public class Matrice {
 	public Matrice() {
 		
 		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
+		this.initialiser(); 
 		// Donne le nombre de cases 
 		
 	}
@@ -57,7 +58,7 @@ public class Matrice {
 		
 		i = Math.round(posx/Constantes.tailleCase);
 		j = Math.round(posy/Constantes.tailleCase);
-		Point p = new Point(i,j) ;
+		Point p = new Point(j,i) ;
 		return p;
 		
 	}
@@ -70,7 +71,7 @@ public class Matrice {
 		i = Math.round(posx/Constantes.tailleCase);
 		j = Math.round(posy/Constantes.tailleCase);
 		matrice[i][j] = 1;
-		Point p = new Point(i,j) ;
+		Point p = new Point(j,i) ;
 		//return p;
 		
 	}
