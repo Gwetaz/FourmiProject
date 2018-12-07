@@ -215,14 +215,16 @@ public class Fourmi {
 			
 		}
 		return QuelStack;
-
-		
 	}
 	
+	public Point getStackproche(Monde3 m)
+	{
+		return new Point(fourmiliere.getListeStack().get(this.StackProche(m)).Casex,fourmiliere.getListeStack().get(this.StackProche(m)).Casey);
+	}
 	
 	public void retourMaison(Monde3 m)
 	{
-		int i = StackProche(m);
+		/*int i = StackProche(m);
 		Point Posfourmi = m.getMatrice().DePosACase(this.posX, this.posY);
 		
 		if( fourmiliere.getListeStack().get(i).Casex > Posfourmi.getX() )
@@ -241,7 +243,7 @@ public class Fourmi {
 		else if( fourmiliere.getListeStack().get(i).Casey < Posfourmi.getY() )
 		{
 			this.posY = this.posY-10;
-		}
+		}*/
 		
 		
 		

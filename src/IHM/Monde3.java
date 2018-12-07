@@ -124,14 +124,7 @@ public class Monde3 extends JPanel{
 	{
 		return this.matrice;
 	}
-	public boolean cheminExiste(Point caseMatrice) {
-		//System.out.println("Chemin existe Monde3");
-		/*for (int i=0; i< mapProieChemin.size(); i++)
-		{
-			//for(int j=0; mapProieChemin.get(i); )
-		}*/
-		
-		
+	public boolean cheminExiste(Point caseMatrice) {		
 
 		Set<List<Point>> cles = mapProieChemin.keySet();
 		Iterator<List<Point>> it = cles.iterator();
@@ -142,21 +135,45 @@ public class Monde3 extends JPanel{
 		   {
 			   if(caseMatrice.getX() == cle.get(i).getX() && caseMatrice.getY() == cle.get(i).getY())
 			   {
+				   Point valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
+				   System.out.println("CheminExiste case : "+caseMatrice.getX()+" "+caseMatrice.getY()+" valeur : "+valeur.getX()+" "+valeur.getY());
 				   return true;
 			   }
 		   }
-		   Object valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
+		   
 		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
 		}
 		
 		return false;
 	}
 	public void creerChemin(Point caseMatrice) {
-		System.out.println("creer chemin Monde3");
+		System.out.println("creer chemin Monde3"); 
 		// TODO Auto-generated method stub
 		List<Point> listePoint = new ArrayList<Point>();
 		listePoint.add(caseMatrice);
 		mapProieChemin.put(listePoint, caseMatrice);
+	}
+	public boolean proieDansCase(Point caseMatrice) {
+		Set<List<Point>> cles = mapProieChemin.keySet();
+		Iterator<List<Point>> it = cles.iterator();
+		while (it.hasNext()){
+			
+		   List<Point> cle = it.next(); // tu peux typer plus finement ici
+		   for (int i =0; i<cle.size(); i++)
+		   {
+			   if(caseMatrice.getX() == cle.get(i).getX() && caseMatrice.getY() == cle.get(i).getY())
+			   {
+				   Point valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
+				   if (caseMatrice.getX() == valeur.getX() && caseMatrice.getY() == valeur.getY())
+				   {
+					   System.out.println("PROIIIIIEEEEEE");
+					   return true;
+				   }
+			   }
+		   }
+		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
+		}
+		return false;
 	}
 
 	

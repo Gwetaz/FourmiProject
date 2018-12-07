@@ -84,7 +84,7 @@ public class Demo4 {
 			/*listeProies = FacadeMonde.genererProie(fourmiliere);
 			monMonde.setListeproie(listeProies);*/
 			
-			//System.out.println("BACKSLASH AINE");
+			System.out.println("");
 			monMonde.repaint();
 			//tour++;
 		}

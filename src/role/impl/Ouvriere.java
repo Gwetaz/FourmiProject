@@ -127,20 +127,29 @@ public class Ouvriere extends Role{
 		}
 		if(f.isCreationChemin())
 		{
-			System.out.println("CREATION CHEMIN");
+			//System.out.println("CREATION CHEMIN");
+			//retour à la maison en creant chemin
+			f.retourMaison(m);
 		}else{
 			if(m.getMatrice().PheroOuPas(f) == 1) {
 				if(f.isPossedeNourriture())
 				{
 					//retour maison (stack le plus proche)
 					f.retourMaison(m);
-				}else{
+				}else{ //si case phromone et pas nourriture
 					//si go proie avec hashmap
-					if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) {
+					if(m.proieDansCase(m.getMatrice().DePosACase(posx, posy)))//si case phromone et pas nourriture et dans une proie
+					{
 						f.setPossedeNourriture(true);
-					}
-					else {
 						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+						System.out.println("COUCOU");
+					}
+					else if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) { //si case phromone et pas nourriture et sur un chemin qui existe
+						// go to proie
+					}else{ //si case phromone et pas nourriture et pas dans de chemin qui existe
+						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+						f.setCreationChemin(true);
+						System.out.println("ELLLLLLSSSEEE");
 					}
 				}
 				/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
