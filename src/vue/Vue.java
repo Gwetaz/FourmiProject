@@ -82,7 +82,7 @@ public class Vue {
 		return r;
 	}
 	
-	public static List<RectangleForme> stack(Stack s) {
+	public static List<RectangleForme> stack() {
 		List<RectangleForme> listeStack = new ArrayList<RectangleForme>();
 		RectangleForme s1,s2,s3,s4;
 		s1 = new RectangleForme(Constantes.couleurStack, new Point(Constantes.departStack1X,Constantes.departStack1Y), new Dimension(Constantes.tailleStack, Constantes.tailleStack));

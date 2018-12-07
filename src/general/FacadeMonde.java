@@ -12,9 +12,9 @@ import vue.Vue;
 
 public class FacadeMonde {
 	
-	public static Monde3 genererMonde(Fourmiliere fourmiliere, Nid nid, List<Cercle> listeCercle, List<Cercle> listeProie) 
+	public static Monde3 genererMonde(Fourmiliere fourmiliere, Nid nid, List<Cercle> listeCercle, List<Cercle> listeProie, List<RectangleForme> listeStack) 
 	{
-		Monde3 monMonde = new Monde3("Mon Monde",fourmiliere,listeCercle, listeProie);
+		Monde3 monMonde = new Monde3("Mon Monde",fourmiliere,listeCercle, listeProie, listeStack);
 		monMonde.setBackground(Constantes.couleurSol);
 		monMonde.setPreferredSize(new Dimension(Constantes.tailleJframeX, Constantes.tailleJframeY));
 		return monMonde;
