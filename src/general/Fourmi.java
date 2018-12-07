@@ -109,6 +109,18 @@ public class Fourmi {
 	public void setRoleAdulte(RoleFourmi roleAdulte) {
 		this.roleAdulte = roleAdulte;
 	}
+	
+	
+
+
+	public boolean isCreationChemin() {
+		return creationChemin;
+	}
+
+
+	public void setCreationChemin(boolean creationChemin) {
+		this.creationChemin = creationChemin;
+	}
 
 
 	public Boolean getFourmiFemelle() {
@@ -190,7 +202,7 @@ public class Fourmi {
 		
 		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
 		{
-			//JeCalcul = Math.sqrt((this.posX - fourmiliere.getListeStack().get(i).Casex))
+		//	JeCalcul = Math.sqrt((this.posX - Matrice.DeCaseaPosfourmiliere.getListeStack().get(i).Casex))
 			
 		}
 		
