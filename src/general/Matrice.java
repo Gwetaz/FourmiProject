@@ -121,6 +121,21 @@ public class Matrice {
 	}
 	
 	
+	public Point DeCaseaPos(int Casex , int Casey)
+	{
+
+		int i,j;
+		
+		i = Math.round(Casex*Constantes.tailleCase);
+		j = Math.round(Casey*Constantes.tailleCase);
+		Point p = new Point(i,j) ;
+		return p;
+		
+		
+		
+	}
+	
+	
 	
 	
 	
