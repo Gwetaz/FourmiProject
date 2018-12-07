@@ -30,19 +30,17 @@ public class Monde3 extends JPanel{
 	private Fourmiliere fourmiliere;
 	private List<Cercle> listeCercle;
 	private List<Cercle> listeproie;
-	private List<RectangleForme> listeStack;
 	private Matrice matrice;
 	String name = "";
 	private int nbJour;
 	private HashMap<List<Point>,Point> mapProieChemin;
 	
-	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie, List<RectangleForme> listeStack) {
+	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
 		this.matrice = new Matrice(fourmiliere);
 		this.name = name;
 		this.listeCercle = listeCercle;
 		this.fourmiliere = fourmiliere;
 		this.listeproie = listeproie;
-		this.listeStack = listeStack;
 		this.nbJour = 0;
 		this.mapProieChemin = new HashMap<List<Point>,Point>();
 	}

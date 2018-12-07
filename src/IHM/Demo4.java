@@ -43,8 +43,12 @@ public class Demo4 {
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 		List<Cercle> listeProies = new ArrayList<Cercle> ();
 		List<RectangleForme> listeStackForme = Vue.stack();
-		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle, listeProies, listeStackForme);
+		Monde3 monMonde = FacadeMonde.genererMonde(fourmiliere, nid, listeCercle, listeProies);
 		monMonde.add(fourmiliereForme);
+		monMonde.add(listeStackForme.get(0));
+		monMonde.add(listeStackForme.get(1));
+		monMonde.add(listeStackForme.get(2));
+		monMonde.add(listeStackForme.get(3));
 		monMonde.add(nidForme);
 		monMonde.open();
 		
