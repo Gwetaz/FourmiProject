@@ -3,8 +3,6 @@ package role.impl;
 import general.Constantes;
 import general.Fourmi;
 
-import java.util.Random;
-
 public class Sexuee extends Role{
 	protected int nourriture;
 
@@ -44,8 +42,7 @@ public class Sexuee extends Role{
 	}
 	
 	public static void deplacement(Fourmi f) {
-		Random r = new Random();
-		int posx,posy,probabilite;
+		int posx,posy;
 		posx = f.getPosX();
 		posy = f.getPosY();
 		if(posy <= 0 || posy >= Constantes.tailleJframeY || posx <= 0 || posx >= Constantes.tailleJframeX)
@@ -55,15 +52,6 @@ public class Sexuee extends Role{
 		if(posy > 0 && posy < Constantes.tailleJframeY && posx > 0 && posx < Constantes.tailleJframeX){
 			sortirEcran(f);
 		}
-		/*probabilite = r.nextInt(5-1) + 1;
-		if(probabilite == 1)
-			f.setPosX(posx+10);
-		if(probabilite == 2)
-			f.setPosX(posx-10);
-		if(probabilite == 3)
-			f.setPosY(posy+10);
-		if(probabilite == 4)
-			f.setPosY(posy-10);*/
 	}
 	
 	public static void actionSexuee(Fourmi f) {

@@ -15,7 +15,6 @@ import general.Matrice;
 import general.Nid;
 import general.Proie;
 import general.RectangleForme;
-import general.Stack;
 
 public class Vue {
 
@@ -35,21 +34,16 @@ public class Vue {
 		for(int i=0;i<listeReine.size();i++) {
 			listeCercles.add(new Cercle(listeFourmis.get(i).getEtat().getColor(), new Point(listeFourmis.get(i).getPosX(), listeFourmis.get(i).getPosY()), new Dimension(Constantes.tailleReine,Constantes.tailleReine)));
 		}
-		//listeCercles.add(new Cercle(listeFourmis.get(0).getEtat().getColor(), new Point(listeFourmis.get(0).getPosX(), listeFourmis.get(0).getPosY()), new Dimension(Constantes.tailleReine,Constantes.tailleReine)));
 		return listeCercles;
 	}
 	
 	public static List<Cercle> listeproie(Fourmiliere fourmiliere, Matrice m){
 		List<Cercle> listeProie = new ArrayList<Cercle>();
 		for(int i=0; i<Constantes.nombreProies; i++) {
-			//System.out.println("proie "+i);
-			//listeProie.add(new Cercle(fourmiliere.getListeProies().get(i).getColor(), new Point(fourmiliere.getListeProies().get(i).getPosX(), fourmiliere.getListeProies().get(i).getPosY()), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
 			int posx,posy;
 			Random rx = new Random();
 			Random ry = new Random();
 			posx = rx.nextInt(Constantes.tailleJframeX ) ;
-			//rand.nextInt(max - min + 1) + min
-			//System.out.println("x entre "+Constantes.departFourmiliereX+" et "+(Constantes.departFourmiliereX + Constantes.tailleFourmiliereX));
 			while((posx >= Constantes.departFourmiliereX && posx <= (Constantes.departFourmiliereX + Constantes.tailleFourmiliereX)) || posx >= (Constantes.tailleJframeX - Constantes.tailleProie))
 			{
 				posx = rx.nextInt(Constantes.tailleJframeX );
@@ -62,7 +56,6 @@ public class Vue {
 			}
 			m.MarquerCaseProie(posx, posy);
 			Proie p = new Proie(2, posx, posy );
-			//System.out.println(p.toString());
 			fourmiliere.getListeProies().add(p);
 			listeProie.add(new Cercle(Constantes.couleurProie, new Point(posx, posy), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
 		}

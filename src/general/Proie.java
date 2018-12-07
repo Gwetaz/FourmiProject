@@ -61,7 +61,6 @@ public class Proie {
 	}
 
 	private void bouger() {
-		// TODO Auto-generated method stub
 		Random r = new Random();
 		int probabilite;
 		probabilite = r.nextInt(4-1) + 1;
