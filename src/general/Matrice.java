@@ -83,11 +83,19 @@ public class Matrice {
 	public Point RenvoyerCoordProie(int posx,int posy)
 	{
 		Point p = this.DePosACase(posx, posy);
+		Point renvoi = new Point(0,0);
 		
 		for (int i = 0; i < f.getListeProies().size() ; i ++ )
 		{
 			Point pProie = this.DePosACase(f.getListeProies().get(i).posX, f.getListeProies().get(i).posY);
-			if (pProie.equals(p)) return pProie;
+			if (pProie.equals(p)) 
+				{
+					renvoi.x = f.getListeProies().get(i).posX;
+					renvoi.y =  f.getListeProies().get(i).posY;
+					return renvoi;
+				}
+			
+			
 		}
 		
 		
