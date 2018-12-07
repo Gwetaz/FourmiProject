@@ -11,6 +11,7 @@ import general.Cercle;
 import general.Constantes;
 import general.Fourmi;
 import general.Fourmiliere;
+import general.Matrice;
 import general.Nid;
 import general.Proie;
 import general.RectangleForme;
@@ -37,7 +38,7 @@ public class Vue {
 		return listeCercles;
 	}
 	
-	public static List<Cercle> listeproie(Fourmiliere fourmiliere){
+	public static List<Cercle> listeproie(Fourmiliere fourmiliere, Matrice m){
 		List<Cercle> listeProie = new ArrayList<Cercle>();
 		for(int i=0; i<Constantes.nombreProies; i++) {
 			//System.out.println("proie "+i);
@@ -58,9 +59,9 @@ public class Vue {
 			{
 				posy = ry.nextInt(Constantes.tailleJframeX );
 			}
-			
+			m.MarquerCaseProie(posx, posy);
 			Proie p = new Proie(2, posx, posy );
-			System.out.println(p.toString());
+			//System.out.println(p.toString());
 			fourmiliere.getListeProies().add(p);
 			listeProie.add(new Cercle(Constantes.couleurProie, new Point(posx, posy), new Dimension(Constantes.tailleProie,Constantes.tailleProie)));
 		}

@@ -48,7 +48,7 @@ public class Demo4 {
 		
 		
 		
-		listeProies = FacadeMonde.genererProie(fourmiliere);
+		listeProies = FacadeMonde.genererProie(fourmiliere, monMonde.getMatrice());
 		monMonde.setListeproie(listeProies);
 		//int tour = 0;
 		int nbFourmis;
