@@ -1,14 +1,17 @@
 package general;
 
+import java.awt.Point;
+
 public class Matrice {
 	
 	
-	protected int[][] Matrice;
+	protected boolean[][] Matrice;
+
 	
 	public Matrice() {
 		
-		Matrice = new int[Constantes.tailleJframeX][Constantes.tailleJframeX/Constantes.tailleCase] ;
-		
+		Matrice = new boolean[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
+		// Donne le nombre de cases 
 		
 	}
 	
@@ -18,11 +21,11 @@ public class Matrice {
 	{
 		 int i,j;
 		 
-		 for(i=0;i < Matrice[i].length ; i++)
+		 for(i=0;i < Matrice.length ; i++) // On parcours les lignes 
 		 {
-			 for(j =0; j < Matrice[i][j] ; j++)
+			 for(j =0; j < Matrice[i].length ; j++) // On parcours les colonnes
 			 {
-				 Matrice[i][j] = 0;
+				 Matrice[i][j] = false;
 			 }
 		 }
 		
@@ -31,27 +34,64 @@ public class Matrice {
 	
 	public void PrioPlus(int posx , int posy )
 	{
-		Matrice[posx][posy] = Matrice[posx][posy]+1;
+		Matrice[posx][posy] = true;
 		
 		
 	}
 	
 	
 	
-	public void PrioManger(int posx , int posy )
-	{
-		Matrice[posx][posy] = Constantes.prioriteManger;
-		
-
-	}
 	
 	
 	public void Reset(int posx , int posy )
 	{
-		Matrice[posx][posy] = 0;
+		Matrice[posx][posy] = false;
 		
 		
 	}
+	
+	
+	public Point DePosACase(int posx , int posy)
+	{
+		int i,j;
+		
+		i = Math.round(posx/Constantes.tailleCase);
+		j = Math.round(posy/Constantes.tailleCase);
+		Point p = new Point(i,j) ;
+		return p;
+		
+	}
+	
+	
+	public void MarquerCaseProie(int posx , int posy)
+	{
+		int i,j;
+		
+		i = Math.round(posx/Constantes.tailleCase);
+		j = Math.round(posy/Constantes.tailleCase);
+		Point p = new Point(i,j) ;
+		//return p;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public boolean PheroOuPas(Fourmi f)
+	{
+		
+		int i,j;
+		Point p = this.DePosACase(f.getPosX(), f.getPosY());
+		return this.Matrice[p.x][p.y];
+	}
+	
+	
+	
+	
 	
 	
 	
