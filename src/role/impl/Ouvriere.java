@@ -127,6 +127,10 @@ public class Ouvriere extends Role{
 		}
 		if(f.isCreationChemin())
 		{
+			if(m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getX() == f.getStackproche(m).getX() && m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getY() == f.getStackproche(m).getY())
+			{
+				System.out.println("ON NEZ SUR LE STACK");
+			}
 			//System.out.println("CREATION CHEMIN");
 			//retour à la maison en creant chemin
 			f.retourMaison(m);
