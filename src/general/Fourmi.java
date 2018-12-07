@@ -59,6 +59,7 @@ public class Fourmi {
 		this.nbJourEnNymphe = 1;
 		this.nbJourDeVie = 0;
 		this.fourmiliere = fourmiliere;
+		this.PossedeNourriture = false;
 		Random r = new Random();
 		int sexe; 
 		sexe = r.nextInt(2-1) + 1;
