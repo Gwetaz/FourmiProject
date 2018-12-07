@@ -10,11 +10,12 @@ public class Matrice {
 	
 
 	
-	public Matrice() {
+	public Matrice(Fourmiliere f) {
 		
 		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
 		this.initialiser(); 
 		// Donne le nombre de cases 
+		this.f = f ;
 		
 	}
 	
