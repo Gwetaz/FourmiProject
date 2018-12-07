@@ -204,7 +204,7 @@ public class Fourmi {
 		{
 			Point p = m.getMatrice().DeCaseaPos(fourmiliere.getListeStack().get(i).Casex, fourmiliere.getListeStack().get(i).Casey);
 			
-			intermed = Math.sqrt(((this.posX - p.x) * (this.posX - p.x) )+ ((this.posY - p.x) * (this.posY - p.x))) ;
+			intermed = Math.sqrt(((this.posX - p.x) * (this.posX - p.x) )+ ((this.posY - p.y) * (this.posY - p.y))) ;
 			 if ( intermed < JeCalcul ) 
 			 {
 				 JeCalcul = intermed;
@@ -217,6 +217,7 @@ public class Fourmi {
 	
 	public Point getStackproche(Monde3 m)
 	{
+		System.out.println("case stack proche : "+fourmiliere.getListeStack().get(this.StackProche(m)).Casex+" "+fourmiliere.getListeStack().get(this.StackProche(m)).Casey+" i = "+this.StackProche(m));
 		return new Point(fourmiliere.getListeStack().get(this.StackProche(m)).Casex,fourmiliere.getListeStack().get(this.StackProche(m)).Casey);
 	}
 	

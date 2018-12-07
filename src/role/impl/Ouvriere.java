@@ -127,34 +127,46 @@ public class Ouvriere extends Role{
 		}
 		if(f.isCreationChemin())
 		{
+			//System.out.println("CREATION CHEMIN = TRUE");
 			if(m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getX() == f.getStackproche(m).getX() && m.getMatrice().DePosACase(f.getPosX(), f.getPosY()).getY() == f.getStackproche(m).getY())
 			{
 				System.out.println("ON NEZ SUR LE STACK");
 				f.setPossedeNourriture(false);
+			}else{
+				f.retourMaison(m);
 			}
 			//System.out.println("CREATION CHEMIN");
 			//retour à la maison en creant chemin
-			f.retourMaison(m);
 		}else{
 			if(m.getMatrice().PheroOuPas(f) == 1) {
+				
 				if(f.isPossedeNourriture())
 				{
+					System.out.println("POSSEDE NOURRITURE");
 					//retour maison (stack le plus proche)
-					f.retourMaison(m);
+					//f.retourMaison(m);
 				}else{ //si case phromone et pas nourriture
 					//si go proie avec hashmap
+					if(m.affProieDansCase(m.getMatrice().DePosACase(posx, posy)))
+					{
+						System.out.println("C LA VALEUR TRUEEEEEEE");
+					}else
 					if(m.proieDansCase(m.getMatrice().DePosACase(posx, posy)))//si case phromone et pas nourriture et dans une proie
 					{
 						f.setPossedeNourriture(true);
-						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+						//m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+						f.setCreationChemin(true);
+						f.retourMaison(m);
 						System.out.println("COUCOU");
 					}
 					else if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) { //si case phromone et pas nourriture et sur un chemin qui existe
 						// go to proie
+						System.out.println("IF CHEMIN EXISTE");
 					}else{ //si case phromone et pas nourriture et pas dans de chemin qui existe = 1ere qui crer le chemin
-						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
-						f.setCreationChemin(true);
+						//m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+						//f.setCreationChemin(true);
 						System.out.println("ELLLLLLSSSEEE");
+						m.affProieDansCase(m.getMatrice().DePosACase(posx, posy));
 					}
 				}
 				/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);

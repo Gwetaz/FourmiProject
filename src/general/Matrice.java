@@ -13,7 +13,8 @@ public class Matrice {
 	
 	public Matrice(Fourmiliere f) {
 		
-		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeY/Constantes.tailleCase] ;
+		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
+		System.out.println();
 		this.initialiser(); 
 		// Donne le nombre de cases 
 		this.f = f ;
@@ -135,4 +136,22 @@ public class Matrice {
 		
 		
 	}
+	
+	public void afficherCaseMarque()
+	{
+		int i,j;
+		for(i=0;i < matrice.length ; i++) // On parcours les lignes 
+		 {
+			 for(j =0; j < matrice[i].length ; j++) // On parcours les colonnes
+			 {
+				 if(matrice[i][j] ==1)
+				 {
+					 System.out.print("["+i+"]["+j+"], ");
+				 }
+				 
+			 }
+		 }
+		System.out.println("");
+	}
+	
 }

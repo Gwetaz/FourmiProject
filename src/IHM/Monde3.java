@@ -154,7 +154,7 @@ public class Monde3 extends JPanel{
 		listePoint.add(caseMatrice);
 		mapProieChemin.put(listePoint, caseMatrice);
 	}
-	public boolean proieDansCase(Point caseMatrice) {
+	/*public boolean proieDansCase(Point caseMatrice) {
 		Set<List<Point>> cles = mapProieChemin.keySet();
 		Iterator<List<Point>> it = cles.iterator();
 		while (it.hasNext()){
@@ -173,6 +173,32 @@ public class Monde3 extends JPanel{
 			   }
 		   }
 		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
+		}
+		return false;
+	}*/
+	public boolean proieDansCase(Point caseMatrice) {
+		for (int i=0; i<this.fourmiliere.getListeProies().size(); i++)
+		{
+			//this.ma
+			if(this.fourmiliere.getListeProies().get(i).getPosX() == caseMatrice.getX() && this.fourmiliere.getListeProies().get(i).getPosY() == caseMatrice.getY())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean affProieDansCase(Point caseMatrice) {
+		System.out.println("Case de la fourmi : "+caseMatrice.getX()+" "+caseMatrice.getY());
+		this.matrice.afficherCaseMarque();
+		for (int i=0; i<this.fourmiliere.getListeProies().size(); i++)
+		{
+			System.out.println("Case de la proie : "+this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getX()+" "+this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getY());
+			if(this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getX() == caseMatrice.getX() && this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getY() == caseMatrice.getY())
+			{
+				System.out.println("DESSUSSSSSSSS");
+				return true;	
+			}
 		}
 		return false;
 	}
