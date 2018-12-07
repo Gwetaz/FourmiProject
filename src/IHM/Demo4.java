@@ -56,7 +56,7 @@ public class Demo4 {
 			//System.out.println("Tour : "+tour);
 			List<IMovableDrawable> drawables = monMonde.contents();
 			try {
-				Thread.sleep(50);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -66,7 +66,7 @@ public class Demo4 {
 			for(int i = 0; i<nbFourmis; i++)
 			{
 				//System.out.println("i : "+i);
-				fourmiliere.getListeFourmis().get(i).action(monMonde.getMatrice());
+				fourmiliere.getListeFourmis().get(i).action(monMonde);
 				//System.out.println(fourmiliere.getListeFourmis().get(i).toString());
 			}
 			int nbProies = fourmiliere.getListeProies().size();

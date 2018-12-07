@@ -9,9 +9,11 @@ import general.Matrice;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,6 +31,7 @@ public class Monde3 extends JPanel{
 	private Matrice matrice;
 	String name = "";
 	private int nbJour;
+	private HashMap<List<Point>,Point> mapProieChemin;
 	
 	public Monde3(String name, Fourmiliere fourmiliere, List<Cercle> listeCercle, List<Cercle> listeproie) {
 		this.matrice = new Matrice(fourmiliere);
@@ -37,6 +40,7 @@ public class Monde3 extends JPanel{
 		this.fourmiliere = fourmiliere;
 		this.listeproie = listeproie; 
 		this.nbJour = 0;
+		this.mapProieChemin = new HashMap<List<Point>,Point>();
 	}
 	public List<IMovableDrawable> contents() {
 		return drawables;

@@ -3,6 +3,7 @@ package role.impl;
 import java.awt.Point;
 import java.util.Random;
 
+import IHM.Monde3;
 import general.Constantes;
 import general.Fourmi;
 import general.Matrice;
@@ -73,11 +74,11 @@ public class Ouvriere extends Role{
 		}
 	}
 	
-	public static void deplacement(Fourmi f, Matrice m) {
+	public static void deplacement(Fourmi f, Monde3 m) {
 		Random r = new Random();
 		int prob;
 		prob = r.nextInt(3-1) + 1;
-		if(m.PheroOuPas(f) == 1) {
+		if(m.getMatrice().PheroOuPas(f) == 1) {
 			deplacementChasse(f,m);
 		}
 		else {
@@ -111,7 +112,7 @@ public class Ouvriere extends Role{
 			f.setPosY(posy-10);
 	}
 	
-	public static void deplacementChasse(Fourmi f, Matrice m) {	
+	public static void deplacementChasse(Fourmi f, Monde3 m) {	
 		Random r = new Random();
 		int posx,posy, prob;
 		Point proie;
@@ -121,8 +122,14 @@ public class Ouvriere extends Role{
 			sortirFourmiliere(f);
 		}
 		
-		if(m.PheroOuPas(f) == 1) {
-			proie = m.RenvoyerCoordProie(posx, posy);
+		if(m.getMatrice().PheroOuPas(f) == 1) {
+			if(f.isPossedeNourriture())
+			{
+				//retour maison (stack le plus proche)
+			}else{
+				//si go proie avec hashmap
+			}
+			proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
 			if(proie.getX() > posx)
 				f.setPosX(posx+10);
 			else if(proie.getX() < posx)
@@ -154,7 +161,7 @@ public class Ouvriere extends Role{
 		
 	}
 	
-	public static void actionOuvriere(Fourmi f, Matrice m) {
+	public static void actionOuvriere(Fourmi f, Monde3 m) {
 		deplacement(f,m);
 	}
 }

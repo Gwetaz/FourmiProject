@@ -30,6 +30,8 @@ public class FacadeMonde {
 		return Vue.nid(nid);
 	}
 	
+	//public static List<RectangleForme> genererStack
+	
 	public static List<Cercle> genererListCercle(Fourmiliere fourmiliere)
 	{
 		return Vue.listeFourmis(fourmiliere.listeFourmis);

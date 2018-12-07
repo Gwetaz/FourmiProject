@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import IHM.Monde3;
 import role.impl.Ouvriere;
 import role.impl.Reine;
 import role.impl.RoleFourmi;
@@ -57,7 +58,7 @@ public class Etat implements Action{
 	}
 
 	@Override
-	public void action(Fourmi f, Matrice m) {
+	public void action(Fourmi f, Monde3 m) {
 		
 		switch(etatFourmi)
 		{

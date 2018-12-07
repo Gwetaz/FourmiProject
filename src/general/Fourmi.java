@@ -1,6 +1,8 @@
 package general;
 import java.util.Random;
 
+import IHM.Monde;
+import IHM.Monde3;
 import etat.impl.* ;
 import role.impl.*;
 
@@ -174,8 +176,8 @@ public class Fourmi {
 
 
 	
-	public void action(Matrice m) {
-		this.getEtat().action(this, m);
+	public void action(Monde3 monMonde) {
+		this.getEtat().action(this, monMonde);
 		//this.nbJourDeVie++;
 	}
 
