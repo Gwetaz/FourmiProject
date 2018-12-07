@@ -103,13 +103,17 @@ public class Ouvriere extends Role{
 		
 		prob = r.nextInt(5-1) + 1;
 		if(prob == 1)
-			f.setPosX(posx+10);
+			if(posx+10 > Constantes.tailleJframeX);
+			else f.setPosX(posx+10);
 		if(prob == 2)
-			f.setPosX(posx-10);
+			if(posx-10 < 10);
+			else f.setPosX(posx-10);
 		if(prob == 3)
-			f.setPosY(posy+10);
+			if(posy+10 > Constantes.tailleJframeY);
+			else f.setPosY(posy+10);
 		if(prob == 4)
-			f.setPosY(posy-10);
+			if(posy-10 < 10);
+			else f.setPosY(posy-10);
 	}
 	
 	public static void deplacementChasse(Fourmi f, Monde3 m) {	
@@ -128,8 +132,14 @@ public class Ouvriere extends Role{
 				//retour maison (stack le plus proche)
 			}else{
 				//si go proie avec hashmap
+				if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) {
+					f.setPossedeNourriture(true);
+				}
+				else {
+					m.creerChemin();
+				}
 			}
-			proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
+			/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
 			if(proie.getX() > posx)
 				f.setPosX(posx+10);
 			else if(proie.getX() < posx)
@@ -137,19 +147,23 @@ public class Ouvriere extends Role{
 			else if(proie.getY() > posy)
 				f.setPosY(posy+10);
 			else if(proie.getY() < posy)
-				f.setPosY(posy-10);
+				f.setPosY(posy-10);*/
 			
 		}
 		else {
 			prob = r.nextInt(5-1) + 1;
 			if(prob == 1)
-				f.setPosX(posx+10);
+				if(posx+10 > Constantes.tailleJframeX);
+				else f.setPosX(posx+10);
 			if(prob == 2)
-				f.setPosX(posx-10);
+				if(posx-10 < 10);
+				else f.setPosX(posx-10);
 			if(prob == 3)
-				f.setPosY(posy+10);
+				if(posy+10 > Constantes.tailleJframeY);
+				else f.setPosY(posy+10);
 			if(prob == 4)
-				f.setPosY(posy-10);
+				if(posy-10 < 10);
+				else f.setPosY(posy-10);
 		}		
 	}
 	
