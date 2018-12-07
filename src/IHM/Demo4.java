@@ -39,7 +39,6 @@ public class Demo4 {
 		listeStack.add(s3);
 		listeStack.add(s4);
 		fourmiliere.setListeStack(listeStack);
-		
 		RectangleForme nidForme = FacadeMonde.genererNid(nid);
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 		List<Cercle> listeProies = new ArrayList<Cercle> ();
