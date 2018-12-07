@@ -174,8 +174,8 @@ public class Fourmi {
 
 
 	
-	public void action() {
-		this.getEtat().action(this);
+	public void action(Matrice m) {
+		this.getEtat().action(this, m);
 		//this.nbJourDeVie++;
 	}
 
