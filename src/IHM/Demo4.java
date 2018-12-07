@@ -20,6 +20,7 @@ import general.Fourmiliere;
 import general.IMovableDrawable;
 import general.Nid;
 import general.RectangleForme;
+import general.Stack;
 
 public class Demo4 {
 
@@ -27,6 +28,16 @@ public class Demo4 {
 		Fourmiliere fourmiliere = new Fourmiliere();
 		RectangleForme fourmiliereForme = FacadeMonde.genererFourmilliere(fourmiliere);
 		Nid nid = new Nid();
+		Stack s1,s2,s3,s4;
+		List<Stack> listeStack = new ArrayList<Stack>();
+		s1 = new Stack();
+		s2 = new Stack();
+		s3 = new Stack();
+		s4 = new Stack();
+		listeStack.add(s1);
+		listeStack.add(s2);
+		listeStack.add(s3);
+		listeStack.add(s4);
 		RectangleForme nidForme = FacadeMonde.genererNid(nid);
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);
 		List<Cercle> listeProies = new ArrayList<Cercle> ();
