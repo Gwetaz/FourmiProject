@@ -130,13 +130,14 @@ public class Ouvriere extends Role{
 			if(f.isPossedeNourriture())
 			{
 				//retour maison (stack le plus proche)
+				f.retourMaison();
 			}else{
 				//si go proie avec hashmap
 				if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) {
 					f.setPossedeNourriture(true);
 				}
 				else {
-					m.creerChemin();
+					m.creerChemin(m.getMatrice().DePosACase(posx, posy));
 				}
 			}
 			/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
