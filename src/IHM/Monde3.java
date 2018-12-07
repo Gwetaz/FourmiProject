@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -124,12 +125,38 @@ public class Monde3 extends JPanel{
 		return this.matrice;
 	}
 	public boolean cheminExiste(Point caseMatrice) {
-		// TODO Auto-generated method stub
+		//System.out.println("Chemin existe Monde3");
+		/*for (int i=0; i< mapProieChemin.size(); i++)
+		{
+			//for(int j=0; mapProieChemin.get(i); )
+		}*/
+		
+		
+
+		Set<List<Point>> cles = mapProieChemin.keySet();
+		Iterator<List<Point>> it = cles.iterator();
+		while (it.hasNext()){
+			
+		   List<Point> cle = it.next(); // tu peux typer plus finement ici
+		   for (int i =0; i<cle.size(); i++)
+		   {
+			   if(caseMatrice.getX() == cle.get(i).getX() && caseMatrice.getY() == cle.get(i).getY())
+			   {
+				   return true;
+			   }
+		   }
+		   Object valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
+		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
+		}
+		
 		return false;
 	}
 	public void creerChemin(Point caseMatrice) {
+		System.out.println("creer chemin Monde3");
 		// TODO Auto-generated method stub
-		
+		List<Point> listePoint = new ArrayList<Point>();
+		listePoint.add(caseMatrice);
+		mapProieChemin.put(listePoint, caseMatrice);
 	}
 
 	

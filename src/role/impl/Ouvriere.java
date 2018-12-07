@@ -125,47 +125,52 @@ public class Ouvriere extends Role{
 		if(posy > Constantes.departFourmiliereY && posy < Constantes.departFourmiliereY+Constantes.tailleFourmiliereY && posx > Constantes.departFourmiliereX && posx < Constantes.departFourmiliereX+Constantes.tailleFourmiliereX) {
 			sortirFourmiliere(f);
 		}
-		
-		if(m.getMatrice().PheroOuPas(f) == 1) {
-			if(f.isPossedeNourriture())
-			{
-				//retour maison (stack le plus proche)
-				f.retourMaison();
-			}else{
-				//si go proie avec hashmap
-				if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) {
-					f.setPossedeNourriture(true);
+		if(f.isCreationChemin())
+		{
+			System.out.println("CREATION CHEMIN");
+		}else{
+			if(m.getMatrice().PheroOuPas(f) == 1) {
+				if(f.isPossedeNourriture())
+				{
+					//retour maison (stack le plus proche)
+					f.retourMaison(m);
+				}else{
+					//si go proie avec hashmap
+					if(m.cheminExiste(m.getMatrice().DePosACase(posx, posy))) {
+						f.setPossedeNourriture(true);
+					}
+					else {
+						m.creerChemin(m.getMatrice().DePosACase(posx, posy));
+					}
 				}
-				else {
-					m.creerChemin(m.getMatrice().DePosACase(posx, posy));
-				}
+				/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
+				if(proie.getX() > posx)
+					f.setPosX(posx+10);
+				else if(proie.getX() < posx)
+					f.setPosX(posx-10);
+				else if(proie.getY() > posy)
+					f.setPosY(posy+10);
+				else if(proie.getY() < posy)
+					f.setPosY(posy-10);*/
+				
 			}
-			/*proie = m.getMatrice().RenvoyerCoordProie(posx, posy);
-			if(proie.getX() > posx)
-				f.setPosX(posx+10);
-			else if(proie.getX() < posx)
-				f.setPosX(posx-10);
-			else if(proie.getY() > posy)
-				f.setPosY(posy+10);
-			else if(proie.getY() < posy)
-				f.setPosY(posy-10);*/
-			
+			else {
+				prob = r.nextInt(5-1) + 1;
+				if(prob == 1)
+					if(posx+10 > Constantes.tailleJframeX);
+					else f.setPosX(posx+10);
+				if(prob == 2)
+					if(posx-10 < 10);
+					else f.setPosX(posx-10);
+				if(prob == 3)
+					if(posy+10 > Constantes.tailleJframeY);
+					else f.setPosY(posy+10);
+				if(prob == 4)
+					if(posy-10 < 10);
+					else f.setPosY(posy-10);
+			}
 		}
-		else {
-			prob = r.nextInt(5-1) + 1;
-			if(prob == 1)
-				if(posx+10 > Constantes.tailleJframeX);
-				else f.setPosX(posx+10);
-			if(prob == 2)
-				if(posx-10 < 10);
-				else f.setPosX(posx-10);
-			if(prob == 3)
-				if(posy+10 > Constantes.tailleJframeY);
-				else f.setPosY(posy+10);
-			if(prob == 4)
-				if(posy-10 < 10);
-				else f.setPosY(posy-10);
-		}		
+				
 	}
 	
 	public void donnerNourriture(Fourmi f) {
