@@ -104,7 +104,11 @@ public class Matrice {
 	public int PheroOuPas(Fourmi f)
 	{
 		Point p = this.DePosACase(f.getPosX(), f.getPosY());
-		return this.matrice[p.x][p.y];
+		if (p.x >0 && p.x <=Constantes.tailleJframeX && p.y >0 && p.y <= Constantes.tailleJframeY)
+		{
+			return this.matrice[p.x][p.y];
+		}
+		return 0;
 	}
 	
 	
