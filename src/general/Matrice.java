@@ -2,6 +2,7 @@ package general;
 
 import java.awt.Point;
 
+//Cette classe représente comme son nom l'indique une matrice de case de 50 par 50 en fonction de la longueur et de la largeur de la fenêtre
 public class Matrice {
 	
 	
@@ -12,7 +13,7 @@ public class Matrice {
 	
 	public Matrice(Fourmiliere f) {
 		
-		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
+		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeY/Constantes.tailleCase] ;
 		this.initialiser(); 
 		// Donne le nombre de cases 
 		this.f = f ;

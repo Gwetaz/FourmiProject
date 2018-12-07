@@ -8,7 +8,7 @@ import role.impl.*;
 public class Fourmiliere {
 	
 	protected List<Fourmi>  listeFourmis;
-	private List<Proie> listeProies;
+	private List<Proie> listeProies;//a voir
 	private List<Stack> listeStack;
 	protected Reine reine;
 	protected RectangleForme rectangle;

@@ -2,6 +2,7 @@ package general;
 
 import java.awt.Color;
 
+//Toutes les constantes utilisés dans ce projet son regroupés ici avec un nom de variable le plus compréhensible possible
 public class Constantes {
 
 	public final static int pourcentOuvriere = 60;

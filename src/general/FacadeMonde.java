@@ -6,6 +6,7 @@ import java.util.List;
 import IHM.Monde3;
 import vue.Vue;
 
+//Cette classe est le lien entre les objets et nos objets graphiques
 public class FacadeMonde {
 	
 	public static Monde3 genererMonde(Fourmiliere fourmiliere, Nid nid, List<Cercle> listeCercle, List<Cercle> listeProie) 

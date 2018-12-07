@@ -55,6 +55,7 @@ public class Etat implements Action{
 		return etatFourmi.toString();
 	}
 
+	//Cette méthode définit ce que va faire une fourmi selon son état: cf voir document partie 1
 	@Override
 	public void action(Fourmi f, Monde3 m) {
 		
