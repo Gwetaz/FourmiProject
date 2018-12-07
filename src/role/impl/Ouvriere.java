@@ -123,7 +123,6 @@ public class Ouvriere extends Role{
 		
 		if(m.PheroOuPas(f) == 1) {
 			proie = m.RenvoyerCoordProie(posx, posy);
-			System.out.println(proie.getX()+" "+proie.getY());
 			if(proie.getX() > posx)
 				f.setPosX(posx+10);
 			else if(proie.getX() < posx)
