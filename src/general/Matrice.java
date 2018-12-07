@@ -66,13 +66,10 @@ public class Matrice {
 	
 	public void MarquerCaseProie(int posx , int posy)
 	{
-		int i,j;
 		
-		i = Math.round(posx/Constantes.tailleCase);
-		j = Math.round(posy/Constantes.tailleCase);
-		matrice[i][j] = 1;
-		Point p = new Point(j,i) ;
-		//return p;
+	
+		
+	
 		
 	}
 	
@@ -83,6 +80,12 @@ public class Matrice {
 	
 	
 	
+	public int[][] getMatrice() {
+		return matrice;
+	}
+
+
+
 	public int PheroOuPas(Fourmi f)
 	{
 		
