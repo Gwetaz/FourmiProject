@@ -28,6 +28,13 @@ public class Monde3 extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private List<IMovableDrawable> drawables = new LinkedList<IMovableDrawable>();
 	private Fourmiliere fourmiliere;
+	public Fourmiliere getFourmiliere() {
+		return fourmiliere;
+	}
+	public void setFourmiliere(Fourmiliere fourmiliere) {
+		this.fourmiliere = fourmiliere;
+	}
+
 	private List<Cercle> listeCercle;
 	private List<Cercle> listeproie;
 	private Matrice matrice;
@@ -48,16 +55,6 @@ public class Monde3 extends JPanel{
 		return drawables;
 	}
 	
-	public void afficherMatrice()
-	{
-		for (int i=0; i<matrice.getMatrice().length; i++)
-		{
-			for (int j=0; j<matrice.getMatrice()[0].length; j++)
-			{
-				System.out.println(matrice.getMatrice()[i][j]+",");
-			}
-		}
-	}
 	
 	public void open() {
 		JFrame frame = new JFrame(name);
@@ -137,45 +134,19 @@ public class Monde3 extends JPanel{
 			   if(caseMatrice.getX() == cle.get(i).getX() && caseMatrice.getY() == cle.get(i).getY())
 			   {
 				   Point valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
-				   System.out.println("CheminExiste case : "+caseMatrice.getX()+" "+caseMatrice.getY()+" valeur : "+valeur.getX()+" "+valeur.getY());
 				   return true;
 			   }
 		   }
-		   
-		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
 		}
 		
 		return false;
 	}
 	public void creerChemin(Point caseMatrice) {
-		System.out.println("creer chemin Monde3"); 
-		// TODO Auto-generated method stub
 		List<Point> listePoint = new ArrayList<Point>();
 		listePoint.add(caseMatrice);
 		mapProieChemin.put(listePoint, caseMatrice);
 	}
-	/*public boolean proieDansCase(Point caseMatrice) {
-		Set<List<Point>> cles = mapProieChemin.keySet();
-		Iterator<List<Point>> it = cles.iterator();
-		while (it.hasNext()){
-			
-		   List<Point> cle = it.next(); // tu peux typer plus finement ici
-		   for (int i =0; i<cle.size(); i++)
-		   {
-			   if(caseMatrice.getX() == cle.get(i).getX() && caseMatrice.getY() == cle.get(i).getY())
-			   {
-				   Point valeur = mapProieChemin.get(cle); // tu peux typer plus finement ici
-				   if (caseMatrice.getX() == valeur.getX() && caseMatrice.getY() == valeur.getY())
-				   {
-					   System.out.println("PROIIIIIEEEEEE");
-					   return true;
-				   }
-			   }
-		   }
-		   //System.out.println("OUI "+cle.toString()+" "+valeur.toString());
-		}
-		return false;
-	}*/
+
 	public boolean proieDansCase(Point caseMatrice) {
 		for (int i=0; i<this.fourmiliere.getListeProies().size(); i++)
 		{
@@ -189,14 +160,11 @@ public class Monde3 extends JPanel{
 	}
 	
 	public boolean affProieDansCase(Point caseMatrice) {
-		System.out.println("Case de la fourmi : "+caseMatrice.getX()+" "+caseMatrice.getY());
-		this.matrice.afficherCaseMarque();
+
 		for (int i=0; i<this.fourmiliere.getListeProies().size(); i++)
 		{
-			System.out.println("Case de la proie : "+this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getX()+" "+this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getY());
 			if(this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getX() == caseMatrice.getX() && this.matrice.DePosACase(this.fourmiliere.getListeProies().get(i).getPosX(), this.fourmiliere.getListeProies().get(i).getPosY()).getY() == caseMatrice.getY())
 			{
-				System.out.println("DESSUSSSSSSSS");
 				return true;	
 			}
 		}

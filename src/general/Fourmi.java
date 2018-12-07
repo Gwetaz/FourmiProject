@@ -195,9 +195,9 @@ public class Fourmi {
 	}
 
 
-	public int StackProche(Monde3 m) {
+	/*public int StackProche(Monde3 m) {
 		
-		double JeCalcul =1000 ;
+		double JeCalcul = 1000 ;
 		double intermed = 0 ;		
 		int QuelStack = -1 ;
 		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
@@ -213,11 +213,16 @@ public class Fourmi {
 			
 		}
 		return QuelStack;
+	}*/
+	
+	public int StackProche(Monde3 m) {
+		
+		return 0;
 	}
+	
 	
 	public Point getStackproche(Monde3 m)
 	{
-		System.out.println("case stack proche : "+fourmiliere.getListeStack().get(this.StackProche(m)).Casex+" "+fourmiliere.getListeStack().get(this.StackProche(m)).Casey+" i = "+this.StackProche(m));
 		return new Point(fourmiliere.getListeStack().get(this.StackProche(m)).Casex,fourmiliere.getListeStack().get(this.StackProche(m)).Casey);
 	}
 	
@@ -225,12 +230,11 @@ public class Fourmi {
 	{
 		int i = StackProche(m);
 		Point Posfourmi = m.getMatrice().DePosACase(this.posX, this.posY);
-		
 		if( fourmiliere.getListeStack().get(i).Casex > Posfourmi.getX() )
 		{
 			this.posX = this.posX+10;
 		}
-		else if( fourmiliere.getListeStack().get(i).Casex < Posfourmi.getX() )
+		if( fourmiliere.getListeStack().get(i).Casex < Posfourmi.getX() )
 		{
 			this.posX = this.posX-10;
 		}
@@ -239,7 +243,7 @@ public class Fourmi {
 		{
 			this.posY = this.posY+10;
 		}
-		else if( fourmiliere.getListeStack().get(i).Casey < Posfourmi.getY() )
+		if( fourmiliere.getListeStack().get(i).Casey < Posfourmi.getY() )
 		{
 			this.posY = this.posY-10;
 		}

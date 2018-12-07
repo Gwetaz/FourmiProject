@@ -14,7 +14,6 @@ public class Matrice {
 	public Matrice(Fourmiliere f) {
 		
 		matrice = new int[Constantes.tailleJframeX/Constantes.tailleCase][Constantes.tailleJframeX/Constantes.tailleCase] ;
-		System.out.println();
 		this.initialiser(); 
 		// Donne le nombre de cases 
 		this.f = f ;
@@ -26,7 +25,6 @@ public class Matrice {
 	public void initialiser()
 	{
 		 int i,j;
-		 
 		 for(i=0;i < matrice.length ; i++) // On parcours les lignes 
 		 {
 			 for(j =0; j < matrice[i].length ; j++) // On parcours les colonnes
@@ -72,7 +70,6 @@ public class Matrice {
 	public void MarquerCaseProie(int posx , int posy)
 	{
 		Point  p = this.DePosACase(posx, posy);
-		
 		this.matrice[p.x][p.y] = 1;
 		
 	
@@ -115,7 +112,7 @@ public class Matrice {
 	public int PheroOuPas(Fourmi f)
 	{
 		Point p = this.DePosACase(f.getPosX(), f.getPosY());
-		if (p.x >0 && p.x <=Constantes.tailleJframeX-10 && p.y >0 && p.y <= Constantes.tailleJframeY-10)
+		if (p.x >0 && p.x <=(Constantes.tailleJframeX/50-10) && p.y >0 && p.y <= Constantes.tailleJframeY/50-10)
 		{
 			return this.matrice[p.x][p.y];
 		}
@@ -130,28 +127,13 @@ public class Matrice {
 		
 		i = Math.round(Casex*Constantes.tailleCase);
 		j = Math.round(Casey*Constantes.tailleCase);
-		Point p = new Point(i,j);
+		Point p = new Point(j,i);
 		return p;
 		
 		
 		
 	}
 	
-	public void afficherCaseMarque()
-	{
-		int i,j;
-		for(i=0;i < matrice.length ; i++) // On parcours les lignes 
-		 {
-			 for(j =0; j < matrice[i].length ; j++) // On parcours les colonnes
-			 {
-				 if(matrice[i][j] ==1)
-				 {
-					 System.out.print("["+i+"]["+j+"], ");
-				 }
-				 
-			 }
-		 }
-		System.out.println("");
-	}
+
 	
 }
