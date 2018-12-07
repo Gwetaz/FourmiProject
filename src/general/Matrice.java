@@ -55,7 +55,7 @@ public class Matrice {
 	}
 	
 	
-	public Point DePosACase(int posx , int posy)
+	public static Point DePosACase(int posx , int posy)
 	{
 		int i,j;
 		
@@ -121,14 +121,14 @@ public class Matrice {
 	}
 	
 	
-	public Point DeCaseaPos(int Casex , int Casey)
+	public static Point DeCaseaPos(int Casex , int Casey)
 	{
 
 		int i,j;
 		
 		i = Math.round(Casex*Constantes.tailleCase);
 		j = Math.round(Casey*Constantes.tailleCase);
-		Point p = new Point(i,j) ;
+		Point p = new Point(i,j);
 		return p;
 		
 		

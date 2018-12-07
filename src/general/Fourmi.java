@@ -22,6 +22,7 @@ public class Fourmi {
 	public int nbJourDeMort;
 	boolean vivante;
 	boolean PossedeNourriture;
+	boolean creationChemin;
 
 	public int getNbJourDeVie() {
 		return nbJourDeVie;
@@ -62,6 +63,7 @@ public class Fourmi {
 		this.nbJourDeVie = 0;
 		this.fourmiliere = fourmiliere;
 		this.PossedeNourriture = false;
+		this.creationChemin = false;
 		Random r = new Random();
 		int sexe; 
 		sexe = r.nextInt(2-1) + 1;
@@ -183,7 +185,15 @@ public class Fourmi {
 
 
 	public void retourMaison() {
-		// TODO Auto-generated method stub
+		
+		int JeCalcul =0 ;
+		
+		for(int i = 0; i < fourmiliere.getListeStack().size(); i++)
+		{
+			JeCalcul = Math.sqrt((this.posX - fourmiliere.getListeStack().get(i).Casex))
+			
+		}
+		
 		
 	}
 
