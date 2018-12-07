@@ -30,14 +30,14 @@ public class Demo4 {
 		Nid nid = new Nid();
 		Stack s1,s2,s3,s4;
 		List<Stack> listeStack = new ArrayList<Stack>();
-		s1 = new Stack();
+		/*s1 = new Stack();
 		s2 = new Stack();
 		s3 = new Stack();
 		s4 = new Stack();
 		listeStack.add(s1);
 		listeStack.add(s2);
 		listeStack.add(s3);
-		listeStack.add(s4);
+		listeStack.add(s4);*/
 		fourmiliere.setListeStack(listeStack);
 		RectangleForme nidForme = FacadeMonde.genererNid(nid);
 		List<Cercle> listeCercle = FacadeMonde.genererListCercle(fourmiliere);

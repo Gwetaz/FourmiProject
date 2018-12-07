@@ -9,8 +9,10 @@ public class Stack {
 	protected int Casey;
 
 	
-	public Stack ()
+	public Stack (int Casex, int Casey)
 	{
+		this.Casex = Casex;
+		this.Casey = Casey;
 		this.couleur = Constantes.couleurStack;
 	}
 	
