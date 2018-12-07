@@ -48,5 +48,6 @@ public class Constantes {
 	public final static int nbJourEnLarve = 10;
 	public final static int nbJourEnNymphe = 5;
 	public final static int nombreProies = 10;
-
+	public final static Color couleurStack = new Color(255, 184 ,77);
+	public final static int tailleStack = 50;
 }

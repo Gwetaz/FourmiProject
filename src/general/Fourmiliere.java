@@ -10,6 +10,7 @@ public class Fourmiliere {
 	
 	protected List<Fourmi>  listeFourmis;
 	private List<Proie> listeProies;
+	private List<Stack> listeStack;
 	protected Reine reine;
 	protected RectangleForme rectangle;
 	protected Nid nid;
@@ -26,6 +27,7 @@ public class Fourmiliere {
 		this.nbSexuee = 0;
 		listeFourmis = new ArrayList<Fourmi>();
 		listeProies = new ArrayList<Proie>();
+		listeStack = new ArrayList<Stack>();
 	}
 	
 	public List<Proie> getListeProies() {
@@ -34,6 +36,15 @@ public class Fourmiliere {
 
 	public void setListeProies(List<Proie> listeProies) {
 		this.listeProies = listeProies;
+	}
+	
+
+	public List<Stack> getListeStack() {
+		return listeStack;
+	}
+
+	public void setListeStack(List<Stack> listeStack) {
+		this.listeStack = listeStack;
 	}
 
 	public void purge()
